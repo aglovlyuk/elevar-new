@@ -1,0 +1,32 @@
+.form-contact {
+    background-color: $cr-brand-secondary;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px $side-gutters;
+    margin-left: -$side-gutters-sm;
+    margin-right: -$side-gutters-sm;
+    @include media('>=desktop') {
+        padding-top: 82px;
+        padding-bottom: 80px;
+    }
+
+    .form-control {
+        margin-bottom: 18px;
+    }
+}
+
+.form-contact__controls {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-contact__cta {
+    margin-top: 30px;
+    @include media('>=desktop') {
+        margin-top: 54px;
+    }
+}

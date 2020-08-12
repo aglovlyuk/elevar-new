@@ -1,0 +1,14 @@
+.main-hero {
+    position: relative;
+    margin-bottom: 25px;
+
+    @include media('>=desktop') {
+        margin-bottom: 50px;
+    }
+}
+
+.main-hero__txt-holder {
+    @include xycenter;
+    color: #fff;
+    margin: 0;
+}

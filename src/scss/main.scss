@@ -1,0 +1,42 @@
+@import "core/colors";
+@import "core/variables";
+@import "abstracts/mixins";
+@import "core/icons";
+@import "core/fonts";
+@import "core/typography-settings";
+
+@import "vendor/include-media";
+
+// Bootstrap
+@import 'core/bootstrap-overrides';
+@import '~bootstrap/scss/bootstrap';
+@import '~slick-carousel/slick/slick';
+
+@import "abstracts/utils";
+@import "abstracts/classes";
+@import "abstracts/helpers";
+@import "abstracts/styleguide";
+
+@import "components/buttons";
+@import "components/links";
+@import "components/typography";
+@import "components/forms";
+@import "components/loader";
+//@import "components/tabs";
+//@import "components/badge";
+//@import "components/tooltip";
+//@import "components/dropdown";
+//@import "components/modal-override";
+
+@import "layout/header";
+@import "layout/layout";
+@import "layout/footer";
+@import "layout/popup";
+@import "layout/form-contact";
+@import "layout/site-section";
+@import "layout/projects";
+@import "layout/insights";
+
+@import "pages/home";
+@import "pages/not-found";
+@import "pages/general-cms";

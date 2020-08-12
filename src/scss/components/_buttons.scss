@@ -1,0 +1,168 @@
+a[class*="btn"] {
+    text-decoration: none;
+}
+
+.btn-primary {
+    @include anim;
+    border-radius: 0;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    height: 25px;
+    background-color: $cr-brand-tertiary;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    padding: 4px 12px;
+    text-decoration: none;
+    box-shadow: none;
+    overflow: hidden;
+
+    &:after {
+        @include anim($dur: $animation-speed-slow);
+        content: '';
+        z-index: -1;
+        position: absolute;
+        left: -35%;
+        top: 0;
+        width: 135%;
+        bottom: 0;
+        pointer-events: none;
+        background-color: lighten($cr-brand-primary, 20%);
+        transform: skew(-45deg) scaleX(-1);
+        transform-origin: 0 100%;
+    }
+    @include hover {
+        text-decoration: none;
+        background-color: $cr-brand-tertiary;
+
+        &:after {
+            transform: skew(-45deg) scaleX(1.05);
+        }
+    }
+    .inverted & {
+        color: $cr-brand-secondary;
+        background-color: $cr-brand-primary;
+
+        @include hover {
+            background-color: $cr-brand-secondary;
+            color: $cr-brand-primary;
+        }
+    }
+}
+
+.btn-primary-inverted {
+    @extend .btn-primary;
+    @include hover-bg($cr-brand-primary);
+    background-color: $cr-brand-secondary;
+}
+
+.btn-secondary {
+    @extend .btn-primary;
+    height: 34px;
+    box-shadow: 0 3px 6px rgba(14, 29, 47, 0.05), 0 1px 3px rgba(#000, .06);
+    border-radius: 6px;
+    background-color: #fff;
+    color: $badge-bg;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.17px;
+    text-transform: uppercase;
+
+    @include hover {
+        background-color: $badge-bg;
+        color: #fff;
+    }
+}
+
+.btn-cta {
+    @extend .btn-primary;
+    height: 44px;
+    border-radius: 8px;
+    background-color: rgba(246, 164, 235, .5);
+    color: $cr-brand-primary;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.16px;
+    text-transform: uppercase;
+
+    .icon-arrow-angle {
+        font-size: 10px;
+        margin-left: .75em;
+    }
+}
+
+.btn-md {
+    height: 38px;
+    border-radius: 8px;
+}
+
+.btn-lg {
+    height: 60px;
+    border-radius: 4px;
+    text-transform: none;
+}
+
+.btn-danger {
+    @extend .btn-secondary;
+    box-shadow: 0 3px 6px #eaf0f7, 0 1px 3px rgba(#000, .06);
+    background-color: $cr-danger;
+    color: #fff;
+    @include hover {
+        background-color: #fff;
+        color: $cr-danger;
+    }
+}
+
+.btn--wide {
+    min-width: 220px;
+}
+
+.btn-default {
+    @extend .btn-primary;
+    height: 36px;
+    text-transform: uppercase;
+    color: rgba($cr-brand-secondary, .5);
+    border: 1px solid currentColor;
+    background-color: transparent;
+    padding: 10px;
+    min-width: 68px;
+
+    @include hover {
+        color: #fff;
+        background-color: $cr-brand-secondary;
+        border-color: $cr-brand-secondary;
+    }
+}
+
+.btn-transparency {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.btn-submit {
+    @extend .btn-primary;
+    min-width: 178px;
+    padding: 10px 20px;
+    span {
+        font-size: 14px;
+        font-weight: 700;
+        color: $font-cr-secondary;
+        pointer-events: none;
+    }
+    svg {
+        font-size: 18px;
+        color: #fff;
+        margin-right: 14px;
+        pointer-events: none;
+    }
+}

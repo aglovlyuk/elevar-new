@@ -1,0 +1,61 @@
+.footer {
+    font-size: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    a {
+        color: currentColor;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .social-icons {
+        @extend %listreset;
+        display: flex;
+
+        li {
+            margin-left: 10px;
+        }
+    }
+}
+
+.footer__left-container {
+    p {
+        margin: 0;
+    }
+}
+
+.fa-icon::after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.facebook::after {
+    content: '\f09a';
+}
+
+.linkedin::after {
+    content: '\f08c';
+}
+
+.twitter::after {
+    content: '\f08c';
+}
+
+.instagram::after {
+    content: '\f08c';
+}
+
+.youtube::after {
+    content: '\f08c';
+}
+
+.issuu::after {
+    content: '\f08c';
+}

@@ -1,0 +1,112 @@
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &::selection {
+        color: #fff;
+        opacity: 1;
+        background-color: rgba($cr-brand-primary, .7);
+    }
+}
+
+body {
+    font-family: $font-primary;
+    color: $base-text-color;
+    font-size: $base-font-size;
+    line-height: $line-height-base;
+}
+
+img {
+    max-width: 100%;
+}
+
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    color: currentColor;
+}
+
+img,
+video,
+iframe {
+    vertical-align: top;
+}
+
+p {
+    margin-top: 0;
+}
+
+.h,
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+    margin-top: 0;
+    cursor: default;
+}
+
+h2 {
+    @include media('<tablet') {
+        font-size: $h2-font-size * 0.75;
+    }
+}
+
+a {
+    @include anim;
+    color: $cr-link;
+    text-decoration: underline;
+    @include hover {
+        text-decoration: none;
+        color: $cr-link;
+    }
+}
+
+strong, b {
+    cursor: default;
+    font-weight: 700;
+}
+
+.title-section {
+    display: block;
+    font-size: 50px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+
+    @include media('<tablet') {
+        font-size: 30px;
+        line-height: 1.4px;
+    }
+
+    .title-accent {
+        font-weight: 700;
+        color: $cr-brand-primary;
+    }
+}
+
+.description {
+    margin-bottom: 40px;
+
+    @include media('<phone') {
+        width: 95%;
+    }
+    @include media('>=phone') {
+        width: 90%;
+    }
+    @include media('>=desktop') {
+        width: 85%;
+    }
+    @include media('>=widescreen') {
+        width: 80%;
+    }
+    @include media('>=largescreen') {
+        width: 85%;
+    }
+    @include media('>=megascreen') {
+        width: 75%;
+    }
+
+    .description-accent {
+        background-color: $cr-brand-primary;
+        color: $font-cr-secondary;
+    }
+}

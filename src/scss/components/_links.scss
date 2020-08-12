@@ -1,0 +1,48 @@
+/* LINKS */
+
+[class*="link-"] {
+    @include anim;
+    @extend .btn-transparency;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    [class*="icon"] {
+        margin-right: 10px;
+    }
+}
+
+.link-primary {
+    text-decoration: none;
+    position: relative;
+    color: $cr-brand-primary;
+    &:hover {
+        color: $cr-brand-secondary;
+    }
+    .ajax-loader {
+        @include ycenter;
+        left: 105%;
+    }
+}
+
+.link-more {
+    color: $cr-brand-primary;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @include hover {
+    }
+
+    @include media('>=desktop') {
+        font-size: 18px;
+    }
+}
+
+.link-default {
+    color: #9eadbc;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+}

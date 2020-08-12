@@ -1,0 +1,63 @@
+.popup-overlay {
+    @include anim($dur: $animation-speed-slow);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 265px;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba($cr-brand-secondary, .37);
+
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: 50% 0;
+    pointer-events: none;
+    .is-popup-open & {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+}
+
+.popup-services {
+    width: 977px;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: auto;
+    position: relative;
+
+    @include media('>=desktop') {
+        padding: 95px 95px 67px;
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 1px solid $cr-brand-primary;
+        background-color: transparent;
+
+        &:after,
+        &:before {
+            @include xycenter;
+            content: '';
+            height: 1px;
+            background-color: $cr-brand-secondary;
+            width: 30%;
+        }
+
+        &:after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &:before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}

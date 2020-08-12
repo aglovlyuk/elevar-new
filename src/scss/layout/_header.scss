@@ -1,0 +1,31 @@
+.header {
+    position: relative;
+    padding-top: 47px;
+    padding-bottom: 23px;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 210px;
+    height: 47px;
+}
+
+.main-nav {
+    .nav-item {
+        &:not(:first-child) {
+            @include media('>=desktop') {
+                margin-left: 65px;
+            }
+        }
+    }
+
+    .nav-link {
+        color: $font-cr-secondary;
+        text-decoration: none;
+    }
+}
