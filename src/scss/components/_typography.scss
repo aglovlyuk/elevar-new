@@ -12,8 +12,11 @@ html * {
 body {
     font-family: $font-primary;
     color: $base-text-color;
-    font-size: $base-font-size;
     line-height: $line-height-base;
+
+    @include media('<desktop') {
+        font-size: $font-size-sm;
+    }
 }
 
 img {
@@ -55,9 +58,10 @@ a {
     @include anim;
     color: $cr-link;
     text-decoration: underline;
+
     @include hover {
         text-decoration: none;
-        color: $cr-link;
+        color: $link-cr-font;
     }
 }
 
@@ -80,33 +84,5 @@ strong, b {
     .title-accent {
         font-weight: 700;
         color: $cr-brand-primary;
-    }
-}
-
-.description {
-    margin-bottom: 40px;
-
-    @include media('<phone') {
-        width: 95%;
-    }
-    @include media('>=phone') {
-        width: 90%;
-    }
-    @include media('>=desktop') {
-        width: 85%;
-    }
-    @include media('>=widescreen') {
-        width: 80%;
-    }
-    @include media('>=largescreen') {
-        width: 85%;
-    }
-    @include media('>=megascreen') {
-        width: 75%;
-    }
-
-    .description-accent {
-        background-color: $cr-brand-primary;
-        color: $font-cr-secondary;
     }
 }

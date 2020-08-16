@@ -8,17 +8,18 @@
 
 .projects {
     background-color: $cr-brand-secondary;
-    padding: 48px 32px 0;
+    padding: 29px 10px 0;
     margin-bottom: 30px;
 
     @include media('>=desktop') {
+        padding: 48px 32px 0;
         margin-bottom: 43px;
     }
 }
 
 .projects__ttl {
+    @include adaptiv-font(20, 35);
     color: #5b5d62;
-    font-size: 35px;
     font-weight: 700;
     line-height: 1.286;
     max-width: 688px;
@@ -40,19 +41,17 @@
         margin-bottom: 30px;
     }
 
-    &:hover {
-        @include media('>=desktop') {
-            .projects-list__text-item {
-                background-color: $cr-brand-primary;
-            }
+    @include hover {
+        .projects-list__text-item {
+            background-color: $cr-brand-primary;
+        }
 
-            .projects-list__text-ttl {
-                color: $cr-brand-tertiary;
-            }
+        .projects-list__text-ttl {
+            color: $cr-brand-tertiary;
+        }
 
-            .txt-overflow {
-                max-height: 80px;
-            }
+        .txt-overflow {
+            max-height: 80px;
         }
     }
 }

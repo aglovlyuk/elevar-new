@@ -7,8 +7,11 @@
     }
 }
 
-.main-hero__txt-holder {
+.main-hero__ttl {
     @include xycenter;
+    @include adaptiv-font(26, 57);
     color: #fff;
     margin: 0;
+    width: 80%;
+    text-align: center;
 }

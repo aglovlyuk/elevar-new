@@ -1,0 +1,111 @@
+<% var data = {
+  title: "Elevar Design Group",
+  author: "© 2019 All Rights Reserved."
+}; %>
+
+<%= _.template(require('./../includes/header.html').default)(data) %>
+<div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
+
+<div class="wrapper">
+    <section class="main-hero">
+        <div class="container">
+            <img src="uploads/hero-elevate.jpg" alt="">
+            <h1 class="main-hero__ttl">Let’s Elevate</h1>
+        </div>
+    </section>
+
+    <section class="insights-section">
+        <div class="container">
+            <div class="filter" id="filters">
+                <button data-filter="*">View All</button>
+                <button data-filter=".insight">Insights</button>
+                <button data-filter=".news">News</button>
+                <button data-filter=".whitepapers">Whitepapers</button>
+                <button data-filter=".videos">Videos</button>
+            </div>
+
+            <div class="insights">
+                <div class="insights-list row js-grid-insights">
+                    <div class="grid-sizer col-md-6 col-lg-3"></div>
+                    <div class="col-md-6 col-lg-3 grid-item insight">
+                        <div class="insights-list__item">
+                            <div class="insights-list__img"><img src="uploads/elevate1.jpg" alt=""></div>
+                            <h3 class="insights-list__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                            <a href="" class="link-more">READ MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 grid-item news">
+                        <div class="insights-list__item">
+                            <div class="insights-list__img"><img src="uploads/elevate2.jpg" alt=""></div>
+                            <h3 class="insights-list__text-ttl">Mauris est dolor, tempus non purus sit amet, tristique venenatis urna</h3>
+                            <p>Nunc quis tempor ex, eu vehicula odio. Quisque luctus risus sit amet libero maximus, eget convallis metus cursus. Suspendisse gravida erat a velit pharetra, a pretium purus tristique.</p>
+                            <a href="" class="link-more">READ MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 grid-item whitepapers">
+                        <div class="insights-list__item">
+                            <div class="insights-list__img"><img src="uploads/elevate3.jpg" alt=""></div>
+                            <h3 class="insights-list__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                            <a href="" class="link-more">READ MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 grid-item videos">
+                        <div class="insights-list__item">
+                            <div class="insights-list__img"><img src="uploads/elevate1.jpg" alt=""></div>
+                            <h3 class="insights-list__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                            <a href="" class="link-more">READ MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 grid-item insight">
+                        <div class="insights-list__item">
+                            <div class="insights-list__img"><img src="uploads/elevate1.jpg" alt=""></div>
+                            <h3 class="insights-list__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                            <a href="" class="link-more">READ MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 grid-item news">
+                        <div class="insights-list__item">
+                            <div class="insights-list__img"><img src="uploads/elevate2.jpg" alt=""></div>
+                            <h3 class="insights-list__text-ttl">Mauris est dolor, tempus non purus sit amet, tristique venenatis urna</h3>
+                            <p>Nunc quis tempor ex, eu vehicula odio. Quisque luctus risus sit amet libero maximus, eget convallis metus cursus. Suspendisse gravida erat a velit pharetra, a pretium purus tristique.</p>
+                            <a href="" class="link-more">READ MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 grid-item whitepapers">
+                        <div class="insights-list__item">
+                            <div class="insights-list__img"><img src="uploads/elevate3.jpg" alt=""></div>
+                            <h3 class="insights-list__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                            <a href="" class="link-more">READ MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 grid-item videos">
+                        <div class="insights-list__item">
+                            <div class="insights-list__img"><img src="uploads/elevate1.jpg" alt=""></div>
+                            <h3 class="insights-list__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                            <a href="" class="link-more">READ MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="" class="btn btn-primary">Load more</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

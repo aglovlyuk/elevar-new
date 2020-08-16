@@ -43,28 +43,6 @@ $media-expressions: (
  transition: all 0.3s ease-in-out;
 }
 
-// justify nav
-%justify {
- text-align: justify;
- font-size: 1px;
- line-height: 0;
- > * {
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
-  font-size: $base-font-size;
-  line-height: $line-height-base;
- }
- &:after {
-  content: '';
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
- }
-}
-
-
-
 /// * Helper class to truncate and add ellipsis to a string too long for it to fit
 /// * on a single line.
 /// * 1. Prevent content from wrapping, forcing it on a single line.

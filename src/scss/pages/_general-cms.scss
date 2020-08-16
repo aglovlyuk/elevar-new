@@ -385,6 +385,7 @@
     justify-content: center;
     color: #fff;
     background-color: $cr-brand-primary;
+
     @include hover {
         background-color: $cr-brand-secondary;
         color: #fff;

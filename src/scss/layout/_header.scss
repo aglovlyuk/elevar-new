@@ -1,7 +1,35 @@
+body {
+    &.is-menu-open {
+        &:before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &:before {
+        content: '';
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(#5c5c60, .5);
+        z-index: 2;
+        transition: $animation-speed;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 .header {
     position: relative;
-    padding-top: 47px;
-    padding-bottom: 23px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @include media('>=desktop') {
+        padding-top: 47px;
+        padding-bottom: 23px;
+    }
 }
 
 .header__container {
@@ -22,10 +50,128 @@
                 margin-left: 65px;
             }
         }
+
+        @include media('<tablet') {
+            margin-bottom: 15px;
+            font-size: 19px;
+        }
     }
 
     .nav-link {
         color: $font-cr-secondary;
         text-decoration: none;
+        position: relative;
+        display: inline-block;
+        padding-top: .25em;
+        padding-bottom: .25em;
+
+        @include media('<tablet') {
+            color: #fff;
+        }
+
+        &:after {
+            content: '';
+            transition: transform .3s ease-out, border-color .3s ease-out;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            transform: scaleX(0);
+            background-color: $cr-brand-primary;
+            height: 2px;
+        }
+
+        @include hover {
+            &:after {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    .nav-toggle {
+        position: absolute;
+        right: 20px;
+        top: 26px;
+        width: 30px;
+        height: 30px;
+        background-color: #5c5c60;
+        padding: 8px 7px;
+        cursor: pointer;
+        z-index: 1002;
+
+        .bar {
+            position: relative;
+            width: 16px;
+            background-color: #fff;
+            transition: all 0s .3s;
+            transform: translate(0,6px);
+            border-radius: 3px;
+            background-clip: padding-box;
+            height: 2px;
+
+            .is-menu-open & {
+                background-color: transparent;
+
+                &:before {
+                    bottom: 0;
+                    transform: rotate(-45deg);
+                    transition: bottom .3s cubic-bezier(.23,1,.32,1),transform .3s .3s cubic-bezier(.23,1,.32,1);
+                }
+
+                &:after {
+                    top: 0;
+                    transform: rotate(45deg);
+                    transition: top .3s cubic-bezier(.23,1,.32,1),transform .3s .3s cubic-bezier(.23,1,.32,1);
+                }
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: -2px;
+                bottom: 6px;
+                background-color: #fff;
+                transition: bottom .3s .3s cubic-bezier(.23,1,.32,1), transform .3s cubic-bezier(.23,1,.32,1);
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: -2px;
+                top: 6px;
+                background-color: #fff;
+                transition: top .3s .3s cubic-bezier(.23,1,.32,1),transform .3s cubic-bezier(.23,1,.32,1);
+            }
+
+            &:before,
+            &:after {
+                width: 20px;
+                border-radius: 3px;
+                background-clip: padding-box;
+                height: 2px;
+            }
+        }
+    }
+
+    .navbar-nav {
+        @include media('<tablet') {
+            background-color: #5c5c60;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            right: 0;
+            height: 100vh;
+            overflow: auto;
+            width: 90vw;
+            max-width: 400px;
+            z-index: 1000;
+            padding: 40px;
+            transform: translateX(0);
+            transition: $animation-speed;
+
+            .is-menu-open & {
+                transform: translateX(-100%);
+            }
+        }
     }
 }

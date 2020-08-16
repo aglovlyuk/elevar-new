@@ -5,6 +5,11 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminSvgo = require('imagemin-svgo');
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 function generateHtmlPlugins(templateDir) {
     const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -85,7 +90,19 @@ const config = {
                 test: /\.html$/,
                 include: path.resolve(__dirname, "src/html/includes"),
                 use: ["raw-loader"]
-            }
+            },
+            /*{
+                test: /\.svg$/i,
+                include: /.*icons\.svg/,
+                use: [
+                    {
+                        loader: 'svg-sprite-loader',
+                        options: {
+                            publicPath: '',
+                        }
+                    },
+                ]
+            }*/
         ]
     },
     plugins: [
@@ -109,7 +126,43 @@ const config = {
                 from: "./src/uploads",
                 to: "./uploads"
             }
-        ])
+        ]),
+        new ImageminPlugin({
+            disable: process.env.NODE_ENV !== 'production', // Disable during development
+            test: /\.(jpe?g|png|gif)$/i, //|svg
+            plugins: [
+                imageminMozjpeg({
+                    quality: 81,
+                    progressive: true
+                }),
+                imageminSvgo({
+                    plugins: [
+                        {removeViewBox: false},
+                        {removeDimensions: true},
+                        {cleanupIDs: false}
+                    ]
+                })
+            ],
+            gifsicle: {
+                interlaced: true,
+                optimizationLevel: 3
+            },
+            optipng: {
+                optimizationLevel: 5
+            }
+        }),
+        new SVGSpritemapPlugin('src/img/icons/**/*.svg', {
+            output: {
+                //filename: path.resolve(__dirname, 'img/sprite.svg'),
+                chunk: {
+                    name: 'sprite'
+                }
+            },
+            sprite: {
+                prefix: 'icon-'
+            }
+        }),
+        //new SpriteLoaderPlugin()
     ].concat(htmlPlugins)
 };
 

@@ -1,3 +1,7 @@
+@mixin anim($param: all, $dur: $animation-speed, $type: $animation-type, $delay: 0s) {
+    transition: $param $dur $type $delay;
+}
+
 @mixin hover {
     @include media('>=desktop-hover') {
         &:hover {
@@ -5,6 +9,7 @@
         }
     }
 }
+
 @mixin hover-color($color) {
     @include anim(color);
 
@@ -13,6 +18,7 @@
         @include anim(color);
     }
 }
+
 @mixin hover-fill($color) {
     @include anim(fill);
 
@@ -21,6 +27,7 @@
         @include anim(color);
     }
 }
+
 @mixin hover-bg($color) {
     @include anim(background-color);
 
@@ -29,6 +36,17 @@
         @include anim(background-color);
     }
 }
+
+@mixin adaptiv-font($mobSize, $pcSize) {
+    $addSize: $pcSize - $mobSize;
+    $max-width: $maxWidth - 360;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 360px) / #{$max-width}));
+
+    @include media('>=#{$maxWidth + px}') {
+        font-size: #{$pcSize + px};
+    }
+}
+
 // vertical/horizontal align el
 // usage: @include xycenter/xcenter/ycenter;
 //
@@ -36,22 +54,16 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 @mixin xcenter {
     position: absolute;
     left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
 }
 @mixin ycenter {
     position: absolute;
     top: 50%;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
 }
 @mixin size($width, $height) {
@@ -65,9 +77,7 @@
     @content;
 }
 
-@mixin anim($param: all, $dur: $animation-speed, $type: $animation-type, $delay: 0s) {
-    transition: $param $dur $type $delay;
-}
+
 @mixin animation($animation-name, $animation-duration, $animation-timing-function) {
     @media screen and (min-width: $desktop-animation) {
         animation-name: $animation-name;

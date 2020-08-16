@@ -1,7 +1,11 @@
 // Bootstrap overrides
 //
-// Copy variables from `node_modules/scss/bootstrap/_variables.scss` to this file to override default values
+// Copy variables from `node_modules/bootstrap/scss/_variables.scss` to this file to override default values
 // without modifying source files.
+
+$font-family-sans-serif:        $font-primary;
+$font-size-base:                1rem !default;
+$font-size-sm:                  $font-size-base * .9375;
 
 // Brand colors
 $primary:                       $cr-brand-primary;

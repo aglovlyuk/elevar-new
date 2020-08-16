@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "isotope-layout": "^3.0.6",
     "jquery": "^3.4.1",
+    "jquery-bridget": "^2.0.1",
     "popper.js": "^1.16.0"
   },
   "devDependencies": {
@@ -20,12 +22,17 @@
     "css-loader": "^3.2.0",
     "cssnano": "^4.1.10",
     "html-webpack-plugin": "^3.2.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-svgo": "^8.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.19.1",
     "raw-loader": "^3.1.0",
     "sass-loader": "^8.0.0",
+    "svg-sprite-loader": "^5.0.0",
+    "svg-spritemap-webpack-plugin": "^3.5.7",
     "terser-webpack-plugin": "^2.2.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",

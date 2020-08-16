@@ -14,11 +14,16 @@ body {
     }
 }
 
+.wrapper {
+    overflow: hidden;
+}
+
 .empty-wrapper {
     padding-top: 0;
     padding-bottom: 5vh;
     display: flex;
     flex-direction: column;
+
     @include media('>=desktop') {
         padding-left: 10vw;
         padding-right: 10vw;

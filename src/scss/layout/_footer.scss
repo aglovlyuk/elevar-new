@@ -6,14 +6,17 @@
     a {
         color: currentColor;
         text-decoration: none;
-        &:hover {
+
+        @include hover {
             text-decoration: underline;
+            color: $link-cr-font;
         }
     }
 
     .social-icons {
         @extend %listreset;
         display: flex;
+        font-size: 18px;
 
         li {
             margin-left: 10px;
@@ -22,6 +25,10 @@
 }
 
 .footer__left-container {
+    @include media('<phone') {
+        margin-bottom: 18px;
+    }
+
     p {
         margin: 0;
     }
@@ -45,17 +52,17 @@
 }
 
 .twitter::after {
-    content: '\f08c';
+    content: '\f099';
 }
 
 .instagram::after {
-    content: '\f08c';
+    content: '\f16d';
 }
 
 .youtube::after {
-    content: '\f08c';
+    content: '\f167';
 }
 
 .issuu::after {
-    content: '\f08c';
+    content: '\f167';
 }
