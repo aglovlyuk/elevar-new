@@ -23,7 +23,7 @@ body {
 
 .header {
     position: relative;
-    padding-top: 20px;
+    padding-top: 17px;
     padding-bottom: 20px;
 
     @include media('>=desktop') {
@@ -39,11 +39,25 @@ body {
 }
 
 .logo {
-    width: 210px;
-    height: 47px;
+    width: 157px;
+    height: 35px;
+
+    @include media('>=tablet') {
+        width: 188px;
+        height: 42px;
+    }
+
+    @include media('>=desktop') {
+        width: 210px;
+        height: 47px;
+    }
 }
 
 .main-nav {
+    @include media('>=tablet') {
+        padding-top: 7px;
+    }
+
     .nav-item {
         &:not(:first-child) {
             @include media('>=desktop') {
@@ -62,6 +76,7 @@ body {
         text-decoration: none;
         position: relative;
         display: inline-block;
+        font-size: 1.125rem;
         padding-top: .25em;
         padding-bottom: .25em;
 
@@ -90,22 +105,24 @@ body {
 
     .nav-toggle {
         position: absolute;
-        right: 20px;
-        top: 26px;
-        width: 30px;
-        height: 30px;
+        right: 13px;
+        top: 20px;
+        width: 23px;
+        height: 23px;
         background-color: #5c5c60;
-        padding: 8px 7px;
+        padding: 6px 3px;
         cursor: pointer;
         z-index: 1002;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         .bar {
             position: relative;
-            width: 16px;
+            width: 11px;
             background-color: #fff;
-            transition: all 0s .3s;
-            transform: translate(0,6px);
             border-radius: 3px;
+            transition: background-color .27s .3s;
             background-clip: padding-box;
             height: 2px;
 
@@ -114,41 +131,38 @@ body {
 
                 &:before {
                     bottom: 0;
-                    transform: rotate(-45deg);
-                    transition: bottom .3s cubic-bezier(.23,1,.32,1),transform .3s .3s cubic-bezier(.23,1,.32,1);
+                    transform: rotate(-45deg) translateX(-50%);
+                    transition: bottom .3s cubic-bezier(.23,1,.32,1), transform .3s .3s cubic-bezier(.23,1,.32,1);
                 }
 
                 &:after {
                     top: 0;
-                    transform: rotate(45deg);
-                    transition: top .3s cubic-bezier(.23,1,.32,1),transform .3s .3s cubic-bezier(.23,1,.32,1);
+                    transform: rotate(45deg) translateX(-50%);
+                    transition: top .3s cubic-bezier(.23,1,.32,1), transform .3s .3s cubic-bezier(.23,1,.32,1);
                 }
             }
 
             &:before {
-                content: '';
-                position: absolute;
-                left: -2px;
                 bottom: 6px;
-                background-color: #fff;
                 transition: bottom .3s .3s cubic-bezier(.23,1,.32,1), transform .3s cubic-bezier(.23,1,.32,1);
             }
 
             &:after {
-                content: '';
-                position: absolute;
-                left: -2px;
                 top: 6px;
-                background-color: #fff;
-                transition: top .3s .3s cubic-bezier(.23,1,.32,1),transform .3s cubic-bezier(.23,1,.32,1);
+                transition: top .3s .3s cubic-bezier(.23,1,.32,1), transform .3s cubic-bezier(.23,1,.32,1);
             }
 
             &:before,
             &:after {
-                width: 20px;
+                content: '';
+                @include xcenter;
+                transform: rotate(0) translateX(-50%);
+                width: 16px;
                 border-radius: 3px;
                 background-clip: padding-box;
                 height: 2px;
+                background-color: #fff;
+                transform-origin: 0 50%;
             }
         }
     }

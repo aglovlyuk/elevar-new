@@ -10,6 +10,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminSvgo = require('imagemin-svgo');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 function generateHtmlPlugins(templateDir) {
     const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -162,7 +163,18 @@ const config = {
                 prefix: 'icon-'
             }
         }),
-        //new SpriteLoaderPlugin()
+        /*new SpriteLoaderPlugin()
+        new BrowserSyncPlugin(
+            {
+                host: 'localhost',
+                port: 3000,
+                server: { baseDir: ['dist'] }
+            },
+            {
+                reload: true,
+                injectCss: true
+            }
+        )*/
     ].concat(htmlPlugins)
 };
 

@@ -16,6 +16,7 @@ body {
 
     @include media('<desktop') {
         font-size: $font-size-sm;
+        line-height: 1.3333;
     }
 }
 

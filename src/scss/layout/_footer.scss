@@ -1,6 +1,6 @@
 .footer {
-    font-size: 12px;
-    padding-top: 20px;
+    font-size: 14px;
+    padding-top: 53px;
     padding-bottom: 20px;
 
     a {
@@ -24,6 +24,11 @@
     }
 }
 
+.footer__container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
 .footer__left-container {
     @include media('<phone') {
         margin-bottom: 18px;
@@ -34,35 +39,6 @@
     }
 }
 
-.fa-icon::after {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: 18px;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.facebook::after {
-    content: '\f09a';
-}
-
-.linkedin::after {
-    content: '\f08c';
-}
-
-.twitter::after {
-    content: '\f099';
-}
-
-.instagram::after {
-    content: '\f16d';
-}
-
-.youtube::after {
-    content: '\f167';
-}
-
-.issuu::after {
-    content: '\f167';
+.social-icons {
+    line-height: 1;
 }

@@ -1,9 +1,9 @@
 .site-section {
     &:not(:last-of-type) {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
 
         @include media('>=desktop') {
-            margin-bottom: 50px;
+            margin-bottom: 63px;
         }
     }
 }
@@ -16,12 +16,21 @@
 .site-section__img-ttl {
     @include adaptiv-font(40, 111);
     color: rgba(#fff, .52);
-    font-weight: 400;
+    font-weight: 300;
     line-height: .8;
     text-transform: uppercase;
     position: absolute;
-    bottom: -20px;
     left: 0;
+    margin: 0;
+
+    @include media('<tablet') {
+        top: 4px;
+        left: 4px;
+    }
+
+    @include media('>=tablet') {
+        bottom: -8px;
+    }
 
     .img-right & {
         left: auto;
@@ -31,18 +40,28 @@
 
 .site-section__txt {
     background-color: $cr-brand-secondary;
-    padding: 20px;
+    padding: 20px 20px 34px;
 
     @include media('>=tablet') {
         max-width: 40%;
         flex: 0 0 40%;
         padding-left: 3.582%;
-        padding-right: 2.836%;
+        padding-right: 2.3%;
     }
 
     @include media('>=desktop') {
         max-width: 29.627%;
         flex: 0 0 29.627%;
+    }
+
+    p {
+        &:last-of-type {
+            margin-bottom: 14px;
+
+            @include media('>=tablet') {
+                margin-bottom: 34px;
+            }
+        }
     }
 }
 
@@ -50,8 +69,12 @@
     @include adaptiv-font(20, 25);
     color: $font-cr-primary;
     font-weight: 700;
-    line-height: 1.56;
+    line-height: 1.3;
     max-width: 78%;
+
+    @include media('>=desktop') {
+        line-height: 1.56;
+    }
 
     &:after {
         content: '';
@@ -59,6 +82,10 @@
         height: 3px;
         background-color: #b9d531;
         display: block;
-        margin: 10px 0 5px;
+        margin: 15px 0 19px;
+
+        @include media('>=tablet') {
+            margin: 19px 0 13px;
+        }
     }
 }

@@ -3,10 +3,9 @@
   author: "© 2019 All Rights Reserved."
 }; %>
 
-<%= _.template(require('./../includes/header.html').default)(data) %>
-<div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
+    <%= _.template(require('./../includes/header.html').default)(data) %>
+    <div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
 
-<div class="wrapper">
     <section class="main-hero">
         <div class="container">
             <img src="uploads/hero.jpg" alt="">

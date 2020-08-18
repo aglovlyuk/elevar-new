@@ -12,7 +12,7 @@
     margin-bottom: 30px;
 
     @include media('>=desktop') {
-        padding: 48px 32px 0;
+        padding: 37px 32px 0;
         margin-bottom: 43px;
     }
 }
@@ -23,7 +23,7 @@
     font-weight: 700;
     line-height: 1.286;
     max-width: 688px;
-    margin: 0 auto 29px;
+    margin: 0 auto 27px;
     text-align: center;
 }
 
@@ -63,7 +63,7 @@
     left: 0;
     width: 100%;
     background-color: rgba(#000, .5);
-    padding: 15px 13px 13px;
+    padding: 9px 10px;
 }
 
 .txt-overflow {

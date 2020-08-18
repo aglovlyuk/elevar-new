@@ -2,18 +2,17 @@
     padding-bottom: 41px;
 
     @include media('>=desktop') {
-        padding-bottom: 61px;
+        padding-bottom: 56px;
     }
 }
 
 .insights {
     background-color: $cr-brand-secondary;
     padding: 29px 10px 0;
-    margin-bottom: 30px;
 
     @include media('>=desktop') {
-        padding: 48px 32px 0;
-        margin-bottom: 43px;
+        padding: 39px 32px 0;
+        margin-bottom: 33px;
     }
 }
 
@@ -23,7 +22,7 @@
     font-weight: 700;
     line-height: 1.286;
     max-width: 900px;
-    margin: 0 auto 29px;
+    margin: 0 auto 32px;
     text-align: center;
 }
 
@@ -33,15 +32,14 @@
     color: $cr-brand-tertiary;
     font-size: 15px;
     line-height: 1.7333;
-    margin-bottom: 20px;
+    margin-bottom: 36px;
     max-width: 405px;
     margin-left: auto;
     margin-right: auto;
     border-bottom: 3px solid $cr-brand-primary;
 
     @include media('>=desktop') {
-        padding: 28px;
-        margin-bottom: 30px;
+        padding: 28px 28px 23px;
 
         &:hover {
             img {
@@ -53,10 +51,10 @@
 
 .insights-list__img {
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
     @include media('>=desktop') {
-        margin-bottom: 32px;
+        margin-bottom: 25px;
 
         img {
             transition: $animation-speed;
@@ -69,5 +67,5 @@
     font-weight: 700;
     line-height: 1.556;
     color: $cr-brand-tertiary;
-    margin: 0 0 20px;
+    margin-bottom: 11px;
 }

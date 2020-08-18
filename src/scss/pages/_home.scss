@@ -1,9 +1,22 @@
 .main-hero {
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 16px;
+
+    @include media('>=tablet') {
+        margin-bottom: 30px;
+    }
 
     @include media('>=desktop') {
         margin-bottom: 50px;
+    }
+
+    img {
+        border-bottom: 5px solid $cr-brand-primary;
+
+        @include media('<tablet') {
+            min-height: 397px;
+            object-fit: cover;
+        }
     }
 }
 
@@ -11,7 +24,7 @@
     @include xycenter;
     @include adaptiv-font(26, 57);
     color: #fff;
-    margin: 0;
+    margin: -28px 0 0;
     width: 80%;
     text-align: center;
 }

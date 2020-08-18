@@ -13,7 +13,7 @@ a[class*="btn"] {
     z-index: 0;
     height: 50px;
     background-color: $cr-brand-tertiary;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.2;
     font-weight: 700;
     text-transform: uppercase;
@@ -28,6 +28,7 @@ a[class*="btn"] {
         padding-left: 12px;
         padding-right: 12px;
         height: 25px;
+        font-size: 14px;
     }
 
     &:after {
@@ -35,7 +36,7 @@ a[class*="btn"] {
         content: '';
         z-index: -1;
         position: absolute;
-        left: -35%;
+        left: -37%;
         top: 0;
         width: 135%;
         bottom: 0;
