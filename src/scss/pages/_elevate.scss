@@ -67,8 +67,31 @@
 }
 
 .filters {
+    @extend %listreset;
     display: flex;
     flex-wrap: wrap;
+
+    li {
+        &:not(:first-child) {
+            &:before {
+                content: '|';
+                margin: -6px 13px 0 12px;
+                display: inline-block;
+                vertical-align: middle;
+
+                @include media('>=desktop') {
+                    margin-right: 16px;
+                    margin-left: 15px;
+                }
+            }
+        }
+
+        &:last-child {
+            @include media('<tablet') {
+                margin-right: 40px;
+            }
+        }
+    }
 }
 
 .filters__btn {
@@ -101,27 +124,6 @@
             width: 100%;
             height: 3px;
             background-color: $cr-success;
-        }
-    }
-
-    &:not(:first-child) {
-        &:before {
-            content: '|';
-            margin: -6px 15px 0 7px;
-            display: inline-block;
-            vertical-align: middle;
-            font-size: .85em;
-
-            @include media('>=desktop') {
-                margin-right: 19px;
-                margin-left: 11px;
-            }
-        }
-    }
-
-    &:last-child {
-        @include media('<tablet') {
-            margin-right: 40px;
         }
     }
 }
