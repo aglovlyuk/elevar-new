@@ -8,63 +8,13 @@
 
 <section class="main-hero">
     <div class="container">
-        <img src="uploads/hero-elevate.jpg" alt="">
-        <h1 class="main-hero__ttl ttl-lg">Let’s Elevate</h1>
-    </div>
-</section>
-
-<section class="benefits">
-    <div class="container benefits__container">
-        <h2 class="benefits__ttl">Adding value every day</h2>
-
-        <div class="row">
-            <div class="col-12 d-lg-flex justify-content-between align-items-center">
-                <div class="benefits__txt">
-                    <p>Elevating the game” means we contribute to our clients’ lives through smart design solutions. We intend to change what Architects are for our clients and communities by measuring success in their terms:</p>
-                    <ul>
-                        <li><strong>Intentional experiences</strong> – people feel the spaces we create. Your customers will feel what it
-                            means to do business with you, how it is to live, work, or stay in your buildings, learn in your
-                            schools, and receive care in your hospitals.
-                        </li>
-                        <li><strong>Improved outcomes</strong> – Better experiences increases your customer outcomes, thereby improving your
-                            competitiveness.
-                        </li>
-                        <li><strong>Increased performance</strong> – from reduced footprint, to higher through-put, we want to see your
-                            bottom line improve.
-                        </li>
-                    </ul>
-                    <p>Our team is committed to and driven by a common theme. . .  to add value, every day.</p>
-                </div>
-
-                <div class="benefits__video-col d-flex">
-                    <div class="benefits__video">
-                        <img src="uploads/video-poster.jpg" alt="">
-                        <button class="btn-play btn-transparency" data-toggle="modal" data-target="#video-modal"><svg class="icon icon-play"><use xlink:href="#icon-play"></use></svg></button>
-                        <div class="benefits__video-ttl">FPO Screenshot</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <img src="uploads/sustainability.jpg" alt="">
+        <h1 class="main-hero__ttl">Sustainability</h1>
     </div>
 </section>
 
 <section class="elevates-section">
     <div class="container">
-        <div class="toolbar">
-            <div class="filters" id="js-filters">
-                <button class="filters__btn is-checked" data-filter="*">View All</button>
-                <button class="filters__btn" data-filter=".insight">Insights</button>
-                <button class="filters__btn" data-filter=".news">News</button>
-                <button class="filters__btn" data-filter=".whitepapers">Whitepapers</button>
-                <button class="filters__btn" data-filter=".videos">Videos</button>
-            </div>
-
-            <form action="" class="search-form">
-                <input class="search-form__control form-control" aria-label="Search field" type="search">
-                <button class="search-form__cta btn-transparency" type="submit" aria-label="Search button"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg></button>
-            </form>
-        </div>
-
         <div class="insights-list row js-grid-insights">
             <div class="grid-sizer col-6 col-lg-3"></div>
             <div class="col-6 col-lg-3 grid-item insight">
@@ -149,10 +99,9 @@
         </div>
 
         <div class="text-center">
-            <a href="" class="btn btn-primary">Load more</a>
+            <a href="" class="btn btn-primary">elevate</a>
         </div>
     </div>
 </section>
 
-<%= _.template(require('./../includes/video.html').default)(data) %>
 <%= _.template(require('./../includes/footer.html').default)(data) %>

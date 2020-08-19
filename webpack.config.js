@@ -129,7 +129,7 @@ const config = {
             }
         ]),
         new ImageminPlugin({
-            disable: process.env.NODE_ENV !== 'production', // Disable during development
+            //disable: process.env.NODE_ENV !== 'production', // Disable during development
             test: /\.(jpe?g|png|gif)$/i, //|svg
             plugins: [
                 imageminMozjpeg({

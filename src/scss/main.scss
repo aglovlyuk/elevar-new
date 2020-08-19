@@ -24,7 +24,7 @@
 //@import "components/badge";
 //@import "components/tooltip";
 //@import "components/dropdown";
-//@import "components/modal-override";
+@import "components/modal-override";
 
 @import "layout/header";
 @import "layout/layout";
@@ -36,5 +36,6 @@
 @import "layout/insights";
 
 @import "pages/home";
+@import "pages/elevate";
 @import "pages/not-found";
 @import "pages/general-cms";

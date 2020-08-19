@@ -2,6 +2,7 @@
 
 // Fonts
 $font-primary:              "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+$font-secondary:            Helvetica, Arial, sans-serif;
 
 // Body
 $line-height-base:          1.625 !default; //30px
@@ -14,7 +15,7 @@ $maxWidth:                  1500; // max size screen for mixin 'adaptiv-font'
 // headings
 $heading-cr:                #212529;
 $heading-letter-spacing:    0;
-$headings-font-family:      Helvetica, Arial, sans-serif;
+$headings-font-family:      $font-secondary;
 $h1-font-size:              3.5625rem;
 
 // Additional

@@ -19,7 +19,7 @@ a[class*="btn"] {
     text-transform: uppercase;
     color: #fff;
     cursor: pointer;
-    padding: 4px 20px;
+    padding: 5px 20px 3px;
     text-decoration: none;
     box-shadow: none;
     overflow: hidden;
@@ -74,18 +74,20 @@ a[class*="btn"] {
 
 .btn-secondary {
     @extend .btn-primary;
-    height: 34px;
-    box-shadow: 0 3px 6px rgba(14, 29, 47, 0.05), 0 1px 3px rgba(#000, .06);
-    border-radius: 6px;
-    background-color: #fff;
-    color: $badge-bg;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.17px;
+    height: 40px;
+    background-color: $cr-success;
+    color: #fefefe;
+    font-family: $font-secondary;
+    font-size: 18px;
+    font-weight: 700;
     text-transform: uppercase;
 
+    &:after {
+        background-color: darken($cr-success, 15%);
+    }
+
     @include hover {
-        background-color: $badge-bg;
+        background-color: $cr-success;
         color: #fff;
     }
 }

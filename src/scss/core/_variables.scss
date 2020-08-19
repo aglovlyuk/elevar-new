@@ -6,8 +6,9 @@ $animation-speed-slow3x:    $animation-speed * 3;
 $animation-type:            cubic-bezier(0.215, 0.61, 0.355, 1) !default;
 
 // Forms
-$form-border:               0;
-$form-cr-val:               #231f20;
+$form-border:               1px dotted $cr-brand-tertiary;
+// Style for "Form Field"
+$form-cr-val:               $cr-brand-tertiary;
 $form-cr-placeholder:       $form-cr-val;
 $form-hor-padding-sm:       15px;
 $form-hor-padding:          7px;
@@ -22,7 +23,7 @@ $aside:                     238px;
 $container-xl:              1920px;
 $container-md:              1490px;
 $container:                 1370px;
-$container-cms:             970px;
+$container-cms:             933px;
 $container-cms-sm:          730px;
 $container-xs:              370px;
 $base-min-width:            320px;
@@ -34,11 +35,11 @@ $side-gutters-xl:           $side-gutters * 2;
 $layout-gutter-r:           1.81vw;
 $layout-gutter-l:           7.41vw;
 
-$screen-xs:                 530px !default;
+$screen-xs:                 480px !default;
 $screen-xs-min:             $screen-xs !default;
 $screen-phone:              $screen-xs-min !default;
 
-$screen-ph:                 600px !default;
+$screen-ph:                 576px !default;
 
 $screen-sm:                 768px !default;
 $screen-sm-min:             $screen-sm !default;

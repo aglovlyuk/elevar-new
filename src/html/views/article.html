@@ -1,0 +1,77 @@
+<% var data = {
+  title: "Elevar Design Group",
+  author: "© 2019 All Rights Reserved."
+}; %>
+
+<%= _.template(require('./../includes/header.html').default)(data) %>
+<div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
+
+<section class="main-hero">
+    <div class="container">
+        <img src="uploads/hero-article.jpg" alt="">
+    </div>
+</section>
+
+<section class="general-cms">
+    <div class="container--cms">
+        <a href="" class="link-back">< Back</a>
+        <h1>The is the article title Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do usmod</h1>
+        <div class="article-meta">
+            <div class="article-meta__author">
+                <img src="uploads/author.jpg" alt="">
+            </div>
+            <div class="article-meta__txt">
+                By: First Last <span class="divide">|</span> June 6, 2020
+            </div>
+            <ul class="article-meta__social">
+                <li><a href=""><svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg></a></li>
+                <li><a href=""><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a></li>
+                <li><a href=""><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg></a></li>
+                <li><a href=""><svg class="icon icon-pinterest"><use xlink:href="#icon-pinterest"></use></svg></a></li>
+            </ul>
+        </div>
+
+        <div class="tags">Tags: <a href="">Sustainability</a>, <a href="">Design</a></div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin congue ante quis hendrerit tincidunt. Nunc vitae luctus purus. Sed a massa in nisi fringilla suscipit. Proin in ipsum non turpis finibus sagittis. Nunc rutrum dapibus nunc ut molestie. Maecenas sollicitudin scelerisque est, venenatis volutpat arcu. Vestibulum egestas felis vehicula, egestas leo sed, hendrerit augue. Sed a iaculis leo, at lobortis dolor. Suspendisse euismod nisi ac dolor venenatis, at imperdiet libero dapibus. Curabitur sem augue, finibus vitae velit id, euismod egestas mi. Mauris pulvinar arcu ornare massa consequat vestibulum.</p>
+        <p>Proin mattis euismod orci eget porttitor. Sed nec tortor rutrum, vehicula nibh ut, porttitor leo. Vivamus blandit tincidunt tortor, a porttitor mi. Vestibulum ac molestie urna. Nullam rhoncus fermentum velit ac consequat. Suspendisse potenti. Suspendisse pellentesque sodales nulla, sit amet pretium felis rutrum et. Cras consectetur erat odio, eget imperdiet dui mattis nec. Nam pretium velit et elit rutrum consectetur. Fusce varius, sem sed dignissim varius, orci dui aliquam sapien, ut vulputate nisl leo ut metus. Vivamus non elementum ante. Aliquam a molestie metus.</p>
+
+        <blockquote class="blockquote">
+            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
+        </blockquote>
+
+        <h3>Sub Heading Text</h3>
+        <p>Morbi feugiat risus vitae orci dictum, eu congue tellus iaculis. Vestibulum hendrerit ut libero nec consectetur. Quisque ut orci nunc. Vivamus sagittis vestibulum feugiat. Fusce id pretium libero, sed aliquam nisl. Donec eleifend dolor ex, in lobortis nibh placerat nec. Curabitur consectetur enim in faucibus volutpat. Ut et mauris id ligula luctus lacinia. Donec id posuere metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>In non ipsum sed turpis molestie sollicitudin. Fusce tempor facilisis tellus non pellentesque. Etiam sed commodo urna, eget luctus dui. Donec tempor magna et sollicitudin pellentesque. In id scelerisque turpis. Donec non ullamcorper sem. Vestibulum cursus tortor ante, in condimentum est accumsan quis. Fusce dui lectus, tincidunt sed egestas vel, tincidunt ac nulla. Curabitur eleifend purus ex, sit amet varius est gravida sed. Sed eget imperdiet massa. Aliquam faucibus dolor quis malesuada pretium. Suspendisse ornare tristique felis sit amet tristique.</p>
+
+        <div class="txt-w-img image-right">
+            <div class="txt-w-img__img">
+                <img src="uploads/content-img.jpg" alt="">
+            </div>
+
+            <div class="txt-w-img__txt">
+                <h3>Sub Heading Text</h3>
+                <p>Nunc ut sollicitudin ante. Nulla facilisi. Aliquam erat volutpat. Nulla sit amet eleifend erat. Etiam sodales dui at tortor porta dignissim. Etiam eget tempus sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                <p>Aenean a dolor vel ante sodales imperdiet non vitae nisi. Nullam ut laoreet nulla, vel pretium justo. Aenean feugiat fringilla nisl a consequat. Praesent faucibus velit eget magna tincidunt, vitae pulvinar quam posuere.</p>
+            </div>
+        </div>
+
+        <div class="txt-w-img image-left">
+            <div class="txt-w-img__img">
+                <img src="uploads/content-img.jpg" alt="">
+            </div>
+
+            <div class="txt-w-img__txt">
+                <h3>Sub Heading Text</h3>
+                <p>Nunc ut sollicitudin ante. Nulla facilisi. Aliquam erat volutpat. Nulla sit amet eleifend erat. Etiam sodales dui at tortor porta dignissim. Etiam eget tempus sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                <p>Aenean a dolor vel ante sodales imperdiet non vitae nisi. Nullam ut laoreet nulla, vel pretium justo. Aenean feugiat fringilla nisl a consequat. Praesent faucibus velit eget magna tincidunt, vitae pulvinar quam posuere.</p>
+            </div>
+        </div>
+
+        <div class="btn-download">
+            <button class="btn-primary">Download PDF</button>
+        </div>
+    </div>
+</section>
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

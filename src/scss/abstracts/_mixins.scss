@@ -39,8 +39,8 @@
 
 @mixin adaptiv-font($mobSize, $pcSize) {
     $addSize: $pcSize - $mobSize;
-    $max-width: $maxWidth - 360;
-    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 360px) / #{$max-width}));
+    $max-width: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$max-width}));
 
     @include media('>=#{$maxWidth + px}') {
         font-size: #{$pcSize + px};

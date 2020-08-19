@@ -1,0 +1,42 @@
+<% var data = {
+  title: "Elevar Design Group",
+  author: "© 2019 All Rights Reserved."
+}; %>
+
+<%= _.template(require('./../includes/header.html').default)(data) %>
+<div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
+
+<section class="general-cms">
+    <div class="container--cms">
+        <div class="video-cms">
+            <img src="uploads/video-lg.jpg" alt="">
+            <button class="btn-play btn-transparency" data-toggle="modal" data-target="#video-modal"><svg class="icon icon-play"><use xlink:href="#icon-play"></use></svg></button>
+        </div>
+
+        <a href="" class="link-back">< Back</a>
+        <h1>Video title Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do usmod</h1>
+        <div class="article-meta">
+            <div class="article-meta__txt">
+                By: First Last  <span class="divide">|</span>    June 6, 2020
+            </div>
+            <ul class="article-meta__social">
+                <li><a href=""><svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg></a></li>
+                <li><a href=""><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a></li>
+                <li><a href=""><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg></a></li>
+                <li><a href=""><svg class="icon icon-pinterest"><use xlink:href="#icon-pinterest"></use></svg></a></li>
+            </ul>
+        </div>
+
+        <div class="tags">Tags: <a href="">Sustainability</a>, <a href="">Design</a></div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin congue ante quis hendrerit tincidunt. Nunc vitae luctus purus. Sed a massa in nisi fringilla suscipit. Proin in ipsum non turpis finibus sagittis. Nunc rutrum dapibus nunc ut molestie. Maecenas sollicitudin scelerisque est, venenatis volutpat arcu. Vestibulum egestas felis vehicula, egestas leo sed, hendrerit augue. Sed a iaculis leo, at lobortis dolor. Suspendisse euismod nisi ac dolor venenatis, at imperdiet libero dapibus. Curabitur sem augue, finibus vitae velit id, euismod egestas mi. Mauris pulvinar arcu ornare massa consequat vestibulum.</p>
+        <p>Proin mattis euismod orci eget porttitor. Sed nec tortor rutrum, vehicula nibh ut, porttitor leo. Vivamus blandit tincidunt tortor, a porttitor mi. Vestibulum ac molestie urna. Nullam rhoncus fermentum velit ac consequat. Suspendisse potenti. Suspendisse pellentesque sodales nulla, sit amet pretium felis rutrum et. Cras consectetur erat odio, eget imperdiet dui mattis nec. Nam pretium velit et elit rutrum consectetur. Fusce varius, sem sed dignissim varius, orci dui aliquam sapien, ut vulputate nisl leo ut metus. Vivamus non elementum ante. Aliquam a molestie metus.</p>
+
+        <div class="btn-download">
+            <button class="btn-primary">View Transcript</button>
+        </div>
+    </div>
+</section>
+
+<%= _.template(require('./../includes/video.html').default)(data) %>
+<%= _.template(require('./../includes/footer.html').default)(data) %>

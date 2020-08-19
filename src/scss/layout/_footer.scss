@@ -1,5 +1,6 @@
 .footer {
     font-size: 14px;
+    line-height: 22px;
     padding-top: 53px;
     padding-bottom: 20px;
 
@@ -16,10 +17,10 @@
     .social-icons {
         @extend %listreset;
         display: flex;
-        font-size: 18px;
+        font-size: 21px;
 
         li {
-            margin-left: 10px;
+            margin-left: 12px;
         }
     }
 }

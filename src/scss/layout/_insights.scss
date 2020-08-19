@@ -26,7 +26,7 @@
     text-align: center;
 }
 
-.insights-list__item {
+.insights-item {
     background-color: #fff;
     padding: 18px;
     color: $cr-brand-tertiary;
@@ -49,7 +49,7 @@
     }
 }
 
-.insights-list__img {
+.insights-item__img {
     overflow: hidden;
     margin-bottom: 18px;
 
@@ -62,10 +62,20 @@
     }
 }
 
-.insights-list__text-ttl {
-    font-size: 18px;
+.insights-item__text-ttl {
+    @include adaptiv-font(13, 18);
     font-weight: 700;
-    line-height: 1.556;
+    line-height: 1.154;
     color: $cr-brand-tertiary;
     margin-bottom: 11px;
+
+    @include media('>=tablet') {
+        line-height: 1.556;
+    }
+}
+
+.insights-item__date {
+    @include adaptiv-font(11, 14);
+    display: block;
+    margin-bottom: 12px;
 }

@@ -33,6 +33,11 @@
     text-decoration: none;
 
     @include hover {
+        color: $cr-brand-tertiary;
+    }
+
+    &:focus {
+        color: $cr-brand-tertiary;
     }
 
     @include media('>=desktop') {
@@ -45,4 +50,24 @@
     font-size: 16px;
     font-weight: 600;
     letter-spacing: -0.4px;
+}
+
+.link-back {
+    color: $cr-success;
+    font-family: $font-secondary;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 19px;
+    text-decoration: none;
+    
+    @include hover {
+        color: $cr-brand-tertiary;
+    }
+    
+    @include media('>=desktop') {
+        margin-bottom: 28px;
+    }
 }

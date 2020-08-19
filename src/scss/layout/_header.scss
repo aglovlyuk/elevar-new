@@ -27,7 +27,7 @@ body {
     padding-bottom: 20px;
 
     @include media('>=desktop') {
-        padding-top: 47px;
+        padding-top: 32px;
         padding-bottom: 23px;
     }
 }
@@ -94,6 +94,12 @@ body {
             transform: scaleX(0);
             background-color: $cr-brand-primary;
             height: 2px;
+        }
+
+        &.active {
+            &:after {
+                transform: scaleX(1);
+            }
         }
 
         @include hover {

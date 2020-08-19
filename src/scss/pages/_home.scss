@@ -7,15 +7,18 @@
     }
 
     @include media('>=desktop') {
-        margin-bottom: 50px;
+        margin-bottom: 57px;
     }
 
     img {
         border-bottom: 5px solid $cr-brand-primary;
+        min-height: 220px;
+        background-color: rgba(#000, .6);
 
         @include media('<tablet') {
             min-height: 397px;
             object-fit: cover;
+            border-bottom-width: 3px;
         }
     }
 }
@@ -27,4 +30,9 @@
     margin: -28px 0 0;
     width: 80%;
     text-align: center;
+
+    &.ttl-lg {
+        @include adaptiv-font(38, 90);
+        margin-top: 0;
+    }
 }
