@@ -1,5 +1,5 @@
 .insights-section {
-    padding-bottom: 41px;
+    padding-bottom: 18px;
 
     @include media('>=desktop') {
         padding-bottom: 56px;
@@ -21,9 +21,11 @@
     color: #5b5d62;
     font-weight: 700;
     line-height: 1.286;
-    max-width: 900px;
+    max-width: 920px;
     margin: 0 auto 32px;
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .insights-item {
@@ -33,10 +35,17 @@
     font-size: 15px;
     line-height: 1.7333;
     margin-bottom: 36px;
-    max-width: 405px;
     margin-left: auto;
     margin-right: auto;
     border-bottom: 3px solid $cr-brand-primary;
+    display: block;
+    text-decoration: none;
+    max-width: 405px;
+
+    &:hover {
+        text-decoration: none;
+        color: $cr-brand-tertiary;
+    }
 
     @include media('>=desktop') {
         padding: 28px 28px 23px;
@@ -55,10 +64,11 @@
 
     @include media('>=desktop') {
         margin-bottom: 25px;
+    }
 
-        img {
-            transition: $animation-speed;
-        }
+    img {
+        width: 100%;
+        transition: $animation-speed;
     }
 }
 

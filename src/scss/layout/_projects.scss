@@ -8,12 +8,10 @@
 
 .projects {
     background-color: $cr-brand-secondary;
-    padding: 29px 10px 0;
-    margin-bottom: 30px;
+    padding: 29px 10px 30px;
 
     @include media('>=desktop') {
-        padding: 37px 32px 0;
-        margin-bottom: 43px;
+        padding: 37px 32px 43px;
     }
 }
 
@@ -22,9 +20,11 @@
     color: #5b5d62;
     font-weight: 700;
     line-height: 1.286;
-    max-width: 688px;
+    max-width: 708px;
     margin: 0 auto 27px;
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .projects-list__item {
@@ -36,18 +36,21 @@
     max-width: 405px;
     margin-left: auto;
     margin-right: auto;
+    display: block;
 
     @include media('>=desktop') {
         margin-bottom: 30px;
     }
 
     @include hover {
+        color: $cr-brand-tertiary;
+
         .projects-list__text-item {
             background-color: $cr-brand-primary;
         }
 
         .projects-list__text-ttl {
-            color: $cr-brand-tertiary;
+            color: inherit;
         }
 
         .txt-overflow {
@@ -57,7 +60,7 @@
 }
 
 .projects-list__text-item {
-    transition: background-color $animation-speed-slow;
+    transition: $animation-speed-slow;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -67,12 +70,13 @@
 }
 
 .txt-overflow {
-    transition: $animation-speed-slow3x;
+    transition: $animation-speed-slow;
     max-height: 0;
     overflow: hidden;
 }
 
 .projects-list__text-ttl {
+    transition: $animation-speed-slow;
     color: #fff;
     font-size: 18px;
     font-weight: 700;
@@ -81,6 +85,7 @@
 }
 
 .projects-list__city {
+    color: inherit;
     display: block;
     margin-bottom: 11px;
 }

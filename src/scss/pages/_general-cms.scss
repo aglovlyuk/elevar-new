@@ -378,6 +378,7 @@
 }
 
 .article-meta__txt {
+    @include adaptiv-font(14, 16);
     background-color: $cr-brand-secondary;
     flex-grow: 1;
     min-height: 44px;
@@ -395,6 +396,7 @@
         flex-basis: calc(100% - 78px);
         flex-shrink: 0;
         flex-grow: 0;
+        line-height: 1.429;
     }
 
     @include media('>=tablet') {
@@ -404,6 +406,14 @@
     .divide {
         display: inline-block;
         margin: 0 20px;
+
+        @include media('<phone') {
+            text-indent: -9999px;
+            width: 100%;
+            line-height: 0;
+            font-size: 0;
+            display: block;
+        }
     }
 }
 

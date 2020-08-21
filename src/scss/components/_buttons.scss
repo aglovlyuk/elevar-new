@@ -2,6 +2,14 @@ a[class*="btn"] {
     text-decoration: none;
 }
 
+@mixin hover {
+    @include media('>=desktop-hover') {
+        &:hover {
+            @content;
+        }
+    }
+}
+
 .btn-primary {
     @include anim;
     border-radius: 0;
@@ -44,6 +52,14 @@ a[class*="btn"] {
         background-color: lighten($cr-brand-primary, 20%);
         transform: skew(-45deg) scaleX(-1);
         transform-origin: 0 100%;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+        @include media('<desktop') {
+            background-color: $cr-brand-primary;
+        }
     }
 
     @include hover {

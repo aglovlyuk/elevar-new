@@ -11,6 +11,11 @@
     .insights-list {
         margin-bottom: 25px;
 
+        @include media('<desktop') {
+            margin-left: -5px;
+            margin-right: -5px;
+        }
+
         @include media('>=desktop') {
             margin-bottom: 61px;
         }
@@ -29,17 +34,8 @@
 
     .grid-item {
         @include media('<desktop') {
-            &:nth-child(even) {
-                .insights-item {
-                    margin-right: -10px;
-                }
-            }
-
-            &:nth-child(odd) {
-                .insights-item {
-                    margin-left: -10px;
-                }
-            }
+            padding-right: 5px;
+            padding-left: 5px;
         }
     }
 
@@ -75,13 +71,14 @@
         &:not(:first-child) {
             &:before {
                 content: '|';
-                margin: -6px 13px 0 12px;
+                margin: 0 13px;
                 display: inline-block;
                 vertical-align: middle;
 
                 @include media('>=desktop') {
                     margin-right: 16px;
                     margin-left: 15px;
+                    margin-top: -6px;
                 }
             }
         }
@@ -102,10 +99,13 @@
     font-family: $font-secondary;
     text-transform: uppercase;
     transition: $animation-speed;
-    padding-left: 4px;
-    padding-right: 4px;
     position: relative;
     margin-bottom: 10px;
+
+    @include media('>=tablet') {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
 
     @include hover {
         &:not(.is-checked):hover {
