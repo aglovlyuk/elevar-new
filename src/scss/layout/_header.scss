@@ -60,7 +60,11 @@ body {
 
     .nav-item {
         &:not(:first-child) {
-            @include media('>=desktop') {
+            @include media('>=tablet') {
+                margin-left: 4.333vw;
+            }
+
+            @include media('>=largescreen') {
                 margin-left: 65px;
             }
         }

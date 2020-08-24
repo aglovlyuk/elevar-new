@@ -22,19 +22,23 @@
     font-weight: 700;
     line-height: 1.286;
     max-width: 920px;
-    margin: 0 auto 32px;
+    margin: 0 auto 20px;
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
+
+    @include media('>=desktop') {
+        margin-bottom: 32px;
+    }
 }
 
 .insights-item {
+    @include adaptiv-font(14, 15);
     background-color: #fff;
     padding: 18px;
     color: $cr-brand-tertiary;
-    font-size: 15px;
     line-height: 1.7333;
-    margin-bottom: 36px;
+    margin-bottom: 13px;
     margin-left: auto;
     margin-right: auto;
     border-bottom: 3px solid $cr-brand-primary;
@@ -49,6 +53,7 @@
 
     @include media('>=desktop') {
         padding: 28px 28px 23px;
+        margin-bottom: 36px;
 
         &:hover {
             img {
@@ -73,7 +78,7 @@
 }
 
 .insights-item__text-ttl {
-    @include adaptiv-font(13, 18);
+    @include adaptiv-font(14, 18);
     font-weight: 700;
     line-height: 1.154;
     color: $cr-brand-tertiary;

@@ -37,9 +37,9 @@
                 </div>
 
                 <div class="benefits__video-col d-flex">
-                    <div class="benefits__video">
+                    <div class="benefits__video" role="button" data-toggle="modal" data-target="#video-modal">
                         <img src="uploads/video-poster.jpg" alt="">
-                        <button class="btn-play btn-transparency" data-toggle="modal" data-target="#video-modal"><svg class="icon icon-play"><use xlink:href="#icon-play"></use></svg></button>
+                        <span class="btn-play btn-transparency"><svg class="icon icon-play"><use xlink:href="#icon-play"></use></svg></span>
                         <div class="benefits__video-ttl">FPO Screenshot</div>
                     </div>
                 </div>
@@ -54,14 +54,14 @@
             <ul class="filters" id="js-filters">
                 <li><button class="filters__btn is-checked" data-filter="*">View All</button></li>
                 <li><button class="filters__btn" data-filter=".insight">Insights</button></li>
-                <li><button class="filters__btn" data-filter=".news">News</button></li>
+                <li><button class="filters__btn" data-filter=".article">News</button></li>
                 <li><button class="filters__btn" data-filter=".whitepapers">Whitepapers</button></li>
-                <li><button class="filters__btn" data-filter=".videos">Videos</button></li>
+                <li><button class="filters__btn" data-filter=".video">Videos</button></li>
             </ul>
 
             <form action="" class="search-form">
                 <input class="search-form__control form-control js-filter-search" aria-label="Search field" type="search">
-                <button class="search-form__cta btn-transparency" type="submit" aria-label="Search button"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg></button>
+                <span class="search-form__cta js-search-opener btn-transparency" aria-label="Search button"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg></span>
             </form>
         </div>
 
@@ -71,17 +71,17 @@
                 <div class="insights-item">
                     <div class="insights-item__img"><img src="uploads/elevate1.jpg" alt=""></div>
                     <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                    <em class="insights-item__date">Whitepaper  |  06•12•2020</em>
+                    <em class="insights-item__date">Insight | 06•12•2020</em>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
                     <a href="" class="link-more">READ MORE</a>
                 </div>
             </div>
 
-            <div class="col-6 col-lg-3 grid-item news">
+            <div class="col-6 col-lg-3 grid-item article">
                 <div class="insights-item">
                     <div class="insights-item__img"><img src="uploads/elevate2.jpg" alt=""></div>
                     <h3 class="insights-item__text-ttl">Mauris est dolor, tempus non purus sit amet, tristique venenatis urna</h3>
-                    <em class="insights-item__date">Article  |  06•12•2020</em>
+                    <em class="insights-item__date">Article | 06•12•2020</em>
                     <p>Nunc quis tempor ex, eu vehicula odio. Quisque luctus risus sit amet libero maximus, eget convallis metus cursus. Suspendisse gravida erat a velit pharetra, a pretium purus tristique.</p>
                     <a href="" class="link-more">READ MORE</a>
                 </div>
@@ -91,7 +91,7 @@
                 <div class="insights-item">
                     <div class="insights-item__img"><img src="uploads/elevate3.jpg" alt=""></div>
                     <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                    <em class="insights-item__date">VIDEO  |  06•12•2020</em>
+                    <em class="insights-item__date">Whitepaper | 06•12•2020</em>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
                     <a href="" class="link-more">READ MORE</a>
                 </div>
@@ -101,7 +101,7 @@
                 <div class="insights-item">
                     <div class="insights-item__img"><img src="uploads/elevate1.jpg" alt=""></div>
                     <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                    <em class="insights-item__date">Article  |  06•12•2020</em>
+                    <em class="insights-item__date">Article | 06•12•2020</em>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
                     <a href="" class="link-more">READ MORE</a>
                 </div>
@@ -111,37 +111,37 @@
                 <div class="insights-item">
                     <div class="insights-item__img"><img src="uploads/elevate1.jpg" alt=""></div>
                     <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                    <em class="insights-item__date">Whitepaper  |  06•12•2020</em>
+                    <em class="insights-item__date">Insight | 06•12•2020</em>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
                     <a href="" class="link-more">READ MORE</a>
                 </div>
             </div>
 
-            <div class="col-6 col-lg-3 grid-item news">
+            <div class="col-6 col-lg-3 grid-item article">
                 <div class="insights-item">
                     <div class="insights-item__img"><img src="uploads/elevate2.jpg" alt=""></div>
                     <h3 class="insights-item__text-ttl">Mauris est dolor, tempus non purus sit amet, tristique venenatis urna</h3>
-                    <em class="insights-item__date">Article  |  06•12•2020</em>
+                    <em class="insights-item__date">Article | 06•12•2020</em>
                     <p>Nunc quis tempor ex, eu vehicula odio. Quisque luctus risus sit amet libero maximus, eget convallis metus cursus. Suspendisse gravida erat a velit pharetra, a pretium purus tristique.</p>
                     <a href="" class="link-more">READ MORE</a>
                 </div>
             </div>
 
-            <div class="col-6 col-lg-3 grid-item whitepapers">
+            <div class="col-6 col-lg-3 grid-item video">
                 <div class="insights-item">
                     <div class="insights-item__img"><img src="uploads/elevate3.jpg" alt=""></div>
                     <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                    <em class="insights-item__date">VIDEO  |  06•12•2020</em>
+                    <em class="insights-item__date">VIDEO | 06•12•2020</em>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
                     <a href="" class="link-more">READ MORE</a>
                 </div>
             </div>
 
-            <div class="col-6 col-lg-3 grid-item videos">
+            <div class="col-6 col-lg-3 grid-item video">
                 <div class="insights-item">
                     <div class="insights-item__img"><img src="uploads/elevate1.jpg" alt=""></div>
                     <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                    <em class="insights-item__date">Whitepaper  |  06•12•2020</em>
+                    <em class="insights-item__date">VIDEO | 06•12•2020</em>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
                     <a href="" class="link-more">READ MORE</a>
                 </div>

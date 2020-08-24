@@ -7,8 +7,8 @@
 
     h1 {
         @include adaptiv-font(20, 35);
-        line-height: 1.25;
         font-family: $font-primary;
+        line-height: 1.25;
         font-weight: 900;
         color: $cr-brand-tertiary;
         margin-bottom: 21px;
@@ -20,6 +20,7 @@
 
     h2 {
         @include adaptiv-font(20, 26);
+        font-family: $font-primary;
         line-height: 1.3;
         color: $cr-brand-tertiary;
         margin-bottom: .85em;
@@ -27,6 +28,7 @@
 
     h3 {
         @include adaptiv-font(16, 20);
+        font-family: $font-primary;
         font-weight: 700;
         line-height: 1.3;
         margin-bottom: .85em;
@@ -37,6 +39,7 @@
         &:only-child,
         &:first-child {
             margin-top: 2em;
+
             @include media('>=desktop') {
                 margin-top: 3em;
             }
@@ -160,37 +163,25 @@
 
         &:before,
         &:after {
-            @include adaptiv-font(100, 240);
+            content: '';
+            background: url(../img/icons/quote-start.svg) no-repeat;
+            background-size: 100% auto;
+            @include adaptiv-font(58, 76);
             font-family: $font-secondary;
             position: absolute;
-            line-height: .75;
-            font-style: italic;
-            text-shadow: 2px 2px $cr-success, -2px -2px $cr-success, -2px 2px $cr-success, 2px -2px $cr-success;
-            color: #fff;
+            width: 1em;
+            height: 1em;
         }
 
         &:before {
-            content: '“';
-            top: -3px;
-            left: 5px;
-
-            @include media('>=tablet') {
-                left: -13px;
-                top: -10px;
-            }
+            top: 0;
+            left: 11px;
         }
 
         &:after {
-            content: '“';
-            bottom: -3px;
+            bottom: 0;
             right: 5px;
-            vertical-align: bottom;
             transform: scale(-1);
-
-            @include media('>=tablet') {
-                bottom: -10px;
-                right: -13px;
-            }
         }
     }
 
@@ -364,6 +355,7 @@
 
     @include media('<tablet') {
         margin-top: -8px;
+        margin-bottom: -8px;
         margin-left: -6px;
     }
 
@@ -432,13 +424,20 @@
         border-top: 1px solid rgba(#8c8c8c, .3);
         padding: 11px 0;
         margin-left: 25px;
+        margin-right: 13px;
 
         .article-meta__author ~ & {
             margin-left: 85px;
         }
     }
 
-    @include media('>=desktop') {
+    @include media('<phablet') {
+        width: calc(100% - 100px);
+        flex-basis: auto;
+        justify-content: flex-start;
+    }
+
+    @include media('>=tablet') {
         justify-content: center;
         width: 189px;
         flex: 0 0 189px;
@@ -447,14 +446,12 @@
     }
 
     li {
-        margin: 0 9px;
+        &:not(:first-child) {
+            margin-left: 29px;
 
-        &:first-child {
-            margin-left: 0;
-        }
-
-        &:last-child {
-            margin-right: 0;
+            @include media('>=desktop') {
+                margin-left: 18px;
+            }
         }
 
         a {

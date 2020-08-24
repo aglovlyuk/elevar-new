@@ -66,26 +66,40 @@
     @extend %listreset;
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 1;
+    padding-right: 15px;
 
     li {
-        &:not(:first-child) {
+        &:not(:last-child) {
+            position: relative;
+            margin-right: 30px;
+
+            @include media('>=desktop') {
+                margin-right: 36px;
+            }
+
             &:before {
                 content: '|';
-                margin: 0 13px;
-                display: inline-block;
-                vertical-align: middle;
+                position: absolute;
+                top: 2px;
+                right: -18px;
 
                 @include media('>=desktop') {
-                    margin-right: 16px;
-                    margin-left: 15px;
-                    margin-top: -6px;
+                    top: 0;
+                    right: -21px;
                 }
+            }
+        }
+
+        &.new-line {
+            &:before {
+                display: none;
             }
         }
 
         &:last-child {
             @include media('<tablet') {
-                margin-right: 40px;
+                margin-right: 35px;
             }
         }
     }
@@ -133,14 +147,17 @@
         width: 30px;
         position: absolute;
         right: 0;
-        bottom: 5px;
+        bottom: 7px;
     }
 
     @include media('>=tablet') {
-        margin-top: -9px;
         position: relative;
-        max-width: 323px;
-        flex: 0 0 323px;
+        max-width: 24.105%;
+        flex: 0 0 24.105%;
+    }
+
+    @include media('>=desktop') {
+        margin-top: -9px;
     }
 }
 
@@ -149,6 +166,26 @@
     background-color: transparent;
     height: 40px;
 
+    @include media('<desktop') {
+        position: absolute;
+        right: 0;
+        top: -5px;
+        width: 100%;
+
+        transition: $animation-speed;
+        transform: scaleX(0);
+        transform-origin: 100% 0;
+
+        .is-opened & {
+            transform: scaleX(1);
+            z-index: 3;
+        }
+    }
+
+    @include media('<tablet') {
+        width: 200px;
+    }
+
     @include media('>=tablet') {
         border: 0;
         border-bottom: 1px solid rgba($cr-brand-tertiary, .36);
@@ -156,16 +193,35 @@
 }
 
 .search-form__cta {
-    position: absolute;
-    right: 0;
-    bottom: 0;
     font-size: 21px;
+    width: 1em;
+
+    @include media('<desktop') {
+        margin-left: auto;
+        display: block;
+        position: relative;
+        z-index: 2;
+    }
+
+    @include media('>=desktop') {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transition: $animation-speed;
+
+        .search-form__control:focus + & {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
 }
 
-
-
 .benefits__container {
-    padding-bottom: 54px;
+    padding-bottom: 15px;
+
+    @include media('>=desktop') {
+        padding-bottom: 54px;
+    }
 }
 
 .benefits__ttl {

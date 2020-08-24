@@ -1,6 +1,4 @@
 .site-section {
-    position: relative;
-
     &:not(:last-of-type) {
         margin-bottom: 20px;
 
@@ -11,6 +9,8 @@
 }
 
 .site-section__container {
+    position: relative;
+
     &:before {
         content: '';
         position: absolute;
@@ -62,12 +62,16 @@
         flex: 0 0 40%;
         padding-left: 3.582%;
         padding-right: 2.3%;
-        padding-bottom: 34px;
     }
 
     @include media('>=desktop') {
         max-width: 29.627%;
         flex: 0 0 29.627%;
+        padding-bottom: 34px;
+    }
+
+    > *:not(.btn) {
+        width: 100%;
     }
 
     p {

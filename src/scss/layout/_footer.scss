@@ -1,7 +1,7 @@
 .footer {
     font-size: 14px;
     line-height: 22px;
-    padding-top: 53px;
+    padding-top: 48px;
     padding-bottom: 20px;
 
     a {
@@ -18,9 +18,14 @@
         @extend %listreset;
         display: flex;
         font-size: 21px;
+        line-height: 1;
 
         li {
             margin-left: 12px;
+        }
+
+        a {
+            display: block;
         }
     }
 }
@@ -38,8 +43,4 @@
     p {
         margin: 0;
     }
-}
-
-.social-icons {
-    line-height: 1;
 }

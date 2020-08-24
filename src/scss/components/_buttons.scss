@@ -27,7 +27,7 @@ a[class*="btn"] {
     text-transform: uppercase;
     color: #fff;
     cursor: pointer;
-    padding: 5px 20px 3px;
+    padding: 4px 20px;
     text-decoration: none;
     box-shadow: none;
     overflow: hidden;
@@ -35,23 +35,23 @@ a[class*="btn"] {
     @include media('>=desktop') {
         padding-left: 12px;
         padding-right: 12px;
-        height: 25px;
+        height: 26px;
         font-size: 14px;
-    }
 
-    &:after {
-        @include anim($dur: $animation-speed-slow);
-        content: '';
-        z-index: -1;
-        position: absolute;
-        left: -37%;
-        top: 0;
-        width: 135%;
-        bottom: 0;
-        pointer-events: none;
-        background-color: lighten($cr-brand-primary, 20%);
-        transform: skew(-45deg) scaleX(-1);
-        transform-origin: 0 100%;
+        &:after {
+            @include anim($dur: $animation-speed-slow);
+            content: '';
+            z-index: -1;
+            position: absolute;
+            left: -40%;
+            top: 0;
+            width: 135%;
+            bottom: 0;
+            pointer-events: none;
+            background-color: lighten($cr-brand-primary, 20%);
+            transform: skew(-45deg) scaleX(-1);
+            transform-origin: 0 100%;
+        }
     }
 
     &:active,
