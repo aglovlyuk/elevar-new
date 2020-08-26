@@ -8,7 +8,7 @@
 
 .insights {
     background-color: $cr-brand-secondary;
-    padding: 29px 10px 0;
+    padding: 23px 10px 0;
 
     @include media('>=desktop') {
         padding: 39px 32px 0;
@@ -32,16 +32,22 @@
     }
 }
 
+.insights-list {
+    @include media('<tablet') {
+        padding-bottom: 22px;
+    }
+}
+
 .insights-item {
     @include adaptiv-font(14, 15);
     background-color: #fff;
     padding: 18px;
     color: $cr-brand-tertiary;
-    line-height: 1.7333;
+    line-height: 1.429;
     margin-bottom: 13px;
     margin-left: auto;
     margin-right: auto;
-    border-bottom: 3px solid $cr-brand-primary;
+    border-bottom: 2px solid $cr-brand-primary;
     display: block;
     text-decoration: none;
     max-width: 405px;
@@ -54,18 +60,30 @@
     @include media('>=desktop') {
         padding: 28px 28px 23px;
         margin-bottom: 36px;
+        line-height: 1.7333;
+        border-bottom-width: 3px;
 
         &:hover {
             img {
                 transform: scale(1.1);
             }
+
+            .link-more {
+                color: $cr-brand-tertiary;
+            }
+        }
+    }
+
+    p {
+        @include media('<desktop') {
+            margin-bottom: 11px;
         }
     }
 }
 
 .insights-item__img {
     overflow: hidden;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
     @include media('>=desktop') {
         margin-bottom: 25px;
@@ -80,12 +98,13 @@
 .insights-item__text-ttl {
     @include adaptiv-font(14, 18);
     font-weight: 700;
-    line-height: 1.154;
+    line-height: 1.429;
     color: $cr-brand-tertiary;
-    margin-bottom: 11px;
+    margin-bottom: 6px;
 
     @include media('>=tablet') {
         line-height: 1.556;
+        margin-bottom: 11px;
     }
 }
 

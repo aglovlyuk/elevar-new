@@ -170,7 +170,7 @@
             font-family: $font-secondary;
             position: absolute;
             width: 1em;
-            height: 1em;
+            height: .66em;
         }
 
         &:before {
@@ -456,6 +456,7 @@
 
         a {
             color: #333033;
+            display: block;
 
             @include hover {
                 color: $cr-success !important;

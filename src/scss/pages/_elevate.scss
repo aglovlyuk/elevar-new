@@ -1,6 +1,6 @@
 .elevates-section {
     background-color: $cr-brand-secondary;
-    padding-top: 30px;
+    padding-top: 12px;
     padding-bottom: 40px;
 
     @include media('>=desktop') {
@@ -67,39 +67,55 @@
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
-    padding-right: 15px;
+    padding-left: 5px;
+
+    @include media('<tablet') {
+        margin-right: -28px;
+    }
+
+    @include media('>=tablet') {
+        padding-right: 15px;
+    }
 
     li {
-        &:not(:last-child) {
-            position: relative;
-            margin-right: 30px;
+        position: relative;
+        margin-right: 36px;
 
-            @include media('>=desktop') {
-                margin-right: 36px;
+        @include media('<tablet') {
+            margin-bottom: 2px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+
+            @include media('<tablet') {
+                margin-right: 70px;
             }
 
-            &:before {
-                content: '|';
-                position: absolute;
-                top: 2px;
-                right: -18px;
-
+            &::before {
                 @include media('>=desktop') {
-                    top: 0;
-                    right: -21px;
+                    display: none;
                 }
+            }
+        }
+
+        &:before {
+            content: '|';
+            position: absolute;
+            top: .17em;
+            right: -21px;
+            font-size: .85em;
+
+            @include media('>=desktop') {
+                top: 0;
+                right: -21px;
+                font-size: 1em;
             }
         }
 
         &.new-line {
             &:before {
                 display: none;
-            }
-        }
-
-        &:last-child {
-            @include media('<tablet') {
-                margin-right: 35px;
             }
         }
     }
@@ -143,21 +159,22 @@
 }
 
 .search-form {
-    @include media('<tablet') {
+    @include media('<desktop') {
         width: 30px;
         position: absolute;
         right: 0;
-        bottom: 7px;
+        bottom: 13px;
     }
 
-    @include media('>=tablet') {
-        position: relative;
-        max-width: 24.105%;
-        flex: 0 0 24.105%;
+    @include media('<phone') {
+        right: 15px;
     }
 
     @include media('>=desktop') {
+        position: relative;
         margin-top: -9px;
+        max-width: 24.105%;
+        flex: 0 0 24.105%;
     }
 }
 
@@ -170,11 +187,12 @@
         position: absolute;
         right: 0;
         top: -5px;
-        width: 100%;
+        width: 200px;
 
         transition: $animation-speed;
         transform: scaleX(0);
         transform-origin: 100% 0;
+        border: 0;
 
         .is-opened & {
             transform: scaleX(1);
@@ -182,18 +200,14 @@
         }
     }
 
-    @include media('<tablet') {
-        width: 200px;
-    }
-
-    @include media('>=tablet') {
+    @include media('>=desktop') {
         border: 0;
         border-bottom: 1px solid rgba($cr-brand-tertiary, .36);
     }
 }
 
 .search-form__cta {
-    font-size: 21px;
+    @include adaptiv-font(16, 21);
     width: 1em;
 
     @include media('<desktop') {
@@ -249,6 +263,7 @@
 .benefits__txt {
     @include adaptiv-font(14, 16);
     padding-left: 6px;
+    padding-right: 6px;
 
     @include media('>=desktop') {
         padding-left: 30px;
@@ -315,7 +330,7 @@
         @include xycenter;
         line-height: 1;
         color: #fff;
-        
+
         @include hover {
             color: $cr-brand-primary;
         }

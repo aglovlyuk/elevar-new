@@ -25,6 +25,14 @@
 
 .site-section__img {
     position: relative;
+
+    @include media('>=tablet') {
+        max-width: 60%;
+    }
+
+    @include media('>=desktop') {
+        max-width: 70.373%;
+    }
 }
 
 .site-section__img-ttl {

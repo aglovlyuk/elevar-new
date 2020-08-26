@@ -1,9 +1,11 @@
 $(window).resize(function() {
-    separatorHandler();
+    if ($('#js-filters').length > 0) {
+        separatorHandler()
+    }
 }).trigger('resize');
 
 function separatorHandler() {
-    var lastItemTop = $('#js-filters li:first-child').position().top;
+    let lastItemTop = $('#js-filters li:first-child').position().top;
 
     $('#js-filters li').each(function() {
         let $this = $(this);
