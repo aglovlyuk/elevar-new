@@ -1,6 +1,31 @@
+.pagepiling {
+    height: calc(100vh - 200px);
+    margin-top: 102px;
+}
+
+.pp-section {
+    background-color: #fff;
+
+    @include media('>=desktop') {
+        padding-top: 102px;
+        padding-bottom: 10vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
+
+#pp-nav li .active,
+.pp-slidesNav .active {
+    span {
+        border-color: $cr-brand-primary !important;
+        background-color: $cr-brand-primary;
+    }
+}
+
 .main-hero {
     position: relative;
-    margin-bottom: 16px;
+    /*margin-bottom: 16px;
 
     @include media('>=tablet') {
         margin-bottom: 30px;
@@ -8,7 +33,7 @@
 
     @include media('>=desktop') {
         margin-bottom: 57px;
-    }
+    }*/
 
     img {
         border-bottom: 5px solid $cr-brand-primary;

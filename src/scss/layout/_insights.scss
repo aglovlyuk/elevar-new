@@ -1,9 +1,9 @@
 .insights-section {
-    padding-bottom: 18px;
+    padding-bottom: 20px;
 
-    @include media('>=desktop') {
+    /*@include media('>=desktop') {
         padding-bottom: 56px;
-    }
+    }*/
 }
 
 .insights {

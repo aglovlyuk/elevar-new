@@ -22,7 +22,12 @@ body {
 }
 
 .header {
-    position: relative;
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
     padding-top: 17px;
     padding-bottom: 20px;
 

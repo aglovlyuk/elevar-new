@@ -92,6 +92,11 @@ const config = {
                 include: path.resolve(__dirname, "src/html/includes"),
                 use: ["raw-loader"]
             },
+            {
+                test: /\.css$/,
+                include: path.resolve(__dirname, "src/scss"),
+                use: ["css-loader"]
+            },
             /*{
                 test: /\.svg$/i,
                 include: /.*icons\.svg/,
