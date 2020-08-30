@@ -1,9 +1,26 @@
-.site-section {
+.section {
     &:not(:last-of-type) {
-        margin-bottom: 20px;
+        .site-section {
+            margin-bottom: 20px;
 
-        @include media('>=desktop') {
-            margin-bottom: 63px;
+            @include media('>=desktop') {
+                margin-bottom: 63px;
+            }
+        }
+    }
+
+    &.active {
+        .site-section {
+            .btn {
+                opacity: 1;
+            }
+        }
+    }
+
+    .site-section {
+        .btn {
+            opacity: 0;
+            transition: opacity $animation-speed-slow3x 2s;
         }
     }
 }

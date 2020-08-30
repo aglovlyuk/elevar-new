@@ -1,4 +1,3 @@
-const $ = require('jquery');
 const jQueryBridget = require('jquery-bridget');
 const Isotope = require('isotope-layout');
 import isotope from 'isotope-layout'

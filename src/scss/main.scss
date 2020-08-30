@@ -3,8 +3,8 @@
 @import "core/icons";
 @import "core/typography-settings";
 
-@import "vendor/include-media";
-@import "vendor/jquery.pagepiling.min.css";
+@import "~include-media/dist/include-media";
+@import "~fullpage.js/dist/jquery.fullpage.min.css";
 
 // Bootstrap
 @import 'core/bootstrap-overrides';

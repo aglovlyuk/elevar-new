@@ -12,6 +12,35 @@ body {
         display: flex;
         flex-direction: column;
     }
+
+    // reserve space for header
+    &:not(.fp-init) {
+        padding-top: 72px;
+        @include media('>=desktop') {
+            padding-top: 102px;
+        }
+    }
+}
+
+.fp-responsive {
+    .fp-section,
+    .fp-slide,
+    .fp-scrollable,
+    .fp-tableCell {
+        height: auto !important;
+    }
+}
+
+.fullpage-wrapper {
+    @include media('<tablet') {
+        padding-top: 72px;
+    }
+}
+
+.fp-section {
+    @include media('<tablet') {
+        padding-top: 0 !important;
+    }
 }
 
 .wrapper {

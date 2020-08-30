@@ -1,6 +1,4 @@
-import $ from 'jquery';
-window.jQuery = $;
-window.$ = $;
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 $(function(){
     const headerOptions = {
@@ -17,14 +15,32 @@ $(function(){
         },
 
         headerMobileMenu : function(){
+            const $body = $('body');
+
             $('.js-mobile-menu-opener').click(function(){
-                $('body').toggleClass('is-menu-open');
+                if($body.hasClass('is-menu-open')) {
+                    $body.removeClass('is-menu-open');
+
+                    if ("ontouchstart" in document.documentElement) {
+                        bodyScrollLock.clearAllBodyScrollLocks();
+                    }
+                } else {
+                    $body.addClass('is-menu-open');
+
+                    if ("ontouchstart" in document.documentElement) {
+                        bodyScrollLock.disableBodyScroll(targetElement);
+                    }
+                }
             });
         },
 
         closeMenu: function(){
-            $('.header__nav-list li a').click(function(){
+            $('.main-nav li a').click(function(){
                 $('body').removeClass('is-menu-open');
+
+                if ("ontouchstart" in document.documentElement) {
+                    bodyScrollLock.clearAllBodyScrollLocks();
+                }
             });
         }
     };

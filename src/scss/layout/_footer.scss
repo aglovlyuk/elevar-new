@@ -1,12 +1,12 @@
 .footer {
     @include adaptiv-font(12, 14);
     line-height: 1.333;
-    padding-top: 25px;
+    padding-top: 25px !important;
     padding-bottom: 20px;
 
     @include media('>=desktop') {
         line-height: 22px;
-        padding-top: 48px;
+        padding-top: 48px !important;
     }
 
     a {

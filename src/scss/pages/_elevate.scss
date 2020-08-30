@@ -57,8 +57,11 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-bottom: 35px;
         padding-top: 3px;
+    }
+
+    @include media('>=desktop') {
+        margin-bottom: 35px;
     }
 }
 

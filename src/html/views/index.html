@@ -6,8 +6,8 @@
 <%= _.template(require('./../includes/header.html').default)(data) %>
 <div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
 
-<div id="pagepiling" class="pagepiling">
-    <section class="section pp-scrollable">
+<div id="fullpage" class="fullpage-wrapper">
+    <section class="section" id="section0">
         <div class="main-hero">
             <div class="container">
                 <img src="uploads/hero.jpg" alt="">
@@ -16,7 +16,7 @@
         </div>
     </section>
 
-    <section class="section pp-scrollable">
+    <section class="section" id="section1">
         <div class="site-section">
             <div class="container site-section__container d-md-flex align-items-center">
                 <div class="site-section__img">
@@ -33,7 +33,7 @@
         </div>
     </section>
 
-    <section class="section pp-scrollable">
+    <section class="section" id="section2">
         <div class="site-section img-right">
             <div class="container site-section__container d-md-flex align-items-center">
                 <div class="site-section__img order-md-1">
@@ -50,7 +50,7 @@
         </div>
     </section>
 
-    <section class="section pp-scrollable">
+    <section class="section" id="section3">
         <div class="projects-section">
             <div class="container">
                 <div class="projects">
@@ -144,7 +144,7 @@
         </div>
     </section>
 
-    <section class="section pp-scrollable">
+    <section class="section" id="section4">
         <div class="insights-section">
             <div class="container">
                 <div class="insights">
@@ -187,7 +187,7 @@
         </div>
     </section>
 
-    <section class="section pp-scrollable">
+    <section class="section" id="section5">
         <div class="site-section img-right">
             <div class="container site-section__container d-md-flex align-items-center">
                 <div class="site-section__img order-md-1">
@@ -203,6 +203,8 @@
             </div>
         </div>
     </section>
+
+    <%= _.template(require('./../includes/footer.html').default)(data) %>
 </div>
 
-<%= _.template(require('./../includes/footer.html').default)(data) %>
+<%= _.template(require('./../includes/end-of-page.html').default)(data) %>

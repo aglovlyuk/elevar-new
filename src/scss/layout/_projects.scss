@@ -1,9 +1,9 @@
 .projects-section {
     padding-bottom: 41px;
 
-    /*@include media('>=desktop') {.pp-tableCell
-        padding-bottom: 61px;
-    }*/
+    @include media('>=desktop') {
+        //padding-bottom: 61px;
+    }
 }
 
 .projects {
