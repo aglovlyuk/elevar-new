@@ -25,7 +25,7 @@ $(function() {
         //anchors: ['hero', 'about', 'people', 'projects', 'insights', 'contact', 'footer'],
         //menu: '.js--menu-anchor',
         fixedElements: '.header',
-        responsiveWidth: 768,
+        //responsiveWidth: 768,
         scrollOverflow: true,
         afterRender: function () {
             $('body').addClass('fp-init')
