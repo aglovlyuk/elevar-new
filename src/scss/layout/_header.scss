@@ -70,6 +70,8 @@ body {
     }
 
     .nav-item {
+        position: relative;
+
         &:not(:first-child) {
             @include media('>=tablet') {
                 margin-left: 4.333vw;
@@ -83,6 +85,127 @@ body {
         @include media('<tablet') {
             margin-bottom: 15px;
             font-size: 19px;
+        }
+
+        &:nth-last-child(2),
+        &:last-child {
+            > ul {
+                left: auto;
+                right: 0;
+
+                > li {
+                    > ul {
+                        left: auto;
+                        right: 100%;
+                    }
+                }
+            }
+        }
+
+        &.is-drop-opened {
+            @include media('<tablet') {
+                > a {
+                    box-shadow: inset 3px 0 $cr-brand-primary;
+                    padding-left: 15px;
+                }
+            }
+
+            @include media('<desktop') {
+                > ul {
+                    transform: translateY(0);
+                    opacity: 1;
+                    visibility: visible;
+                    display: block;
+                }
+            }
+        }
+
+        @include hover {
+            > ul {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        ul {
+            @extend %listreset;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            transform: translateY(-10%);
+            opacity: 0;
+            visibility: hidden;
+
+            @include media('<tablet') {
+                display: none;
+                padding-left: 30px;
+            }
+
+            @include media('>=tablet') {
+                position: absolute;
+                background-color: #5c5c60;
+                z-index: 3;
+                min-width: 160px;
+                transition: $animation-speed;
+                box-shadow: inset 3px 0 $cr-brand-primary;
+            }
+        }
+
+        > ul {
+            top: 100%;
+            left: 0;
+
+            li {
+                position: relative;
+                padding-top: 3px;
+                padding-bottom: 3px;
+
+                @include media('>=tablet') {
+                    padding-left: 12px;
+                    padding-right: 12px;
+                }
+
+                &.is-drop-opened {
+                    @include media('<tablet') {
+                        > a {
+                            box-shadow: inset 3px 0 $cr-brand-primary;
+                            padding-left: 15px;
+                        }
+                    }
+
+                    @include media('<desktop') {
+                        > ul {
+                            transform: translateX(0);
+                            opacity: 1;
+                            visibility: visible;
+                            display: block;
+                        }
+                    }
+                }
+
+                @include hover {
+                    > ul {
+                        transform: translateX(0);
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+
+            ul {
+                top: -5px;
+                left: 100%;
+            }
+
+            a {
+                display: block;
+                color: #fff;
+                text-decoration: none;
+
+                @include hover {
+                    color: $cr-brand-primary;
+                }
+            }
         }
     }
 
@@ -200,7 +323,7 @@ body {
             width: 90vw;
             max-width: 400px;
             z-index: 1000;
-            padding: 40px;
+            padding: 40px 40px 40px 35px;
             transform: translateX(0);
             transition: $animation-speed;
 

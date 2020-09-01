@@ -1,3 +1,6 @@
+$header-height-mob: 72px;
+$header-height-desk: 102px;
+
 *, ::after, ::before {
     box-sizing: border-box;
 }
@@ -15,9 +18,10 @@ body {
 
     // reserve space for header
     &:not(.fp-init) {
-        padding-top: 72px;
+        padding-top: $header-height-mob;
+
         @include media('>=desktop') {
-            padding-top: 102px;
+            padding-top: $header-height-desk;
         }
     }
 }
@@ -33,7 +37,19 @@ body {
 
 .fullpage-wrapper {
     @include media('<tablet') {
-        padding-top: 72px;
+        padding-top: $header-height-mob;
+    }
+}
+
+.section:not(.fp-section):not(.footer) {
+    height: calc(100vh - #{$header-height-mob});
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include media('>=desktop') {
+        height: calc(100vh - #{$header-height-desk});
     }
 }
 

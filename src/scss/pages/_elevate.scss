@@ -72,10 +72,6 @@
     flex-grow: 1;
     padding-left: 5px;
 
-    @include media('<tablet') {
-        margin-right: -28px;
-    }
-
     @include media('>=tablet') {
         padding-right: 15px;
     }
@@ -83,6 +79,10 @@
     li {
         position: relative;
         margin-right: 36px;
+
+        @include media('<phone') {
+            margin-right: 26px;
+        }
 
         @include media('<tablet') {
             margin-bottom: 2px;
@@ -93,6 +93,10 @@
 
             @include media('<tablet') {
                 margin-right: 70px;
+            }
+
+            @include media('<phone') {
+                margin-right: 6.25vw;
             }
 
             &::before {
@@ -106,8 +110,12 @@
             content: '|';
             position: absolute;
             top: .17em;
-            right: -21px;
+            right: -19%;
             font-size: .85em;
+
+            @include media('>=phone') {
+                right: -21px;
+            }
 
             @include media('>=desktop') {
                 top: 0;

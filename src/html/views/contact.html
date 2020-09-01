@@ -1,0 +1,195 @@
+<% var data = {
+  title: "Elevar Design Group",
+  author: "© 2019 All Rights Reserved."
+}; %>
+
+<%= _.template(require('./../includes/header.html').default)(data) %>
+<div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
+
+<section class="maps-container">
+    <div id="map"></div>
+
+    <div id="map-locations">
+        <div class="container">
+            <h1 class="lime">Offices</h1>
+
+            <div class="offices-container row">
+                <div class="col-6 col-md-3">
+                    <h2 class="office-name" data-markerid="0">Cincinnati</h2>
+                    <address data-office="Cincinnati">
+                        <span class="address-1">555 Carr St. </span>
+                        <span class="city-state">Cincinnati, OH</span>
+                        <span class="zip">45203</span>
+                    </address>
+                    <div class="phone-fax-container">
+                        <p>Phone: <a href="tel:(513) 721 - 0600">(513) 721 - 0600</a></p>
+                        <p>Fax: (513) 721 - 0611</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="office-name" data-markerid="1">Dayton</h2>
+                    <address data-office="Dayton">
+                        <span class="address-1">120 West Second St.</span>
+                        <span class="address-2">Suite 1800</span>
+                        <span class="city-state">Dayton, OH</span>
+                        <span class="zip">45402</span>
+                    </address>
+                    <div class="phone-fax-container">
+                        <p>Phone: <a href="tel:(937) 281 - 0600">(937) 281 - 0600</a></p>
+                        <p>Fax: (937) 281 - 0611</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="office-name" data-markerid="2">Lexington</h2>
+                    <address data-office="Lexington">
+                        <span class="address-1">2360 Chauvin Dr. </span>
+                        <span class="city-state">Lexington, KY</span>
+                        <span class="zip">40517</span>
+                    </address>
+                    <div class="phone-fax-container">
+                        <p>Phone: <a href="tel:(859) 455 - 6266">(859) 455 - 6266</a></p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="office-name" data-markerid="3">Cleveland</h2>
+                    <address data-office="Cleveland">
+                        <span class="address-1">1220 West Sixth St.</span>
+                        <span class="address-2">Suite 300</span>
+                        <span class="city-state">Cleveland, OH</span>
+                        <span class="zip">44113</span>
+                    </address>
+                    <div class="phone-fax-container">
+                        <p>Phone: <a href="tel:(216) 356 - 7567">(216) 356 - 7567</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-container">
+    <div class="container">
+        <h1 class="lime">Send us an email</h1>
+        <div class="contact-leadership row">
+            <div class="col-one-quarter col-md-3">
+                <h2>Executive Leadership:</h2>
+                <ul class="leadership">
+                    <li>
+                        <span>E. Thomas Fernandez</span>
+                        <span>Chief Executive Officer</span>
+                        <a href="mailto:tfernandez@elevar.com?subject=Contact elevar design group">tfernandez@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Kim Patton</span>
+                        <span>President</span>
+                        <a href="mailto:kpatton@elevar.com?subject=Contact elevar design group">kpatton@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Greg Otis</span>
+                        <span>Senior Vice President - </span>
+                        <span>Strategic Planning</span>
+                        <a href="mailto:gotis@elevar.com?subject=Contact elevar design group">gotis@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Tony Lozier</span>
+                        <span>Senior Vice President - </span>
+                        <span>Engineering</span>
+                        <a href="mailto:tlozier@elevar.com?subject=Contact elevar design group">tlozier@elevar.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-one-quarter col-md-9">
+                <h2>Specialists:</h2>
+
+                <ul class="experts">
+                    <li>
+                        <span>Dara Baldridge </span>
+                        <span>Senior Interior Designer - </span>
+                        <span>Workplace</span>
+                        <a href="mailto:dbaldridge@elevar.com">dbaldridge@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>David Breda</span>
+                        <span>Construction Administration</span>
+                        <a href="mailto:dbreda@elevar.com">dbreda@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Mark Browning</span>
+                        <span>Senior Architect - </span>
+                        <span>Senior Living</span>
+                        <a href="mailto:mbrowning@elevar.com">mbrowning@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Lisa Cameron Gulley</span>
+                        <span>Senior Designer - </span>
+                        <span>Educational Planning</span>
+                        <a href="mailto:lgulley@elevar.com">lgulley@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>James Harrell</span>
+                        <span>Senior Architect - </span>
+                        <span>Healthcare Planning</span>
+                        <a href="mailto:jharrell@elevar.com">jharrell@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Regan Henry</span>
+                        <span>Architect - </span>
+                        <span>Evidence Based Design/ Research</span>
+                        <a href="mailto:rhenry@elevar.com">rhenry@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>David Hester</span>
+                        <span>Senior Architect - Education</span>
+                        <a href="mailto:dhester@elevar.com">dhester@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Melissa Johnson</span>
+                        <span>Senior Interior Designer </span>
+                        <a href="mailto:mjohnson@elevar.com">mjohnson@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Matthew King</span>
+                        <span>Senior Architect - </span>
+                        <span>Institutional</span>
+                        <a href="mailto:mking@elevar.com">mking@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Chuck Kling</span>
+                        <span>Client Manager - Retail</span>
+                        <a href="mailto:ckling@elevar.com">ckling@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Dan Montgomery</span>
+                        <span>Senior Architect - </span>
+                        <span>Building Enclosure </span>
+                        <a href="mailto:dmontgomery@elevar.com">dmontgomery@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>John Patrick Rademacher</span>
+                        <span>Client Manager</span>
+                        <a href="mailto:jrademacher@elevar.com">jrademacher@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Jeni Schmidt</span>
+                        <span>Marketing Manager</span>
+                        <a href="mailto:jschmidt@elevar.com">jschmidt@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>David VonderBrink</span>
+                        <span>Senior Architect - Housing</span>
+                        <a href="mailto:dvonderbrink@elevar.com">dvonderbrink@elevar.com</a>
+                    </li>
+                    <li>
+                        <span>Bob Zielasko</span>
+                        <span>Senior Architect - Commercial</span>
+                        <a href="mailto:bzielasko@elevar.com">bzielasko@elevar.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>
+<%= _.template(require('./../includes/end-of-page.html').default)(data) %>

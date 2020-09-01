@@ -1,0 +1,80 @@
+<% var data = {
+  title: "Elevar Design Group",
+  author: "© 2019 All Rights Reserved."
+}; %>
+
+<%= _.template(require('./../includes/header.html').default)(data) %>
+<div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
+
+<section id="about-section" class="about-container">
+    <section class="slider-container">
+        <div class="slider-adaptive">
+            <div>
+                <div class="image-container">
+                    <img src="uploads/img_8374.jpg" alt="">
+                </div>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img src="uploads/img_8389.jpg" alt="">
+                </div>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img src="uploads/img_0213-opt.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="block-left"></div>
+        <div class="block-right"></div>
+    </section>
+
+    <div class="container--md">
+        <div class="content-container">
+            <h1>Elevar Quick Draw</h1>
+            <p style="text-align: justify;">Elevar Quick Draw is a subsidiary of Elevar Design Group, a powerful architecture and engineering firm with offices in Cincinnati, Dayton, Lexington, and Cleveland. Under one roof, we employ architects, engineers, interior designers, planners, and support staff for design projects in a wide variety of markets. Quick Draw works hand-in-hand with the resources afforded by Elevar Design Group to expedite the draw process for our lending partners. With Quick Draw your institution receives timely information necessary to verify work so you can ensure your loans remain in balance.</p>
+            <p style="text-align: justify;">We understand that the most critical part of the construction draw process is the quick turn-around of the draw report for each phase of a project. The longer this process takes, the more risk you and your partners attract. Your institution practices under a high degree of due diligence to ensure your risk is mitigated. That is why it is critical that the draw process is completed in a timely and efficient manner.</p>
+            <p style="text-align: justify;">Elevar Quick Draw is a team of professionals with decades of experience in the design and construction industry. We work with financial institutions to ease the burden of the construction draw process. Using custom software to generate reports, you will receive your construction draw report ahead of plan.</p>
+        </div>
+
+        <div class="bottom-content-container">
+            <div class="media-container txt-w-img image-left">
+                <div class="media-type image-gallery txt-w-img__img">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div><img src="uploads/jay-thelen.jpg" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-content txt-w-img__txt">
+                    <h2>Jay Thelen, President</h2>
+                    <p style="text-align: justify;">Mr. Thelen serves as President of Elevar Quick Draw. In this role, he works with banks and other private clients to produce fast and accurate reports of contractor activities to procure the construction draw. Jay works within bank requirements for the draw schedule to inspect on-site construction activities to implement project financing and payments.</p>
+                    <p style="text-align: justify;">Mr. Thelen is an accomplished business professional with more than three decades of customer relation experience. With a proven history of sales channel development, profit and loss accountability, and strategic sales planning, Jay is motivated by maintaining strong customer relationships and working within those mutually beneficial relationships to craft the most effective business solutions for his clients. Jay believes strongly in building and maintaining concrete relationships to drive sales. He has implemented efficient strategies to expand market share and increase profits.</p>
+                    <p style="text-align: justify;">With a background in construction and complex geotechnical testing, he brings extensive knowledge to be able to provide financial institutions with reliable and timely budget reviews, construction draw reports, construction estimates, and refinance reviews.</p>
+                </div>
+            </div>
+
+            <div class="media-container txt-w-img image-left">
+                <div class="media-type image-gallery txt-w-img__img">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div><img src="uploads/img_20180221_160022-opt.jpg" alt=""></div>
+                            <div><img src="uploads/imag3721-opt.jpg" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-content txt-w-img__txt">
+                    <h2>Why Elevar Quickdraw?</h2>
+                    <p style="text-align: justify;">Elevar Quick Draw is a locally-owned subsidiary of Elevar Design Group, the largest minority-owned design firm in Cincinnati, OH. Operated by a Client Manager and Executive Team with more than 90 combined years of experience, we provide quality services unmatched by other firms.</p>
+                    <p style="text-align: justify;">Our software generates all-encompassing reports in one complete document to help ensure the construction draw process is done as thoroughly and efficiently as possible. Elevar Quick Draw maintains all file backups, reducing the need for you to keep track of a paper trail.</p>
+                    <p style="text-align: justify;">It is simple: You lend. They build. We monitor. Your money is kept in balance with construction progress to aid in an easy, fast financial loan transfer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>
+<%= _.template(require('./../includes/end-of-page.html').default)(data) %>
