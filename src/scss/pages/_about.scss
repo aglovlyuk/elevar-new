@@ -1,0 +1,248 @@
+/********************************************
+    BEGIN HOMPAGE
+********************************************/
+
+.slider-container {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    height: 40vh;
+    position: relative;
+    overflow: hidden;
+
+    @include media('>=tablet') {
+        height: 50vh;
+    }
+
+    @include media('>=desktop') {
+        height: 80vh;
+        margin-bottom: 85px;
+    }
+
+    .slick-slider {
+        background-color: #d1d3d4;
+        height: 100%;
+        padding: 0;
+
+        &.slider-adaptive {
+            background-color: #fff;
+
+            @include media('>=desktop') {
+                max-height: 600px;
+            }
+
+            .slick-list {
+                @include media('>=desktop') {
+                    max-height: 600px;
+                }
+            }
+        }
+
+        .slick-track {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            .slick-slide {
+                position: relative;
+            }
+        }
+
+        .slick-img {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: 0 0;
+
+            @include media('>=desktop') {
+                background-position: center center;
+                max-height: 100vh;
+            }
+            /*&:after {
+                content: '';
+                display: block;
+                padding-bottom: 56.25%;
+            }*/
+        }
+
+        .slick-arrow {
+            @include anim(all, $animation-speed);
+            color: #fff;
+            background: transparent;
+            border: none;
+            position: absolute;
+            top: 50%;
+            margin-top: -18px;
+            font-size: 0;
+            outline: none;
+            line-height: 1;
+            z-index: 9999;
+
+
+            @include media('>=tablet') {
+                top: 50%;
+                margin-top: -25px;
+            }
+
+            &.slick-prev {
+                left: 1%;
+                z-index: 9999;
+
+                &:before {
+                    font-family: Themify;
+                    font-size: 30px;
+                    content: '\e64a';
+
+                    @include media('>=tablet') {
+                        font-size: 50px;
+                    }
+                }
+            }
+
+            &.slick-next {
+                right: 1%;
+                z-index: 9999;
+
+                &:before {
+                    font-family: Themify;
+                    font-size: 30px;
+                    content: '\e649';
+
+                    @include media('>=tablet') {
+                        font-size: 50px;
+                    }
+                }
+
+                &.testimonial {
+                    right: 20%;
+
+                    @include media('>=desktop') {
+                        right: 5%;
+                    }
+
+                    &.expanded {
+                        right: 1%;
+
+                        @include media('>=desktop') {
+                            right: 300px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .slick-dots {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+
+            li {
+                position: relative;
+                display: inline-block;
+                height: 20px;
+                width: 20px;
+                margin: 0 5px;
+                padding: 0;
+                cursor: pointer;
+
+                button {
+                    @include transition(all 0.5s ease);
+                    border: 0;
+                    background: transparent;
+                    display: block;
+                    height: 20px;
+                    width: 20px;
+                    outline: none;
+                    line-height: 0;
+                    font-size: 0;
+                    color: transparent;
+                    padding: 5px;
+                    cursor: pointer;
+
+                    &:hover,
+                    &:focus {
+                        outline: none;
+
+                        &:before {
+                            opacity: .75;
+                        }
+                    }
+
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        font: 14px/20px FontAwesome;
+                        text-align: center;
+                        color: #5c5c60;
+                        opacity: .25;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                    }
+                }
+
+                &.slick-active button:before {
+                    color: $cr-brand-primary;
+                    opacity: .75;
+                }
+            }
+        }
+
+        .image-container {
+            padding: 0 5px;
+
+            img {
+                @include media('>=desktop') {
+                    max-height: 600px;
+                }
+            }
+        }
+    }
+
+    .block-left,
+    .block-right {
+        @include transition(width 0.3s $animation-type);
+        background-color: rgba(#000, .6);
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: calc(100% - 25px);
+        z-index: 1;
+
+        @include media('>=desktop') {
+            max-height: 600px;
+        }
+    }
+
+    .slick-arrow {
+        &:hover {
+            color: $cr-brand-primary;
+
+            &.slick-next {
+                right: .5%;
+            }
+
+            &.slick-prev {
+                left: .5%;
+            }
+        }
+    }
+
+    .block-left {
+        left: 0;
+    }
+
+    .block-right {
+        right: 0;
+    }
+}
+
+.media-type .slider-container {
+    max-height: 320px;
+}
+
+.media-type.vertical .slider-container {
+    max-height: 590px;
+}

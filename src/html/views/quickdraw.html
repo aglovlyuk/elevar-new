@@ -39,7 +39,7 @@
 
         <div class="bottom-content-container">
             <div class="media-container txt-w-img image-left">
-                <div class="media-type image-gallery txt-w-img__img">
+                <div class="media-type vertical image-gallery txt-w-img__img">
                     <div class="slider-container">
                         <div class="slider">
                             <div><img src="uploads/jay-thelen.jpg" alt=""></div>
@@ -75,6 +75,10 @@
         </div>
     </div>
 </section>
+
+<div id="content-arrow" class="active">
+    <span class="bounce arrow active"></span>
+</div>
 
 <%= _.template(require('./../includes/footer.html').default)(data) %>
 <%= _.template(require('./../includes/end-of-page.html').default)(data) %>
