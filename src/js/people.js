@@ -1,3 +1,12 @@
+const Isotope = require('isotope-layout');
+import isotope from 'isotope-layout'
+const jQueryBridget = require('jquery-bridget');
+const InfiniteScroll = require('infinite-scroll');
+
+// make Infinite Scroll a jQuery plugin
+jQueryBridget( 'infiniteScroll', InfiniteScroll, $ );
+jQueryBridget( 'isotope', Isotope, $ );
+
 var People = function(settings){
     var $people,
         $peopleSubMenu,
@@ -68,8 +77,8 @@ var People = function(settings){
         filterValue = $this.data('filter');
 
         // menu active states
-        $peopleSubMenu.find('li').removeClass('active');
-        $this.parent().toggleClass('active');
+        $peopleSubMenu.find('.filters__btn').removeClass('is-checked');
+        $this.toggleClass('is-checked');
 
         // filter items
         if ($grid.length > 0) {
@@ -118,7 +127,7 @@ var People = function(settings){
         // init Isotope
         $grid = $($people).isotope({
                 resizable: false,
-                itemSelector: '.item',
+                itemSelector: '.grid-item',
                 percentPosition: true,
                 layoutMode: 'fitRows',
                 fitRows: {
@@ -187,17 +196,17 @@ var People = function(settings){
     }
 
     function init() {
-        $people = $('.people-page').find('.people-lists'),
-        $peopleSubMenu = $('.people-page').find('.people-submenu');
-        $search = $peopleSubMenu.find('.search');
+        $people = $('.people-page').find('.js-grid-people');
+        $peopleSubMenu = $('#js-people-filters');
+        $search = $peopleSubMenu.find('.search-form');
 
         initIsotope();
 
         // event handlers
-        $people.on('click', 'li .info', executiveClickEventHandler);
+        $people.on('click', '.grid-item .info', executiveClickEventHandler);
 
         if ($peopleSubMenu.length > 0) {
-            $peopleSubMenu.find('a').on('click', peopleSubMenuClickEventHandler);
+            $peopleSubMenu.find('.filters__btn').on('click', peopleSubMenuClickEventHandler);
         }
 
         if (window.location.hash.length > 0) {
@@ -212,4 +221,6 @@ var People = function(settings){
     return {
         init: init
     }
-}
+};
+
+People().init();

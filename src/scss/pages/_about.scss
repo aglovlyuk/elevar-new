@@ -239,10 +239,55 @@
     }
 }
 
-.media-type .slider-container {
-    max-height: 320px;
+.media-type {
+    @include media('<tablet') {
+        width: 100%;
+    }
+
+    .slider-container {
+        max-height: 320px;
+        padding-bottom: 0;
+
+        .slick-arrow {
+            .about-page &,
+            .quickdraw-page & {
+                background: rgba(#000, .8);
+                margin-top: 0;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+
+                &.slick-next {
+                    right: 0;
+                }
+
+                &.slick-prev {
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    &.vertical .slider-container {
+        max-height: 590px;
+    }
 }
 
-.media-type.vertical .slider-container {
-    max-height: 590px;
+.about-container {
+    h1 {
+        font-family: $font-primary;
+    }
+}
+
+.media-content {
+    h2 {
+        color: $cr-brand-primary;
+        font-family: $font-primary;
+    }
+}
+
+.bottom-content-container {
+    border-top: 1px solid $cr-brand-primary;
+    padding-top: 40px;
+    margin-top: 30px;
 }

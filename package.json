@@ -14,11 +14,13 @@
     "bootstrap": "^4.3.1",
     "fullpage.js": "2.9.7",
     "imagesloaded": "^4.1.4",
+    "infinite-scroll": "^3.0.6",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.5.1",
     "jquery-bridget": "^2.0.1",
     "popper.js": "^1.16.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "waypoints": "^4.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.26.12",

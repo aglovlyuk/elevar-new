@@ -81,11 +81,11 @@
 
                 &:before {
                     @include font-themify();
-                    @include font-size(3.0);
+                    font-size: 30px;
                     content: '\e64a';
 
                     @include media('>=tablet') {
-                        @include font-size(5.0);
+                        font-size: 50px;
                     }
                 }
             }
@@ -407,7 +407,7 @@
                 .bio-container__name,
                 p,
                 .email {
-                    @include font-size(1.4);
+                    font-size: 1rem;
                     font-weight: normal;
                     margin: 0;
                     padding: 0;
@@ -415,6 +415,7 @@
                 }
 
                 .bio-container__name {
+                    display: block;
                     color: $rgb-grey;
                 }
 
@@ -465,12 +466,12 @@
                 .bio-container__name,
                 .bio-container__title {
                     text-align: left;
-                    @include font-size(1.4);
+                    font-size: 1rem;
                     color: $rgb-grey;
                 }
 
                 .bio-container__title {
-                    @include font-size(1.3);
+                    font-size: .9rem;
                 }
 
                 span.phone {
@@ -498,12 +499,9 @@
                 .bio-container .more {
                     display: block;
                     height: 100%;
-                    //@include flexbox();
-                    //@include flex-direction(column);
                 }
 
                 .overlay {
-                    //@include rgba-background($rgb-black, 0);
                     opacity: 0;
                 }
             }
@@ -527,6 +525,30 @@
 
                     .overlay {
                         opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination {
+        justify-content: center;
+        ul {
+            @extend %listreset;
+            display: flex;
+
+            li {
+                margin: 0 3px;
+
+                @include media('>=tablet') {
+                    margin: 0 8px;
+                }
+
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $cr-brand-tertiary;
                     }
                 }
             }
@@ -586,7 +608,12 @@
         padding: 0;
     }
 
+    h1 {
+        @include adaptiv-font(24, 33);
+    }
+
     h2 {
+        @include adaptiv-font(20, 25);
         font-weight: 600;
         margin-bottom: 12px;
     }
@@ -624,8 +651,6 @@
             }
 
             .offices-container {
-                display: flex;
-                flex-direction: column;
                 @include transition(color $animation-speed $animation-type);
                 padding-bottom: 30px;
 
@@ -634,7 +659,6 @@
                 }
 
                 @include media('>=desktop') {
-                    flex-direction: row;
                     padding-bottom: 60px;
 
                     > div {
@@ -733,7 +757,7 @@
                 &.experts {
                     @include media('>=tablet') {
                         column-count: 3;
-                        column-gap: 100px;
+                        column-gap: 5vw;
                     }
 
                     li {
