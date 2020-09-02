@@ -46,7 +46,7 @@ var People = function(settings){
                 scrollToPosition($parent);
             }
         } else {
-            var $items = $peopleSubMenu.find('a'),
+            var $items = $peopleSubMenu.find('.filters__btn'),
                 arr = new Array();
 
             $.each($items, function(index, value) {
