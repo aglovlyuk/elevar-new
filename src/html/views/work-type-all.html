@@ -1,0 +1,265 @@
+<% var classes = {
+    bodyClass: "type-page work-page"
+}; %>
+
+<%= _.template(require('./../includes/header.html').default)(classes) %>
+<div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
+
+<section id="work-section" class="work-container" data-section="worktype">
+    <div class="container">
+        <div class="toolbar">
+            <ul class="filters" id="js-work-filters">
+                <li><a href="#all" class="filters__btn is-checked" data-filter="*">View All</a></li>
+                <li><a href="#learn" class="filters__btn" data-filter=".executive-leadership">Executive Leadership</a></li>
+                <li><a href="#heal" class="filters__btn" data-filter=".specialist">Specialists</a></li>
+                <li><a href="#live" class="filters__btn" data-filter=".live">live</a></li>
+                <li><a href="#work" class="filters__btn" data-filter=".work">work</a></li>
+                <li><a href="#stay" class="filters__btn" data-filter=".stay">stay</a></li>
+                <li><a href="#shop" class="filters__btn" data-filter=".shop">shop</a></li>
+                <li><a href="#research" class="filters__btn" data-filter=".research">research</a></li>
+                <li><a href="#gather" class="filters__btn" data-filter=".gather">gather</a></li>
+                <li><a href="#compete" class="filters__btn" data-filter=".compete">compete</a></li>
+            </ul>
+
+            <form action="" class="search-form">
+                <input class="search-form__control form-control js-filter-search" aria-label="Search field" type="search">
+                <span class="search-form__cta js-search-opener btn-transparency" aria-label="Search button"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg></span>
+            </form>
+        </div>
+
+        <div class="work-lists row js-grid-work">
+            <div class="grid-sizer col-12 col-sm-6 col-md-4 col-lg-3"></div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 grid-item learn">
+                <a href="">
+                    <figure>
+                        <img src="" class="lazyload" data-src="uploads/2012_ed_chca-18-grid.jpg" alt="Cincinnati Hills Christian Academy">
+                    </figure>
+                    <div class="overlay">
+                        <div class="project-detail-container">
+                            <hgroup>
+                                <h2 class="title">Cincinnati Hills Christian Academy</h2>
+                                <h3 class="location">Cincinnati, OH</h3>
+                            </hgroup>
+                            <div class="cta-container">
+                                <span>read more</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="hidden">
+                    <div class="featured">0</div>
+                    <div class="sortorder">0</div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 grid-item live">
+                <a href="">
+                    <figure>
+                        <img src="" class="lazyload" data-src="uploads/2012_ed_chca-18-grid.jpg" alt="Cincinnati Hills Christian Academy" j>
+                    </figure>
+                    <div class="overlay">
+                        <div class="project-detail-container">
+                            <hgroup>
+                                <h2 class="title">West Clermont High School</h2>
+                                <h3 class="location">Cincinnati, OH</h3>
+                            </hgroup>
+                            <div class="cta-container">
+                                <span>read more</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="hidden">
+                    <div class="featured">0</div>
+                    <div class="sortorder">1</div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 grid-item stay">
+                <a href="">
+                    <figure>
+                        <img src="" class="lazyload" data-src="uploads/2012_ed_chca-18-grid.jpg" alt="Cincinnati Hills Christian Academy">
+                    </figure>
+                    <div class="overlay">
+                        <div class="project-detail-container">
+                            <hgroup>
+                                <h2 class="title">Clifton Neighborhood School </h2>
+                                <h3 class="location">Cincinnati, OH </h3>
+                            </hgroup>
+                            <div class="cta-container">
+                                <span>read more</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="hidden">
+                    <div class="featured">0</div>
+                    <div class="sortorder">2</div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 grid-item gather">
+                <a href="">
+                    <figure>
+                        <img src="" class="lazyload" data-src="uploads/2012_ed_chca-18-grid.jpg" alt="Cincinnati Hills Christian Academy">
+                    </figure>
+                    <div class="overlay">
+                        <div class="project-detail-container">
+                            <hgroup>
+                                <h2 class="title">Art Academy of Cincinnati Future House </h2>
+                                <h3 class="location">Cincinnati, OH </h3>
+                            </hgroup>
+                            <div class="cta-container">
+                                <span>read more</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="hidden">
+                    <div class="featured">0</div>
+                    <div class="sortorder">3</div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 grid-item heal">
+                <a href="">
+                    <figure>
+                        <img src="" class="lazyload" data-src="uploads/2012_ed_chca-18-grid.jpg" alt="Cincinnati Hills Christian Academy">
+                    </figure>
+                    <div class="overlay">
+                        <div class="project-detail-container">
+                            <hgroup>
+                                <h2 class="title">Notre Dame Academy </h2>
+                                <h3 class="location">Park Hills, KY </h3>
+                            </hgroup>
+                            <div class="cta-container">
+                                <span>read more</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="hidden">
+                    <div class="featured">0</div>
+                    <div class="sortorder">4</div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 grid-item research">
+                <a href="">
+                    <figure>
+                        <img src="" class="lazyload" data-src="uploads/2012_ed_chca-18-grid.jpg" alt="Cincinnati Hills Christian Academy">
+                    </figure>
+                    <div class="overlay">
+                        <div class="project-detail-container">
+                            <hgroup>
+                                <h2 class="title">Summerside and Willowville Elementary Schools </h2>
+                                <h3 class="location">Cincinnati, Ohio </h3>
+                            </hgroup>
+                            <div class="cta-container">
+                                <span>read more</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="hidden">
+                    <div class="featured">0</div>
+                    <div class="sortorder">5</div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 grid-item compete">
+                <a href="">
+                    <figure>
+                        <img src="" class="lazyload" data-src="uploads/2012_ed_chca-18-grid.jpg" alt="Cincinnati Hills Christian Academy">
+                        <div class="leed-container">
+                            <img class="leed-award" src="uploads/silver.png" alt="2015 Leed Silver Award Winner">
+                        </div>
+                    </figure>
+                    <div class="overlay">
+                        <div class="project-detail-container">
+                            <hgroup>
+                                <h2 class="title">Three Rivers PK-12 School </h2>
+                                <h3 class="location">Cleves, OH</h3>
+                            </hgroup>
+                            <div class="cta-container">
+                                <span>read more</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="hidden">
+                    <div class="featured">0</div>
+                    <div class="sortorder">6</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-load-status">
+            <div class="loader infinite-scroll-request">
+                <span class="loading">Loading</span>
+                <span class="dot dot_1"></span>
+                <span class="dot dot_2"></span>
+                <span class="dot dot_3"></span>
+                <span class="dot dot_4"></span>
+            </div>
+        </div>
+
+        <div class="no-results hidden">
+            <p>We're sorry, your search didn't match any results. Please try again.</p>
+        </div>
+
+        <div class="pagination">
+            <ul>
+                <li class="active">
+                    <a class="" href="/work/type?p=1">1</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=2">2</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=3">3</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=4">4</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=5">5</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=6">6</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=7">7</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=8">8</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=9">9</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=10">10</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=11">11</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=12">12</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=13">13</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=14">14</a>
+                </li>
+                <li class="">
+                    <a class="page-num" href="/work/type?p=15">15</a>
+                </li>
+                <li><a class="pagination__next" href="/work/type?p=2">Next</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<%= _.template(require('./../includes/footer.html').default)() %>
+<%= _.template(require('./../includes/end-of-page.html').default)() %>

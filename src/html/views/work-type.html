@@ -1,0 +1,107 @@
+<% var classes = {
+    bodyClass: "work-page work-details"
+}; %>
+
+<%= _.template(require('./../includes/header.html').default)(classes) %>
+<div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
+
+<section id="work-detail-section" class="about-container">
+    <section class="slider-container">
+        <div class="slider-adaptive">
+            <div>
+                <div class="image-container">
+                    <img src="uploads/img_8374.jpg" alt="">
+                </div>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img src="uploads/img_8389.jpg" alt="">
+                </div>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img src="uploads/img_0213-opt.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="block-left"></div>
+        <div class="block-right"></div>
+    </section>
+
+    <div class="container--md">
+        <section class="project-detail-container">
+            <hgroup>
+                <h1>Rivers Edge Montessori</h1>
+                <h2>Dayton, OH</h2>
+            </hgroup>
+            <p style="text-align: justify;">Located on a small site on the Little Miami River, this new Montessori school in the Dayton Public School District was designed with three stories and is nestled against the existing levee to provide for protected outdoor play. Two separate wings meet to create one lobby of centralized circulation space. The unique window pattern allows outdoor views for students completing school work on the floor – a design inspired by the Montessori curriculum. The design team maximized the size of extended learning areas and created a new atrium commons area as a result of the efficiency of the layout.</p>
+        </section>
+
+        <section class="related-projects-container">
+            <div class="inner inner-small">
+                <h3>Related Projects</h3>
+                <ul class="related-projects-list">
+                    <li>
+                        <a href="">
+                            <figure>
+                                <img src="uploads/img2-grid.jpg" alt="Riverview East Academy ">
+                            </figure>
+                            <div class="overlay">
+                                <div class="project-detail-container">
+                                    <hgroup>
+                                        <h2>Riverview East Academy </h2>
+                                        <h3>Cincinnati, OH</h3>
+                                    </hgroup>
+                                    <div class="cta-container">
+                                        <span>read more</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <figure>
+                                <img src="uploads/img2-grid.jpg" alt="Mariemont City Schools">
+                            </figure>
+                            <div class="overlay">
+                                <div class="project-detail-container">
+                                    <hgroup>
+                                        <h2>Mariemont City Schools</h2>
+                                        <h3>Mariemont, Ohio</h3>
+                                    </hgroup>
+                                    <div class="cta-container">
+                                        <span>read more</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <figure>
+                                <img src="uploads/img2-grid.jpg" alt="North College Hill Elementary School/Middle School/High School ">
+                            </figure>
+                            <div class="overlay">
+                                <div class="project-detail-container">
+                                    <hgroup>
+                                        <h2>North College Hill Elementary School/Middle School/High School </h2>
+                                        <h3>Cincinnati, OH</h3>
+                                    </hgroup>
+                                    <div class="cta-container">
+                                        <span>read more</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</section>
+
+<%= _.template(require('./../includes/footer.html').default)() %>
+<%= _.template(require('./../includes/end-of-page.html').default)() %>

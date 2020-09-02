@@ -1,3 +1,4 @@
+import './script';
 import './header';
 import './isotope';
 import './modals';
@@ -8,3 +9,4 @@ import './full-page-scroll';
 import './about';
 import './contact';
 import './people';
+import './work';

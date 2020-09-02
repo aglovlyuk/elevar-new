@@ -4557,6 +4557,11 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
+lazyload@^2.0.0-rc.2:
+  version "2.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/lazyload/-/lazyload-2.0.0-rc.2.tgz#c774eb7966f334c9bed2f27580fc333a770eb256"
+  integrity sha512-v3OKwYrKHX09eAyeAmkpvVCF5qWZo8rxERT9AVOUFaRwlTIuCyMYVBfHYSra1uyBdKDEHnUkvpZTLgNWI9Y7lA==
+
 limiter@^1.0.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/limiter/-/limiter-1.1.5.tgz#8f92a25b3b16c6131293a0cc834b4a838a2aa7c2"

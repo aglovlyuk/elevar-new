@@ -511,9 +511,6 @@
             }
 
             @include media('>=desktop') {
-                //padding: 0 8px;
-                width: 23%;
-
                 &:hover {
                     img {
                         transform: scale(1.1);

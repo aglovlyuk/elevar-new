@@ -130,9 +130,6 @@ var People = function(settings){
                 itemSelector: '.grid-item',
                 percentPosition: true,
                 layoutMode: 'fitRows',
-                fitRows: {
-                    gutter: 24
-                },
                 stagger: 20,
                 transitionDuration: 0,
                 visibleStyle: {
@@ -155,8 +152,8 @@ var People = function(settings){
             $grid.isotope('layout');
         });
 
-        $search.keyup(debounce(function () {
-            qsRegex = new RegExp($search.val(), 'gi');
+        $search.on('keyup search', debounce( function() {
+            qsRegex = new RegExp($search.val(), 'i');
 
             if (typeof filterValue === 'undefined') {
                 loadAll();
@@ -198,7 +195,7 @@ var People = function(settings){
     function init() {
         $people = $('.people-page').find('.js-grid-people');
         $peopleSubMenu = $('#js-people-filters');
-        $search = $peopleSubMenu.find('.search-form');
+        $search = $('#people-section').find('.js-filter-search');
 
         initIsotope();
 
