@@ -3,6 +3,8 @@
 @import "core/icons";
 @import "core/fonts";
 @import "core/typography-settings";
+@import "custom-old/variables";
+@import "custom-old/mixins";
 
 @import "~include-media/dist/include-media";
 @import "~fullpage.js/dist/jquery.fullpage.min.css";
@@ -28,6 +30,7 @@
 //@import "components/dropdown";
 @import "components/modal-override";
 
+@import "custom-old/base";
 @import "layout/header";
 @import "layout/layout";
 @import "layout/footer";
@@ -42,6 +45,7 @@
 @import "pages/home";
 @import "pages/elevate";
 @import "pages/about";
+@import "pages/site";
 @import "pages/not-found";
 @import "pages/general-cms";
 

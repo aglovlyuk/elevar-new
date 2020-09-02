@@ -18,7 +18,7 @@
 
 .projects__ttl {
     @include adaptiv-font(20, 35);
-    color: #5b5d62;
+    color: $cr-brand-tertiary;
     font-weight: 700;
     line-height: 1.286;
     max-width: 708px;

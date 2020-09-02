@@ -88,7 +88,7 @@
                 z-index: 9999;
 
                 &:before {
-                    font-family: Themify;
+                    @include font-themify();
                     font-size: 30px;
                     content: '\e64a';
 
@@ -103,7 +103,7 @@
                 z-index: 9999;
 
                 &:before {
-                    font-family: Themify;
+                    @include font-themify();
                     font-size: 30px;
                     content: '\e649';
 

@@ -1,3 +1,7 @@
+<% var dataHeader = {
+    title: "Elevar Design Group"
+}; %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,15 +14,15 @@
     <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#bddc04">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-    <title><%=title%></title>
+    <title><%=dataHeader.title%></title>
     <link rel="stylesheet" href="css/main.bundle.css" />
 </head>
-<body>
+<body class="<%=bodyClass%>">
 
 <header class="header">
     <div class="header__container container">
         <div class="logo">
-            <a href="/"><img class="logo__img" src="img/logo.png" alt="<%=title%>"></a>
+            <a href="/"><img class="logo__img" src="img/logo.png" alt="<%=dataHeader.title%>"></a>
         </div>
 
         <nav class="main-nav navbar-nav-scroll">

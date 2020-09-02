@@ -1,9 +1,8 @@
-<% var data = {
-  title: "Elevar Design Group",
-  author: "© 2019 All Rights Reserved."
+<% var classes = {
+    bodyClass: "home-page"
 }; %>
 
-<%= _.template(require('./../includes/header.html').default)(data) %>
+<%= _.template(require('./../includes/header.html').default)(classes) %>
 <div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
 
 <div id="fullpage" class="fullpage-wrapper">
@@ -207,4 +206,4 @@
     <%= _.template(require('./../includes/footer.html').default)(data) %>
 </div>
 
-<%= _.template(require('./../includes/end-of-page.html').default)(data) %>
+<%= _.template(require('./../includes/end-of-page.html').default)() %>

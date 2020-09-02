@@ -6,3 +6,5 @@ import './form-search';
 import './delete-divider';
 import './full-page-scroll';
 import './about';
+import './contact';
+import './people';

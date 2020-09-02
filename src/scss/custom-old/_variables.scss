@@ -1,0 +1,32 @@
+$rgb-white: rgb(255,255,255);
+$rgb-black: rgb(0,0,0);
+$rgb-lime: rgb(186,220,20);
+$rgb-grey: rgb(92,92,96);
+$rgb-grey-light: rgb(209,211,212);
+$rgb-grey-medium: rgb(173,179,182);
+
+$hex-lime: #badc14;
+$hex-grey: #5C5C60;
+$hex-grey-light: #D1D3D4;
+
+$media-tablet: " screen and (min-width: 768px), print";
+$media-desktop: " screen and (min-width: 1024px), print";
+$media-desktop-large: " screen and (min-width: 1280px), print";
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$desktop-large-width: 1280px;
+
+$content-max-width: 1067px;
+
+$slick-font-family: "FontAwesome" !default;
+$slick-dot-size: 14px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 0.9 !default;
+$slick-opacity-not-active: 0.25 !default;
+$slick-dot-color: $rgb-grey !default;
+$slick-dot-color-active: $rgb-lime !default;
+$slick-dot-character: "\f04d" !default;
+
+$animation-type: ease;
+$animation-duration: 0.4s;

@@ -1,9 +1,8 @@
-<% var data = {
-  title: "Elevar Design Group",
-  author: "© 2019 All Rights Reserved."
+<% var classes = {
+    bodyClass: "people-page"
 }; %>
 
-<%= _.template(require('./../includes/header.html').default)(data) %>
+<%= _.template(require('./../includes/header.html').default)(classes) %>
 <div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
 
 <section id="people-section" class="people-container">
@@ -24,148 +23,61 @@
         <div class="people-lists row js-grid-insights">
             <div class="grid-sizer col-6 col-lg-3"></div>
             <div class="col-6 col-lg-3 grid-item">
-                <div class="people-item">
-                    <div class="insights-item__img"><img src="uploads/tom-fernandez.jpg" alt="E. Thomas Fernandez, SARA"/></div>
-                    <span class="people-item__name">E. Thomas Fernandez, SARA</span>
-                    <span class="people-item__title">Chief Executive Officer</span>
+                <div class="item executive-leadership">
+                    <div class="info">
+                        <figure>
+                            <img src="uploads/tom-fernandez.jpg" alt="E. Thomas Fernandez, SARA">
+                        </figure>
+                        <a href="#" class="circle more-info lime"></a>
+                        <div class="overlay"></div>
+                    </div>
 
-                    <div class="people-item__more">
-                        <div class="contact-info-container">
-                            <a class="email" href="mailto:tfernandez@elevar.com">tfernandez@elevar.com</a>
-                            <span class="phone"><a href="tel:(513) 744 - 2959"
-                                                   rel="phone">(513) 744 - 2959</a></span>
-                            <span class="phone"><a href="tel:(513) 503 - 6840"
-                                                   rel="phone">(513) 503 - 6840</a> (c)</span>
-
-                            <a class="v-card" href="/media/3256/e-thomas-fernandez.vcf" target="_blank">download
-                                Vcard</a>
+                    <div id="e.-thomas-fernandez" class="bio-container">
+                        <div class="bio-container__heading">
+                            <span class="bio-container__name">E. Thomas Fernandez, SARA</span>
+                            <span class="bio-container__title">Chief Executive Officer</span>
+                            <span class="hidden">specialist</span>
+                            <span class="hidden">Interior Design</span>
                         </div>
-                        <p style="text-align: justify;">As the CEO of Elevar Design Group, Tom Fernandez is
-                            responsible for the overall vision and innovation of the firm. He facilitates
-                            design direction and ensures that his staff is equipped to provide the best
-                            solutions to clients. Since assuming executive leadership of the firm in the
-                            late 1980s, Tom has been instrumental in growing the staff into the
-                            multi-disciplined team of specialized designers it is today. Tom is the
-                            recipient of many prestigious design awards commemorating his innovative
-                            direction on projects.</p></div>
-                </div>
-            </div>
 
-            <div class="col-6 col-lg-3 grid-item">
-                <div class="people-item">
-                    <div class="insights-item__img"><img src="uploads/tom-fernandez.jpg" alt="E. Thomas Fernandez, SARA"/></div>
-                    <span class="people-item__name">E. Thomas Fernandez, SARA</span>
-                    <span class="people-item__title">Chief Executive Officer</span>
-
-                    <div class="people-item__more">
-                        <div class="contact-info-container">
-                            <a class="email" href="mailto:tfernandez@elevar.com">tfernandez@elevar.com</a>
-                            <span class="phone"><a href="tel:(513) 744 - 2959" rel="phone">(513) 744 - 2959</a></span>
-                            <a class="v-card" href="/media/3256/e-thomas-fernandez.vcf" target="_blank">download Vcard</a>
+                        <div class="more">
+                            <div class="contact-info-container">
+                                <a class="email" href="mailto:tfernandez@elevar.com">tfernandez@elevar.com</a>
+                                <span class="phone"><a href="tel:(513) 744 - 2959" rel="phone">(513) 744 - 2959</a></span>
+                                <span class="phone"><a href="tel:(513) 503 - 6840" rel="phone">(513) 503 - 6840</a> (c)</span>
+                                <a class="v-card" href="/media/3256/e-thomas-fernandez.vcf" target="_blank">download Vcard</a>
+                            </div>
+                            <p style="text-align: justify;">As the CEO of Elevar Design Group, Tom Fernandez is responsible for the overall vision and innovation of the firm. He facilitates design direction and ensures that his staff is equipped to provide the best solutions to clients. Since assuming executive leadership of the firm in the late 1980s, Tom&nbsp;has been instrumental in growing the staff into the multi-disciplined team of specialized designers it is today. Tom&nbsp;is&nbsp;the recipient of many prestigious design awards commemorating his innovative direction on projects.</p>
                         </div>
-                        <p style="text-align: justify;">As the CEO </p>
                     </div>
                 </div>
             </div>
 
             <div class="col-6 col-lg-3 grid-item">
-                <div class="people-item">
-                    <div class="insights-item__img"><img src="uploads/tom-fernandez.jpg" alt="E. Thomas Fernandez, SARA"/></div>
-                    <span class="people-item__name">E. Thomas Fernandez, SARA</span>
-                    <span class="people-item__title">Chief Executive Officer</span>
-
-                    <div class="people-item__more">
-                        <div class="contact-info-container">
-                            <a class="email" href="mailto:tfernandez@elevar.com">tfernandez@elevar.com</a>
-                            <span class="phone"><a href="tel:(513) 744 - 2959" rel="phone">(513) 744 - 2959</a></span>
-                            <a class="v-card" href="/media/3256/e-thomas-fernandez.vcf" target="_blank">download Vcard</a>
-                        </div>
-                        <p style="text-align: justify;">As the CEO </p>
+                <div class="item specialist">
+                    <div class="info">
+                        <figure>
+                            <img src="uploads/tom-fernandez.jpg" alt="E. Thomas Fernandez, SARA">
+                        </figure>
+                        <a href="#" class="circle more-info lime"></a>
+                        <div class="overlay"></div>
                     </div>
-                </div>
-            </div>
 
-            <div class="col-6 col-lg-3 grid-item">
-                <div class="people-item">
-                    <div class="insights-item__img"><img src="uploads/tom-fernandez.jpg" alt="E. Thomas Fernandez, SARA"/></div>
-                    <span class="people-item__name">E. Thomas Fernandez, SARA</span>
-                    <span class="people-item__title">Chief Executive Officer</span>
-
-                    <div class="people-item__more">
-                        <div class="contact-info-container">
-                            <a class="email" href="mailto:tfernandez@elevar.com">tfernandez@elevar.com</a>
-                            <span class="phone"><a href="tel:(513) 744 - 2959" rel="phone">(513) 744 - 2959</a></span>
-                            <a class="v-card" href="/media/3256/e-thomas-fernandez.vcf" target="_blank">download Vcard</a>
+                    <div id="dara-baldridge-" class="bio-container">
+                        <div class="bio-container__heading">
+                            <span class="bio-container__name">Dara Baldridge , IIDA, LEED AP </span>
+                            <span class="bio-container__title">Senior Interior Designer - Workplace</span>
+                            <span class="hidden">specialist</span>
+                            <span class="hidden">Interior Design</span>
                         </div>
-                        <p style="text-align: justify;">As the CEO </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-3 grid-item">
-                <div class="people-item">
-                    <div class="insights-item__img"><img src="uploads/tom-fernandez.jpg" alt="E. Thomas Fernandez, SARA"/></div>
-                    <span class="people-item__name">E. Thomas Fernandez, SARA</span>
-                    <span class="people-item__title">Chief Executive Officer</span>
-
-                    <div class="people-item__more">
-                        <div class="contact-info-container">
-                            <a class="email" href="mailto:tfernandez@elevar.com">tfernandez@elevar.com</a>
-                            <span class="phone"><a href="tel:(513) 744 - 2959" rel="phone">(513) 744 - 2959</a></span>
-                            <a class="v-card" href="/media/3256/e-thomas-fernandez.vcf" target="_blank">download Vcard</a>
-                        </div>
-                        <p style="text-align: justify;">As the CEO </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-3 grid-item">
-                <div class="people-item">
-                    <div class="insights-item__img"><img src="uploads/tom-fernandez.jpg" alt="E. Thomas Fernandez, SARA"/></div>
-                    <span class="people-item__name">E. Thomas Fernandez, SARA</span>
-                    <span class="people-item__title">Chief Executive Officer</span>
-
-                    <div class="people-item__more">
-                        <div class="contact-info-container">
-                            <a class="email" href="mailto:tfernandez@elevar.com">tfernandez@elevar.com</a>
-                            <span class="phone"><a href="tel:(513) 744 - 2959" rel="phone">(513) 744 - 2959</a></span>
-                            <a class="v-card" href="/media/3256/e-thomas-fernandez.vcf" target="_blank">download Vcard</a>
-                        </div>
-                        <p style="text-align: justify;">As the CEO </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-3 grid-item">
-                <div class="people-item">
-                    <div class="insights-item__img"><img src="uploads/tom-fernandez.jpg" alt="E. Thomas Fernandez, SARA"/></div>
-                    <span class="people-item__name">E. Thomas Fernandez, SARA</span>
-                    <span class="people-item__title">Chief Executive Officer</span>
-
-                    <div class="people-item__more">
-                        <div class="contact-info-container">
-                            <a class="email" href="mailto:tfernandez@elevar.com">tfernandez@elevar.com</a>
-                            <span class="phone"><a href="tel:(513) 744 - 2959" rel="phone">(513) 744 - 2959</a></span>
-                            <a class="v-card" href="/media/3256/e-thomas-fernandez.vcf" target="_blank">download Vcard</a>
-                        </div>
-                        <p style="text-align: justify;">As the CEO </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-3 grid-item">
-                <div class="people-item">
-                    <div class="insights-item__img"><img src="uploads/tom-fernandez.jpg" alt="E. Thomas Fernandez, SARA"/></div>
-                    <span class="people-item__name">E. Thomas Fernandez, SARA</span>
-                    <span class="people-item__title">Chief Executive Officer</span>
-
-                    <div class="people-item__more">
-                        <div class="contact-info-container">
-                            <a class="email" href="mailto:tfernandez@elevar.com">tfernandez@elevar.com</a>
-                            <span class="phone"><a href="tel:(513) 744 - 2959" rel="phone">(513) 744 - 2959</a></span>
-                            <a class="v-card" href="/media/3256/e-thomas-fernandez.vcf" target="_blank">download Vcard</a>
-                        </div>
-                        <p style="text-align: justify;">As the CEO </p>
+                        <div class="more">
+                            <div class="contact-info-container">
+                                <a class="email" href="mailto:tfernandez@elevar.com">tfernandez@elevar.com</a>
+                                <span class="phone"><a href="tel:(513) 744 - 2959" rel="phone">(513) 744 - 2959</a></span>
+                                <span class="phone"><a href="tel:(513) 503 - 6840" rel="phone">(513) 503 - 6840</a> (c)</span>
+                                <a class="v-card" href="/media/3256/e-thomas-fernandez.vcf" target="_blank">download Vcard</a>
+                            </div>
+                            <p style="text-align: justify;">As the CEO of Elevar Design Group, Tom Fernandez is responsible for the overall vision and innovation of the firm. He facilitates design direction and ensures that his staff is equipped to provide the best solutions to clients. Since assuming executive leadership of the firm in the late 1980s, Tom&nbsp;has been instrumental in growing the staff into the multi-disciplined team of specialized designers it is today. Tom&nbsp;is&nbsp;the recipient of many prestigious design awards commemorating his innovative direction on projects.</p>                        </div>
                     </div>
                 </div>
             </div>
@@ -213,5 +125,5 @@
     </div>
 </section>
 
-<%= _.template(require('./../includes/footer.html').default)(data) %>
-<%= _.template(require('./../includes/end-of-page.html').default)(data) %>
+<%= _.template(require('./../includes/footer.html').default)() %>
+<%= _.template(require('./../includes/end-of-page.html').default)() %>

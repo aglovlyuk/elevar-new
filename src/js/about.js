@@ -1,7 +1,6 @@
 ﻿import 'slick-carousel';
 const imagesLoaded = require('imagesloaded');
 imagesLoaded.makeJQueryPlugin( $ );
-import '../scss/custom.css';
 
 var About = function () {
     var $sliderAdaptive,
