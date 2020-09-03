@@ -3,6 +3,9 @@ import isotope from 'isotope-layout'
 const jQueryBridget = require('jquery-bridget');
 const InfiniteScroll = require('infinite-scroll');
 
+// make imagesLoaded available for InfiniteScroll
+InfiniteScroll.imagesLoaded = imagesLoaded;
+
 // make Infinite Scroll a jQuery plugin
 jQueryBridget( 'infiniteScroll', InfiniteScroll, $ );
 jQueryBridget( 'isotope', Isotope, $ );
@@ -183,7 +186,7 @@ var People = function(settings){
 
         $grid.infiniteScroll({
             path: '.pagination__next',
-            append: '.item',
+            append: '.grid-item',
             hideNav: '.pagination',
             checkLastPage: true,
             history: false,

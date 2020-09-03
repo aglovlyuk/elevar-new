@@ -5,8 +5,12 @@ const InfiniteScroll = require('infinite-scroll');
 import Lazyload from 'lazyload';
 const imagesLoaded = require('imagesloaded');
 
+// make imagesLoaded available for InfiniteScroll
+InfiniteScroll.imagesLoaded = imagesLoaded;
+
 // make jQuery plugins
 imagesLoaded.makeJQueryPlugin( $ );
+
 jQueryBridget( 'infiniteScroll', InfiniteScroll, $ );
 jQueryBridget( 'isotope', Isotope, $ );
 jQueryBridget( 'lazyload', Lazyload, $ );
@@ -49,7 +53,7 @@ var Work = function(settings) {
             method: "post",
             success: function (data) {
                 if (data) {
-                    var $elem = $('<li class="blurb item"><div class="info">' + data + '</div></li>').addClass(tagName.toLowerCase());
+                    var $elem = $('<div class="col-12 col-sm-6 col-md-4 col-lg-3 grid-item blurb"><div class="info">' + data + '</div></div>').addClass(tagName.toLowerCase());
 
                     $grid.isotope('remove', $($grid).find('.blurb')).isotope('layout');
                     $grid.prepend($elem).isotope('prepended', $elem).isotope('layout');
@@ -186,16 +190,18 @@ var Work = function(settings) {
         });
 
 
-        let iso = $grid.data('isotope');
+        
 
         // layout Isotope after each image loads
         $grid.imagesLoaded().progress(function () {
             $grid.isotope('layout');
         });
 
+        let iso = $grid.data('isotope');
+
         $grid.infiniteScroll({
             path: '.pagination__next',
-            append: '.item',
+            append: '.grid-item',
             hideNav: '.pagination',
             checkLastPage: true,
             history: false,
