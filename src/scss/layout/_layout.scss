@@ -17,7 +17,7 @@ body {
     }
 
     // reserve space for header
-    &:not(.fp-init) {
+    &:not([class*="fp-viewing"]) {
         padding-top: $header-height-mob;
 
         @include media('>=desktop') {
