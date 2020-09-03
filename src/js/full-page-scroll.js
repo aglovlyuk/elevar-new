@@ -17,11 +17,8 @@ function(t,i){var e="active",s="."+e,o="fp-section",n="."+o,r=n+s,h="fp-slide",a
 import 'fullpage.js';
 
 $(function() {
-    let headerHeight = $('.header').outerHeight();
-    let mql = window.matchMedia('only screen and (min-width: 768px)');
-
     $('#fullpage').fullpage({
-        paddingTop: headerHeight,
+        paddingTop: $('.header').outerHeight(),
         //anchors: ['hero', 'about', 'people', 'projects', 'insights', 'contact', 'footer'],
         //menu: '.js--menu-anchor',
         fixedElements: '.header',

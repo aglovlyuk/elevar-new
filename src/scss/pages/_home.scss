@@ -7,9 +7,15 @@
 
     @include media('>=desktop') {
         margin-bottom: 57px;
+    }
 
-        .fullpage-wrapper & {
-            margin-bottom: 0;
+    .fullpage-wrapper & {
+        margin-bottom: 0 !important;
+        padding-bottom: 3vh;
+        height: 100%;
+
+        .container {
+            height: 100%;
         }
     }
 
@@ -17,10 +23,12 @@
         border-bottom: 5px solid $cr-brand-primary;
         min-height: 220px;
         background-color: rgba(#000, .6);
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
 
         @include media('<tablet') {
             min-height: 397px;
-            object-fit: cover;
             border-bottom-width: 3px;
         }
     }
