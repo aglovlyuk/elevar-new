@@ -183,7 +183,7 @@ var People = function(settings){
 
         $grid.infiniteScroll({
             path: '.pagination__next',
-            append: '.item',
+            append: '.grid-item',
             hideNav: '.pagination',
             checkLastPage: true,
             history: false,
