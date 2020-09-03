@@ -2,9 +2,13 @@ const Isotope = require('isotope-layout');
 import isotope from 'isotope-layout'
 const jQueryBridget = require('jquery-bridget');
 const InfiniteScroll = require('infinite-scroll');
+//const imagesLoaded = require('imagesloaded');
 
 // make imagesLoaded available for InfiniteScroll
-InfiniteScroll.imagesLoaded = imagesLoaded;
+//InfiniteScroll.imagesLoaded = imagesLoaded;
+
+// make jQuery plugins
+//imagesLoaded.makeJQueryPlugin( $ );
 
 // make Infinite Scroll a jQuery plugin
 jQueryBridget( 'infiniteScroll', InfiniteScroll, $ );

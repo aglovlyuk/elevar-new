@@ -85,6 +85,8 @@ var Work = function(settings) {
             ? populateTagBlurb(tagName)
             : $grid.isotope('remove', $($grid).find('.blurb')).isotope('layout');
 
+            console.log($grid.length)
+
         // filter items
         if ($grid.length > 0) {
             loadAll();
@@ -100,6 +102,8 @@ var Work = function(settings) {
 
             $grid.isotope('updateSortData').isotope();
         }
+
+        $grid.isotope('layout');
     }
 
     function moveSliderArrow(elem, slideIndex) {
