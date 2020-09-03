@@ -67,6 +67,6 @@ var Application = function(application){
 };
 
 $(function(){
-    app = new Application();
+    let app = new Application();
     app.init();
 });

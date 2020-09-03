@@ -1,4 +1,3 @@
-import './script';
 import './header';
 import './isotope';
 import './modals';
@@ -10,3 +9,4 @@ import './about';
 import './contact';
 import './people';
 import './work';
+import './script';

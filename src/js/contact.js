@@ -80,7 +80,7 @@ function codeAddress() {
                     position: results[0].geometry.location,
                     title: officeName,
                     icon: {
-                        url: "/img/icon.png",
+                        url: "img/icon.png",
                         scaledSize: isDesktop
                             ? new google.maps.Size(32, 32)
                             : new google.maps.Size(22, 22)

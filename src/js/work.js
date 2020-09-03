@@ -3,8 +3,10 @@ import isotope from 'isotope-layout'
 const jQueryBridget = require('jquery-bridget');
 const InfiniteScroll = require('infinite-scroll');
 import Lazyload from 'lazyload';
+const imagesLoaded = require('imagesloaded');
 
 // make jQuery plugins
+imagesLoaded.makeJQueryPlugin( $ );
 jQueryBridget( 'infiniteScroll', InfiniteScroll, $ );
 jQueryBridget( 'isotope', Isotope, $ );
 jQueryBridget( 'lazyload', Lazyload, $ );
@@ -51,19 +53,6 @@ var Work = function(settings) {
 
                     $grid.isotope('remove', $($grid).find('.blurb')).isotope('layout');
                     $grid.prepend($elem).isotope('prepended', $elem).isotope('layout');
-
-                    // now it's prepended, try to move to 3rd position.
-                   // $grid.isotope('destroy');
-
-                    //var $firstElem = $grid.find('li:first');
-                    //$firstElem.detach();
-
-                    //$grid.find('li:eq(2)').after($firstElem);
-
-                    //initGrid();
-                    //$grid.isotope().isotope('layout');
-
-                    //$grid.isotope('layout');
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -75,7 +64,7 @@ var Work = function(settings) {
     function workSubMenuClickEventHandler(e) {
         var $this = $(this);
 
-        app.initArrow();
+        //app.initArrow();
 
         filterValue = $this.data('filter');
         var tagName = filterValue !== '*'
@@ -96,7 +85,7 @@ var Work = function(settings) {
         if ($grid.length > 0) {
             loadAll();
 
-            app.initArrow();
+            //app.initArrow();
 
             if (tagName === '*') {
                 $grid.isotope({ sortBy: 'originial-order' }).isotope();
@@ -197,15 +186,11 @@ var Work = function(settings) {
         });
 
 
-        var iso = $grid.data('isotope');
+        let iso = $grid.data('isotope');
 
         // layout Isotope after each image loads
         $grid.imagesLoaded().progress(function () {
             $grid.isotope('layout');
-        });
-
-        $grid.imagesLoaded(function () {
-            app.initArrow();
         });
 
         $grid.infiniteScroll({
@@ -238,9 +223,6 @@ var Work = function(settings) {
                 }
             }
         });
-
-        //var contactDiv = $('<li class="blurb item"><div class="info">To contact me please call 555-8723</div></li>');
-        //$grid.prepend(contactDiv).isotope('prepended', contactDiv);
     }
 
     function init() {
