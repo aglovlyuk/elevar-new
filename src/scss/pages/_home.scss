@@ -1,3 +1,5 @@
+$hero-padding-bm: 3vh;
+
 .main-hero {
     margin-bottom: 16px;
 
@@ -11,11 +13,19 @@
 
     .fullpage-wrapper & {
         margin-bottom: 0 !important;
-        padding-bottom: 3vh;
+        padding-bottom: $hero-padding-bm;
         height: 100%;
 
         .container {
             height: 100%;
+        }
+
+        img {
+            height: calc(100vh - #{$header-height-mob});
+
+            @include media('>=desktop') {
+                height: calc(100vh - #{$header-height-desk} - #{$hero-padding-bm});
+            }
         }
     }
 
