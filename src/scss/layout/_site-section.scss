@@ -81,7 +81,9 @@ $section-padding-bm: 2vh;
         height: 100%;
 
         .fullpage-wrapper & {
-            height: calc(100vh - #{$header-height-mob});
+            @include media('>=tablet') {
+                height: calc(100vh - #{$header-height-mob});
+            }
 
             @include media('>=desktop') {
                 height: calc(100vh - #{$header-height-desk} - #{$section-padding-bm});
@@ -101,12 +103,12 @@ $section-padding-bm: 2vh;
     margin: 0;
 
     @include media('<tablet') {
-        top: 4px;
+        top: 2px;
         left: 4px;
     }
 
     @include media('>=tablet') {
-        bottom: -.06em;
+        bottom: -.02em;
     }
 
     .img-right & {
