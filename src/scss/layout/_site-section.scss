@@ -42,7 +42,7 @@ $section-padding-bm: 2vh;
 
         .btn {
             opacity: 0;
-            transition: opacity $animation-speed-slow3x 2s;
+            transition: $animation-speed, opacity $animation-speed-slow3x 1s;
         }
     }
 }

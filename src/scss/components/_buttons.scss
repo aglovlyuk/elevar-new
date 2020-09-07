@@ -48,7 +48,7 @@ a[class*="btn"] {
             width: 135%;
             bottom: 0;
             pointer-events: none;
-            background-color: lighten($cr-brand-primary, 20%);
+            background-color: $rgb-lime;
             transform: skew(-45deg) scaleX(-1);
             transform-origin: 0 100%;
         }
