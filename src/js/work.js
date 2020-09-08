@@ -1,5 +1,4 @@
 const Isotope = require('isotope-layout');
-import isotope from 'isotope-layout'
 const jQueryBridget = require('jquery-bridget');
 const InfiniteScroll = require('infinite-scroll');
 import Lazyload from 'lazyload';
@@ -85,8 +84,6 @@ var Work = function(settings) {
             ? populateTagBlurb(tagName)
             : $grid.isotope('remove', $($grid).find('.blurb')).isotope('layout');
 
-            console.log($grid.length)
-
         // filter items
         if ($grid.length > 0) {
             loadAll();
@@ -94,13 +91,13 @@ var Work = function(settings) {
             //app.initArrow();
 
             if (tagName === '*') {
-                $grid.isotope({ sortBy: 'originial-order' }).isotope();
+                $grid.isotope({ sortBy: 'originial-order' }).isotope({ filter: filterValue });
                 return;
             }
 
             $grid.isotope({ sortBy: ['featured', 'random'] });
 
-            $grid.isotope('updateSortData').isotope();
+            $grid.isotope('updateSortData').isotope({ filter: filterValue });
         }
 
         $grid.isotope('layout');
