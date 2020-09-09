@@ -7,18 +7,17 @@
 
 <section id="people-section" class="people-container">
     <div class="container">
-        <div class="toolbar">
-            <ul class="filters" id="js-people-filters">
-                <li><a href="#all" class="filters__btn is-checked" data-filter="*">View All</a></li>
-                <li><a href="#executive-leadership" class="filters__btn" data-filter=".executive-leadership">Executive Leadership</a></li>
-                <li><a href="#specialist" class="filters__btn" data-filter=".specialist">Specialists</a></li>
-            </ul>
+        <ul class="submenu people-submenu" id="js-people-filters">
+            <li><a href="#all" class="submenu__btn is-checked" data-filter="*">View All</a></li>
+            <li><a href="#executive-leadership" class="submenu__btn" data-filter=".executive-leadership">Executive Leadership</a></li>
+            <li><a href="#specialist" class="submenu__btn" data-filter=".specialist">Specialists</a></li>
 
-            <form action="" class="search-form">
-                <input class="search-form__control form-control js-filter-search" aria-label="Search field" type="search">
-                <span class="search-form__cta js-search-opener btn-transparency" aria-label="Search button"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg></span>
-            </form>
-        </div>
+            <li>
+                <form class="search-container">
+                    <input class="search js-people-search" type="search" aria-label="Search field" placeholder="Search">
+                </form>
+            </li>
+        </ul>
 
         <div class="people-lists row js-grid-people">
             <div class="grid-sizer col-12 col-sm-6 col-md-4 col-lg-3"></div>
@@ -142,6 +141,7 @@
                 <span class="dot dot_4"></span>
             </div>
         </div>
+
         <div class="no-results hidden">
             <p>We're sorry, your search didn't match any results. Please try again.</p>
         </div>

@@ -7,25 +7,24 @@
 
 <section id="work-section" class="work-container" data-section="worktype">
     <div class="container">
-        <div class="toolbar">
-            <ul class="filters" id="js-work-filters">
-                <li><a href="#all" class="filters__btn is-checked" data-filter="*">View All</a></li>
-                <li><a href="#learn" class="filters__btn" data-filter=".learn">Executive Leadership</a></li>
-                <li><a href="#heal" class="filters__btn" data-filter=".specialist">Specialists</a></li>
-                <li><a href="#live" class="filters__btn" data-filter=".live">live</a></li>
-                <li><a href="#work" class="filters__btn" data-filter=".work">work</a></li>
-                <li><a href="#stay" class="filters__btn" data-filter=".stay">stay</a></li>
-                <li><a href="#shop" class="filters__btn" data-filter=".shop">shop</a></li>
-                <li><a href="#research" class="filters__btn" data-filter=".research">research</a></li>
-                <li><a href="#gather" class="filters__btn" data-filter=".gather">gather</a></li>
-                <li><a href="#compete" class="filters__btn" data-filter=".compete">compete</a></li>
-            </ul>
+        <ul class="submenu work-submenu" id="js-work-filters">
+            <li><a href="#all" class="submenu__btn is-checked" data-filter="*">View All</a></li>
+            <li><a href="#learn" class="submenu__btn" data-filter=".learn">Executive Leadership</a></li>
+            <li><a href="#heal" class="submenu__btn" data-filter=".specialist">Specialists</a></li>
+            <li><a href="#live" class="submenu__btn" data-filter=".live">live</a></li>
+            <li><a href="#work" class="submenu__btn" data-filter=".work">work</a></li>
+            <li><a href="#stay" class="submenu__btn" data-filter=".stay">stay</a></li>
+            <li><a href="#shop" class="submenu__btn" data-filter=".shop">shop</a></li>
+            <li><a href="#research" class="submenu__btn" data-filter=".research">research</a></li>
+            <li><a href="#gather" class="submenu__btn" data-filter=".gather">gather</a></li>
+            <li><a href="#compete" class="submenu__btn" data-filter=".compete">compete</a></li>
 
-            <form action="" class="search-form">
-                <input class="search-form__control form-control js-filter-search" aria-label="Search field" type="search">
-                <span class="search-form__cta js-search-opener btn-transparency" aria-label="Search button"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg></span>
-            </form>
-        </div>
+            <li>
+                <form class="search-container">
+                    <input class="search js-filter-search" type="search" aria-label="Search field" placeholder="Search">
+                </form>
+            </li>
+        </ul>
 
         <div class="work-lists row js-grid-work">
             <div class="grid-sizer col-12 col-sm-6 col-md-4 col-lg-3"></div>

@@ -16,6 +16,7 @@
     }
 
     .work-submenu {
+        @extend %listreset;
         @include flexbox();
         @include justify-content(center);
         @include align-items(center);
@@ -37,6 +38,11 @@
 
             a {
                 text-decoration: none;
+                color: $font-cr-secondary;
+
+                &.is-checked {
+                    color: $rgb-lime;
+                }
             }
 
             &:first-child {
@@ -49,12 +55,6 @@
 
                 @include media-tablet {
                     margin-left: 30px;
-                }
-            }
-
-            &.active {
-                a {
-                    color: $rgb-lime;
                 }
             }
         }

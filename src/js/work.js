@@ -75,7 +75,7 @@ var Work = function(settings) {
             : filterValue;
 
         // menu active states
-        $workSubMenu.find('.filters__btn').removeClass('is-checked');
+        $workSubMenu.find('.submenu__btn').removeClass('is-checked');
         $this.toggleClass('is-checked');
 
 
@@ -144,6 +144,8 @@ var Work = function(settings) {
     }
 
     function initIsotope() {
+        const $noResults = $('.no-results');
+
         // init Isotope
         var $win = $(window),
             $con = $('#masonry'),
@@ -216,6 +218,11 @@ var Work = function(settings) {
 
             setTimeout(function () {
                 $grid.isotope();
+
+                //show message if no results returned.
+                !$grid.data('isotope').filteredItems.length
+                    ? $noResults.removeClass('hidden')
+                    : $noResults.addClass('hidden');
             }, 100);
         }, 200));
 
@@ -239,8 +246,10 @@ var Work = function(settings) {
         $contentArrow = $('#content-arrow');
         numberOfPages = parseInt($('.pagination').find('.page-num').last().text());
 
-        lazyload();
-        initIsotope();
+        if($workPage.length > 0) {
+            lazyload();
+            initIsotope();
+        }
 
         // Event handlers
         if ($workSubMenu.length > 0) {

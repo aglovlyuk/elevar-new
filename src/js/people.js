@@ -53,7 +53,7 @@ var People = function(settings){
                 scrollToPosition($parent);
             }
         } else {
-            var $items = $peopleSubMenu.find('.filters__btn'),
+            var $items = $peopleSubMenu.find('.submenu__btn'),
                 arr = new Array();
 
             $.each($items, function(index, value) {
@@ -84,14 +84,14 @@ var People = function(settings){
         filterValue = $this.data('filter');
 
         // menu active states
-        $peopleSubMenu.find('.filters__btn').removeClass('is-checked');
+        $peopleSubMenu.find('.submenu__btn').removeClass('is-checked');
         $this.toggleClass('is-checked');
 
         // filter items
         if ($grid.length > 0) {
             loadAll();
 
-            $grid.isotope();
+            $grid.isotope({ filter: filterValue });
         }
     }
 
@@ -129,7 +129,7 @@ var People = function(settings){
     }
 
     function initIsotope() {
-        var $noResults = $('.no-results');
+        const $noResults = $('.no-results');
 
         // init Isotope
         $grid = $($people).isotope({
@@ -160,7 +160,7 @@ var People = function(settings){
         });
 
         $search.on('keyup search', debounce( function() {
-            qsRegex = new RegExp($search.val(), 'i');
+            qsRegex = new RegExp($search.val(), 'gi');
 
             if (typeof filterValue === 'undefined') {
                 loadAll();
@@ -202,7 +202,7 @@ var People = function(settings){
     function init() {
         $people = $('.people-page').find('.js-grid-people');
         $peopleSubMenu = $('#js-people-filters');
-        $search = $('#people-section').find('.js-filter-search');
+        $search = $('.js-people-search');
 
         initIsotope();
 
@@ -210,7 +210,7 @@ var People = function(settings){
         $people.on('click', '.grid-item .info', executiveClickEventHandler);
 
         if ($peopleSubMenu.length > 0) {
-            $peopleSubMenu.find('.filters__btn').on('click', peopleSubMenuClickEventHandler);
+            $peopleSubMenu.find('.submenu__btn').on('click', peopleSubMenuClickEventHandler);
         }
 
         if (window.location.hash.length > 0) {
