@@ -60,7 +60,7 @@ $hero-padding-bm: 3vh;
         width: 100%;
 
         @include media('<tablet') {
-            min-height: 397px;
+            min-height: 235px;
             border-bottom-width: 3px;
         }
     }
