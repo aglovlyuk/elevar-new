@@ -11,7 +11,7 @@ $hero-padding-bm: 3vh;
         margin-bottom: 57px;
     }
 
-    .container {
+    [class*="container"] {
         position: relative;
 
         &:before {

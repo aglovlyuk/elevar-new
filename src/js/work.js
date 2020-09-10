@@ -1,7 +1,8 @@
-const Isotope = require('isotope-layout');
+window.$ = window.jQuery = require('jquery');
+window.isotope = require("isotope-layout/dist/isotope.pkgd.min");
 const jQueryBridget = require('jquery-bridget');
 const InfiniteScroll = require('infinite-scroll');
-import Lazyload from 'lazyload';
+const Lazyload = require('lazyload');
 const imagesLoaded = require('imagesloaded');
 
 // make imagesLoaded available for InfiniteScroll
@@ -9,13 +10,11 @@ InfiniteScroll.imagesLoaded = imagesLoaded;
 
 // make jQuery plugins
 imagesLoaded.makeJQueryPlugin( $ );
-
 jQueryBridget( 'infiniteScroll', InfiniteScroll, $ );
-jQueryBridget( 'isotope', Isotope, $ );
 jQueryBridget( 'lazyload', Lazyload, $ );
 
 var Work = function(settings) {
-    var $window,
+    let $window,
         $body,
         $work,
         $workPage,
@@ -91,13 +90,13 @@ var Work = function(settings) {
             //app.initArrow();
 
             if (tagName === '*') {
-                $grid.isotope({ sortBy: 'originial-order' }).isotope({ filter: filterValue });
+                $grid.isotope({ sortBy: 'originial-order' }).isotope();
                 return;
             }
 
             $grid.isotope({ sortBy: ['featured', 'random'] });
 
-            $grid.isotope('updateSortData').isotope({ filter: filterValue });
+            $grid.isotope('updateSortData').isotope();
         }
 
         $grid.isotope('layout');
