@@ -4,6 +4,10 @@
     color: $rgb-lime;
 }
 
+.grid-sizer {
+    z-index: -1;
+}
+
 .text-shadow {
     @include text-shadow(1px 1px 1px rgba(150,150,150,0.2));
 }
