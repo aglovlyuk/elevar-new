@@ -110,7 +110,7 @@
             content: '|';
             position: absolute;
             top: .17em;
-            right: -19%;
+            right: -15px;
             font-size: .85em;
 
             @include media('>=phone') {
@@ -174,7 +174,7 @@
         width: 30px;
         position: absolute;
         right: 0;
-        bottom: 13px;
+        bottom: 12px;
     }
 
     @include media('<phone') {

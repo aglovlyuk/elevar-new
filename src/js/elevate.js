@@ -2,8 +2,10 @@ window.$ = window.jQuery = require('jquery');
 window.isotope = require("isotope-layout/dist/isotope.pkgd.min");
 const jQueryBridget = require('jquery-bridget');
 const InfiniteScroll = require('infinite-scroll');
+const imagesLoaded = require('imagesloaded');
 // make Infinite Scroll a jQuery plugin
 jQueryBridget( 'infiniteScroll', InfiniteScroll, $ );
+imagesLoaded.makeJQueryPlugin( $ );
 
 const Elevate = function() {
     let qsRegex,
@@ -50,6 +52,14 @@ const Elevate = function() {
                 return searchResult && buttonResult;
             }
         });
+
+        // layout Isotope after each image loads
+        $grid.imagesLoaded().progress(function () {
+            $grid.isotope('layout');
+        })
+            .on('layoutComplete', function() {
+                gridElements.addClass('grid-init')
+            });
 
         let iso = $grid.data('isotope');
 
