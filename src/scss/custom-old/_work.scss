@@ -39,6 +39,7 @@
             a {
                 text-decoration: none;
                 color: $font-cr-secondary;
+                font-size: 13px;
 
                 &.is-checked {
                     color: $rgb-lime;
@@ -155,7 +156,7 @@
                     }
 
                     p {
-                        @include font-size(1);
+                        @include font-size(0.9);
                         color: $rgb-grey;
                         text-align: left;
                     }
