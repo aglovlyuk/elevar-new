@@ -1,5 +1,6 @@
 import './header';
 import './isotope';
+import './elevate';
 import './modals';
 import './outline-fix';
 import './form-search';
