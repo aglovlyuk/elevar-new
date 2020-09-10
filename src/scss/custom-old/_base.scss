@@ -15,6 +15,7 @@
 }
 
 .search-container {
+    margin: 0;
     input[type="search"]{
         @include box-sizing();
         @include border-radius(20px);
