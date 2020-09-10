@@ -97,6 +97,7 @@
                     display: block;
                     overflow: hidden;
                     position: relative;
+                    color: inherit;
                 }
 
                 figure {
@@ -144,7 +145,6 @@
 
                 &.blurb {
                     @include box-sizing();
-                    background: 0 0 $rgb-lime;
                     color: $rgb-white;
                     height: 423px;
 
@@ -166,6 +166,8 @@
                         @include flex-direction(column);
                         height: 100%;
                         padding: 5%;
+                        background: $rgb-lime;
+                        overflow: auto;
 
                         h1, h2 {
                             width: 10%;
