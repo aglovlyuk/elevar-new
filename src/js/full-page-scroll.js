@@ -2750,6 +2750,9 @@ $(function() {
         scrollOverflow: true,
         afterRender: function () {
             $('body').addClass('fp-init')
+        },
+        afterLoad: function(){
+            $(this).addClass('is-visible');
         }
     });
 
