@@ -4,8 +4,10 @@
 
 .slider-container {
     margin-bottom: 25px;
-    padding-bottom: 25px;
+    //padding-bottom: 25px;
     height: 40vh;
+    position: relative;
+    overflow: hidden;
 
     @include media('>=tablet') {
         height: 50vh;
@@ -17,7 +19,6 @@
     }
 
     .slick-slider {
-        background: 0 0 $rgb-grey-light;
         height: 100%;
         padding: 0;
 
@@ -37,7 +38,7 @@
 
         .slick-track {
             display: flex;
-            align-items: center;
+            //align-items: center;
             height: 100%;
 
             .slick-slide {
@@ -45,11 +46,9 @@
             }
         }
 
-        .slick-img {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            background-position: 0 0;
+        img {
+            background-color: #d1d3d4;
+            vertical-align: top;
 
             @include media('>=desktop') {
                 background-position: center center;
@@ -185,6 +184,12 @@
 
         .image-container {
             padding: 0 5px;
+
+            img {
+                @include media('>=desktop') {
+                    max-height: 600px;
+                }
+            }
         }
     }
 

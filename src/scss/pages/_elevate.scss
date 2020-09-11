@@ -170,6 +170,7 @@
 }
 
 .search-form {
+    margin-bottom: 0;
     @include media('<desktop') {
         width: 30px;
         position: absolute;

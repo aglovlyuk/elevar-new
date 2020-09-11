@@ -119,6 +119,121 @@ var Work = function(settings) {
         }
     }
 
+    function initSliderAdaptive() {
+        var $moreInfoContainer = $slider.parent().find('.teaser-info-container'),
+            $btnMoreInfo = $slider.parent().find('.more-info'),
+            currentSlideIndex,
+            totalSlideCount;
+
+        $slider.on('init', function (event, slick) {
+            currentSlideIndex = slick.slickCurrentSlide();
+            totalSlideCount = slick.slideCount;
+
+            var $currentSlide = slick.$slides[currentSlideIndex];
+
+            var width = $($currentSlide).width();
+            var parentWidth = $(this).parent().width();
+            var marginleft = ((parentWidth - width) / 2) - 5;
+
+            setTimeout(function () {
+                $('.block-left, .block-right').css({
+                    'width': marginleft
+                });
+            }, 100);
+
+
+            $('.block-left').on('click', function (e) {
+                e.preventDefault();
+
+                slick.slickPrev();
+            });
+
+            $('.block-right').on('click', function (e) {
+                e.preventDefault();
+
+                slick.slickNext();
+            });
+
+            // check to see if more info is present, if so bump over arrow
+            moveSliderArrow($slider, currentSlideIndex);
+        });
+
+        $slider.slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            centerMode: true,
+            variableWidth: true,
+            speed: 500,
+            autoplay: true,
+            autoplaySpeed: 10000
+        }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            if (nextSlide > 0) {
+                $slider.find('.slick-next').removeClass('testimonial').show();
+
+                $moreInfoContainer
+                    .removeClass('active')
+                    .addClass('hide');
+            } else {
+                moveSliderArrow($slider, nextSlide);
+
+                $moreInfoContainer.removeClass('hide');
+            }
+        }).on('afterChange', function (event, slick, currentSlide) {
+            currentSlideIndex = currentSlide;
+
+            var slidePadding = 5,
+                previousSlideIndex = parseInt(currentSlide - 1),
+                $prevSlide = slick.$slides[previousSlideIndex],
+                $currentSlide = slick.$slides[currentSlideIndex];
+
+            // get window slide offsets
+            var width = $($currentSlide).width(),
+                parentWidth = $(this).parent().width(),
+                marginleft = (parentWidth - width) / 2;
+
+            $('.block-left, .block-right').css({
+                'width': marginleft - slidePadding
+            });
+        });
+
+        $slider.imagesLoaded(function () {
+            var $sliderApadtive = $('.slider-adaptive');
+
+            var slick = $sliderApadtive.slick('getSlick');
+
+            currentSlideIndex = slick.slickCurrentSlide();
+            totalSlideCount = slick.slideCount;
+
+            var $currentSlide = slick.$slides[currentSlideIndex];
+            var width = $($currentSlide).width();
+            var parentWidth = $sliderApadtive.parent().width();
+            var marginleft = ((parentWidth - width) / 2) - 5;
+
+            setTimeout(function () {
+                $('.block-left, .block-right').css({
+                    'width': marginleft
+                });
+            }, 100);
+        });
+
+        // more info click
+        $moreInfoContainer.on('click', function (e) {
+            e.preventDefault();
+
+            var $this = $(this);
+            $this.toggleClass('active');
+
+            moveSliderArrow($slider, 0);
+
+            if ($this.hasClass('active')) {
+                $slider.slick('slickPause');
+            } else {
+                $slider.slick('slickPlay');
+            }
+        });
+    }
+
     function initFilter() {
         var hash = window.location.hash,
             $items = $workSubMenu.find('a'),
@@ -191,10 +306,7 @@ var Work = function(settings) {
         // layout Isotope after each image loads
         $grid.imagesLoaded().progress(function () {
             $grid.isotope('layout');
-        })
-            .on('layoutComplete', function() {
-                gridElements.addClass('grid-init')
-            });
+        });
 
         let iso = $grid.data('isotope');
 
@@ -255,6 +367,10 @@ var Work = function(settings) {
             $workSubMenu.find('a').on('click', workSubMenuClickEventHandler);
 
             menuClicked = true;
+        }
+
+        if($body.hasClass('work-details')) {
+            initSliderAdaptive();
         }
 
         if (window.location.hash.length > 0) {

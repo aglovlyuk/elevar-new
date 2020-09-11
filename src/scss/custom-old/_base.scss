@@ -6,11 +6,7 @@
 
 .grid-sizer {
     z-index: -1;
-    position: absolute;
-
-    .grid-init & {
-        position: static;
-    }
+    position: relative;
 }
 
 .text-shadow {

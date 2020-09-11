@@ -56,10 +56,7 @@ const Elevate = function() {
         // layout Isotope after each image loads
         $grid.imagesLoaded().progress(function () {
             $grid.isotope('layout');
-        })
-            .on('layoutComplete', function() {
-                gridElements.addClass('grid-init')
-            });
+        });
 
         let iso = $grid.data('isotope');
 

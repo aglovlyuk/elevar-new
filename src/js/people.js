@@ -148,10 +148,7 @@ var People = function(settings){
         // layout Isotope after each image loads
         $grid.imagesLoaded().progress(function () {
             $grid.isotope('layout');
-        })
-            .on('layoutComplete', function() {
-                gridElements.addClass('grid-init')
-            });
+        });
 
         $search.on('keyup search', debounce( function() {
             qsRegex = new RegExp($search.val(), 'gi');
