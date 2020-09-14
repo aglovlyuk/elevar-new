@@ -67,7 +67,7 @@
             font-size: 0;
             outline: none;
             line-height: 1;
-            z-index: 9999;
+            z-index: 100;
 
             @include media('>=tablet') {
                 top: 50%;
@@ -76,7 +76,7 @@
 
             &.slick-prev {
                 left: 1%;
-                z-index: 9999;
+                z-index: 100;
 
                 &:before {
                     @include font-themify();
@@ -91,7 +91,7 @@
 
             &.slick-next {
                 right: 1%;
-                z-index: 9999;
+                z-index: 100;
 
                 &:before {
                     @include font-themify();

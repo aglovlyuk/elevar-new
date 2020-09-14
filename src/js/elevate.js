@@ -63,6 +63,8 @@ const Elevate = function() {
         $grid.infiniteScroll({
             path: '.pagination__next',
             append: '.grid-item',
+            loadOnScroll: false,
+            button: '.js-btn-more',
             hideNav: '.pagination',
             checkLastPage: true,
             history: false,
@@ -88,6 +90,11 @@ const Elevate = function() {
             }, 100);
         }, 200));
 
+        // btnMore click
+        // btnMore.on('keyup search', debounce( function() {
+        //     $grid.infiniteScroll('loadNextPage');
+        // }, 200));
+
         // show/hide more button
         $grid.on('arrangeComplete', function (event, filteredItems) {
             if(filteredItems.length < amountItems) {
@@ -108,7 +115,6 @@ const Elevate = function() {
     }
 
     // bind filter button click
-
     function filterEventHandler() {
         var $this = $(this);
 

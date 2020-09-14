@@ -2747,6 +2747,7 @@ $(function() {
         //menu: '.js--menu-anchor',
         fixedElements: '.header',
         //responsiveWidth: 768,
+        //scrollBar: true,
         scrollOverflow: true,
         afterRender: function () {
             $('body').addClass('fp-init')

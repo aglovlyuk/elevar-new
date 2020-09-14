@@ -228,6 +228,12 @@
         @include media('>=desktop') {
             padding-top: 28px;
         }
+
+        .hiddenContent
+        {
+            display: none;
+            text-align: left;
+        }
     }
 }
 

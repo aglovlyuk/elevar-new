@@ -57,6 +57,11 @@ var Application = function(application){
 
         $window.on('resize', windowResizeHandler);
         $window.resize();
+
+        $('.collapsedContent .btn-primary').on('click', function() {
+            $(this).hide();
+            $(this).parent().find('.hiddenContent').fadeIn();
+        });
     }
 
     return {

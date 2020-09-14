@@ -232,6 +232,8 @@ var Work = function(settings) {
                 $slider.slick('slickPlay');
             }
         });
+
+        
     }
 
     function initFilter() {
@@ -345,6 +347,13 @@ var Work = function(settings) {
                 }
             }
         });
+
+        window.addEventListener('load', function () {
+            (function ($) {
+                $("img.lazyload").lazyload();
+                $grid.isotope('layout');
+            })(jQuery);
+        });
     }
 
     function init() {
@@ -383,6 +392,8 @@ var Work = function(settings) {
                 initFilter();
             }
         });
+
+
     }
 
     return {

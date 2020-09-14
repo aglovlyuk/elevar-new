@@ -160,6 +160,10 @@
                         @include font-size(0.9);
                         color: $rgb-grey;
                         text-align: left;
+
+                    }
+                    a{
+                        display: inline;
                     }
 
                     .info {
