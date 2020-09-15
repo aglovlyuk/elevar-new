@@ -102,10 +102,6 @@
     border-radius: 0;
 }
 
-.form-gate {
-    margin-bottom: -10px;
-}
-
 .modal-footer {
     padding: 20px 4.618% 36px;
     border: 0;
@@ -124,6 +120,7 @@
     line-height: 15px;
     font-style: italic;
     display: block;
+    margin-top: -10px;
 
     a {
         color: currentColor;

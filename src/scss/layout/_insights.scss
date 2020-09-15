@@ -1,12 +1,12 @@
 .insights-section {
-    padding-bottom: 100px;
+    padding-bottom: 15vh;
 
-    @include media('>=desktop') {
-        padding-bottom: 200px;
+    @include media('height>=800px') {
+        padding-bottom: 11vh;
     }
 }
 
-.insights {
+.insights-wrapp {
     background-color: $cr-brand-secondary;
     padding: 23px 10px 0;
 

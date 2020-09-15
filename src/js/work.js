@@ -141,7 +141,6 @@ var Work = function(settings) {
                 });
             }, 100);
 
-
             $('.block-left').on('click', function (e) {
                 e.preventDefault();
 
@@ -232,8 +231,6 @@ var Work = function(settings) {
                 $slider.slick('slickPlay');
             }
         });
-
-        
     }
 
     function initFilter() {
@@ -392,8 +389,6 @@ var Work = function(settings) {
                 initFilter();
             }
         });
-
-
     }
 
     return {

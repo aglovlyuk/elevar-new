@@ -150,19 +150,6 @@
     END FOOTER
 ********************************************/
 
-.link-more {
-    display: inline-block;
-    margin-top: 10px;
-    text-transform: uppercase;
-
-    &:after {
-        @include font-awesome();
-        content: '\f105';
-        margin-left: 4px;
-        font-size: 16px;
-    }
-}
-
 .hidden {
     display: none;
 }

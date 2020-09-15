@@ -2,12 +2,9 @@
     BEGIN HOMPAGE
 ********************************************/
 
-.slider-container {
+.main-banner {
     margin-bottom: 25px;
-    //padding-bottom: 25px;
     height: 40vh;
-    position: relative;
-    overflow: hidden;
 
     @include media('>=tablet') {
         height: 50vh;
@@ -17,6 +14,12 @@
         height: 80vh;
         margin-bottom: 85px;
     }
+}
+
+.slider-container {
+    //padding-bottom: 25px;
+    position: relative;
+    overflow: hidden;
 
     .slick-slider {
         height: 100%;
@@ -193,7 +196,8 @@
         }
     }
 
-    .block-left, .block-right {
+    .block-left,
+    .block-right {
         @include transition(width 0.3s $animation-type);
         background-color: rgba(#000, .6);
         position: absolute;
@@ -230,9 +234,7 @@
     }
 }
 
-.slider-mini-container {
-
-}
+.slider-mini-container {}
 
 .home-page .news-container {
     @include font-size(1.3);
