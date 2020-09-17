@@ -64,6 +64,7 @@ $section-padding-bm: 2vh;
 
 .site-section__img {
     position: relative;
+    background-color: #000;
 
     @include media('>=tablet') {
         flex: 0 0 60%;
@@ -78,6 +79,7 @@ $section-padding-bm: 2vh;
     img {
         object-fit: cover;
         width: 100%;
+        opacity: .85;
         //height: 100%;
 
         .fullpage-wrapper & {
