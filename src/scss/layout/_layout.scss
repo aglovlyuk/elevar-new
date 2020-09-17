@@ -26,39 +26,6 @@ body {
     }
 }
 
-.fp-responsive {
-    .fp-section,
-    .fp-slide,
-    .fp-scrollable,
-    .fp-tableCell {
-        height: auto !important;
-    }
-}
-
-.fullpage-wrapper {
-    @include media('<tablet') {
-        padding-top: $header-height-mob;
-    }
-}
-
-.section:not(.fp-section):not(.footer) {
-    height: calc(100vh - #{$header-height-mob});
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    @include media('>=desktop') {
-        height: calc(100vh - #{$header-height-desk});
-    }
-}
-
-.fp-section {
-    @include media('<tablet') {
-        //padding-top: 0 !important;
-    }
-}
-
 .wrapper {
     overflow: hidden;
     padding-bottom: 5px;
