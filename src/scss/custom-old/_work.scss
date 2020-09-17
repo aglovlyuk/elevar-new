@@ -148,7 +148,6 @@
                 &.blurb {
                     @include box-sizing();
                     color: $rgb-white;
-                    height: 423px;
 
                     h1, h2, p {
                         @include text-shadow(1px, 1px, 1px, rgba(150, 150, 150, 0.2));
@@ -160,20 +159,34 @@
                         @include font-size(0.9);
                         color: $rgb-grey;
                         text-align: left;
-
                     }
-                    a{
+
+                    a {
                         display: inline;
+                    }
+
+                    // for same height with sibling blocks
+                    &:before {
+                        content: '';
+                        padding-bottom: 125%;
+                        display: block;
+                    }
+
+                    .info-wrapp {
+                        position: absolute;
+                        top: 0;
+                        left: 15px;
+                        right: 15px;
+                        overflow: auto;
+                        height: 100%;
                     }
 
                     .info {
                         @include box-sizing();
                         @include flexbox();
                         @include flex-direction(column);
-                        height: 100%;
                         padding: 5%;
                         background: $rgb-lime;
-                        overflow: auto;
 
                         h1, h2 {
                             width: 10%;
