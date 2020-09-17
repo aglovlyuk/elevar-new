@@ -136,7 +136,7 @@ const Elevate = function() {
         gridElements      = $('.js-grid-insights');
         searchInput       = $('.js-filter-search');
         btnMore           = $('.js-btn-more');
-        amountItems       = 5;
+        amountItems       = 12;
         elevateFilters    = $('#js-elevate-filters');
 
         if(gridElements.length > 0) {

@@ -22,7 +22,7 @@ const Tags = function() {
     function init() {
         gridElements      = $('.js-grid-tags');
         btnMore           = $('.js-btn-more');
-        amountItems       = 5;
+        amountItems       = 12;
         elevateFilters    = $('#js-elevate-filters');
 
         if(gridElements.length > 0) {
