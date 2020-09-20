@@ -7,7 +7,7 @@
 
     h1 {
         @include adaptiv-font(20, 35);
-        font-family: $font-primary;
+        font-family: Helvetica, Arial;
         line-height: 1.25;
         font-weight: 900;
         color: $cr-brand-tertiary;
