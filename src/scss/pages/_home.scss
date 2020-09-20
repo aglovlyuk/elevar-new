@@ -1,15 +1,9 @@
 $hero-padding-bm: 3vh;
 
 .main-hero {
-    margin-bottom: 16px;
-
-    @include media('>=tablet') {
-        margin-bottom: 30px;
-    }
-
-    @include media('>=desktop') {
-        margin-bottom: 57px;
-    }
+    padding-bottom: $hero-padding-bm;
+    height: 100%;
+    width: 100%;
 
     [class*="container"] {
         position: relative;
@@ -29,46 +23,22 @@ $hero-padding-bm: 3vh;
         }
     }
 
-    .fullpage-wrapper & {
-        margin-bottom: 0 !important;
-        padding-bottom: $hero-padding-bm;
-        height: 100%;
-        width: 100%;
-
-        .container {
-            height: 100%;
-
-            &:before {
-                bottom: $hero-padding-bm;
-            }
-        }
-
-        img {
-            height: calc(100vh - #{$header-height-mob} - #{$hero-padding-bm});
-            max-height: none;
-
-            @include media('>=desktop') {
-                height: calc(100vh - #{$header-height-desk} - #{$hero-padding-bm});
-            }
-        }
-    }
-
     img {
         border-bottom: 5px solid $cr-brand-primary;
         min-height: 220px;
         background-color: rgba(#000, .6);
         object-fit: cover;
         width: 100%;
-        max-height: 59vh;
+        height: calc(100vh - #{$header-height-mob} - #{$hero-padding-bm});
 
         @include media('<tablet') {
             min-height: 235px;
             border-bottom-width: 3px;
         }
-    }
 
-    > .container {
-        position: relative;
+        @include media('>=desktop') {
+            height: calc(100vh - #{$header-height-desk} - #{$hero-padding-bm});
+        }
     }
 }
 
@@ -82,10 +52,10 @@ $hero-padding-bm: 3vh;
     text-shadow: 1px 1px 3px rgba(#000, .65);
     //margin: -28px 0 0;
 
-    .fullpage-wrapper & {
+    /*.fullpage-wrapper & {
         opacity: 0;
         transition: opacity $animation-speed-slow3x 1.5s;
-    }
+    }*/
 
     .fp-viewing-0 & {
         opacity: 1;
