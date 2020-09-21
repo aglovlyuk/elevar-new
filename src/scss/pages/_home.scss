@@ -1,8 +1,7 @@
 $hero-padding-bm: 3vh;
 
 .main-hero {
-    padding-bottom: $hero-padding-bm;
-    height: 100%;
+    margin-bottom: $hero-padding-bm;
     width: 100%;
 
     [class*="container"] {
@@ -32,11 +31,11 @@ $hero-padding-bm: 3vh;
         max-height: 59vh;
 
         .home-page & {
-            height: calc(100vh - #{$header-height-mob} - #{$hero-padding-bm});
+            height: calc(var(--vh, 1vh) * 100 - #{$header-height-mob} - #{$hero-padding-bm});
             max-height: none;
 
             @include media('>=desktop') {
-                height: calc(100vh - #{$header-height-desk} - #{$hero-padding-bm});
+                height: calc(var(--vh, 1vh) * 100 - #{$header-height-desk} - #{$hero-padding-bm});
             }
         }
 
@@ -46,10 +45,12 @@ $hero-padding-bm: 3vh;
         }
     }
 
-    .container-fluid {
-        img {
-            @include media('>=desktop') {
-                max-height: 408px;
+    body:not(.home-page) {
+        .container-fluid {
+            img {
+                @include media('>=desktop') {
+                    max-height: 408px;
+                }
             }
         }
     }
@@ -64,15 +65,6 @@ $hero-padding-bm: 3vh;
     z-index: 2;
     text-shadow: 1px 1px 3px rgba(#000, .65);
     //margin: -28px 0 0;
-
-    /*.fullpage-wrapper & {
-        opacity: 0;
-        transition: opacity $animation-speed-slow3x 1.5s;
-    }*/
-
-    .fp-viewing-0 & {
-        opacity: 1;
-    }
 
     &.ttl-lg {
         @include adaptiv-font(38, 90);
