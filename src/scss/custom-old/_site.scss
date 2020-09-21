@@ -327,6 +327,7 @@
         }
 
         li {
+            font-size: 13px;
             margin: 0 0 6px 16px;
 
             @include media('>=desktop') {
@@ -398,6 +399,9 @@
             }
 
             .bio-container {
+                font-size: .875rem;
+                line-height: 1.4;
+
                 .more {
                     @include transition(all $animation-speed $animation-type);
                     display: none;
@@ -412,7 +416,6 @@
                 .bio-container__name,
                 p,
                 .email {
-                    font-size: 1rem;
                     font-weight: normal;
                     margin: 0;
                     padding: 0;
@@ -425,7 +428,6 @@
                 }
 
                 p {
-                    font-size: inherit;
                     padding: 14px 0;
                     text-align: justify;
                     text-transform: inherit;
@@ -471,7 +473,6 @@
                 .bio-container__name,
                 .bio-container__title {
                     text-align: left;
-                    font-size: 1rem;
                     color: $rgb-grey;
                 }
 
@@ -611,11 +612,12 @@
     }
 
     h1 {
-        @include adaptiv-font(24, 33);
+        @include adaptiv-font(22, 27);
+        font-weight: 400;
     }
 
     h2 {
-        @include adaptiv-font(20, 25);
+        @include adaptiv-font(18, 21);
         font-weight: 600;
         margin-bottom: 12px;
     }
@@ -628,6 +630,8 @@
 
     .maps-container {
         position: relative;
+        font-size: 0.875rem;
+        line-height: 1.4;
 
         #map {
             width: 100%;
@@ -728,6 +732,9 @@
     }
 
     .contact-container {
+        font-size: 0.875rem;
+        line-height: 1.4;
+
         a {
             @include transition(color $animation-speed $animation-type);
             color: $rgb-grey;

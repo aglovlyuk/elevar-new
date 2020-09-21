@@ -65,12 +65,15 @@
 }
 
 .about-page,
+.work-page,
 .quickdraw-page,
 .team-member-page {
     .about-container,
+    .work-container,
     .team-member-container {
         font-family: $font-primary;
-        font-size: 14px;
+        font-size: .875rem;
+        line-height: 1.4;
 
         a {
             color: inherit;
@@ -90,9 +93,13 @@
         font-size: 21px;
     }
 
+    h3 {
+        font-size: 17px;
+    }
+
     h1, h2, h3 {
         font-family: $font-primary;
-        color: #5c5c60;
+        //color: #5c5c60;
         font-weight: 400;
         padding: 0;
         margin: 0 0 6px;

@@ -29,15 +29,20 @@ $hero-padding-bm: 3vh;
         background-color: rgba(#000, .6);
         object-fit: cover;
         width: 100%;
-        height: calc(100vh - #{$header-height-mob} - #{$hero-padding-bm});
+        max-height: 59vh;
+
+        .home-page & {
+            height: calc(100vh - #{$header-height-mob} - #{$hero-padding-bm});
+            max-height: none;
+
+            @include media('>=desktop') {
+                height: calc(100vh - #{$header-height-desk} - #{$hero-padding-bm});
+            }
+        }
 
         @include media('<tablet') {
             min-height: 235px;
             border-bottom-width: 3px;
-        }
-
-        @include media('>=desktop') {
-            height: calc(100vh - #{$header-height-desk} - #{$hero-padding-bm});
         }
     }
 }
