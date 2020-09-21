@@ -89,9 +89,14 @@
         margin-bottom: 25px;
     }
 
+    .insights-section & {
+        max-height: 280px;
+    }
+
     img {
         width: 100%;
         transition: $animation-speed;
+        object-fit: cover;
     }
 }
 
