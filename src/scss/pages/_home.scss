@@ -45,7 +45,7 @@ $hero-padding-bm: 3vh;
         }
     }
 
-    body:not(.home-page) {
+    body:not(.home-page) & {
         .container-fluid {
             img {
                 @include media('>=desktop') {
