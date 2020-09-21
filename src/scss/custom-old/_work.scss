@@ -83,7 +83,7 @@
                 position: relative;
 
                 h2, h3 {
-                    @include font-size(1.4);
+                    @include font-size(1.3125);
                     line-height: 1.1;
                     color: $rgb-lime;
                     margin: 0;
@@ -136,7 +136,7 @@
                     @include align-items(center);
 
                     span {
-                        @include font-size(1.4);
+                        @include font-size(0.875);
                         border: solid 1px $rgb-lime;
                         text-decoration: none;
                         text-transform: lowercase;
@@ -197,12 +197,13 @@
                 .overlay {
                     @include box-sizing();
                     position: absolute;
+                    font-family: $font-primary;
                     top: 0;
                     bottom: 0;
                     right: 0;
                     left: 0;
                     z-index: 100;
-                    display: none;
+                    //display: none;
                 }
 
                 &:hover, &.active {
@@ -508,7 +509,7 @@
                     @include align-items(center);
 
                     span {
-                        @include font-size(1.4);
+                        @include font-size(0.875);
                         border: solid 1px $rgb-lime;
                         text-decoration: none;
                         text-transform: lowercase;

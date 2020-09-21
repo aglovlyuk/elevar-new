@@ -1,0 +1,117 @@
+.slider-container .block-left,
+.slider-container .block-right,
+.work-page #work-detail-section .teaser-info-container {
+    height: 100%;
+}
+
+.canvas {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+@media (max-width:481px) {
+    .work-page #work-detail-section .teaser-info-container .project-stats {
+        padding-bottom: 0;
+    }
+
+    .work-page #work-detail-section .teaser-info-container .project-stats h1 {
+        font-size: 16px;
+    }
+
+    .work-page #work-detail-section .teaser-info-container .teaser-content blockquote {
+        font-size: 1em;
+    }
+
+    .slider-container .slick-slider .slick-arrow.slick-next.testimonial.expanded {
+        right: -9px;
+    }
+
+    .work-page #work-detail-section .teaser-info-container .teaser-content blockquote span:not(.title):before,
+    .work-page #work-detail-section .teaser-info-container .teaser-content blockquote span:not(.title):after {
+        font-size: 3rem;
+    }
+
+    .work-page #work-detail-section .teaser-info-container .teaser-content blockquote span:not(.title):before {
+        left: -6px;
+    }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+    .work-page #work-detail-section .teaser-info-container .project-stats {
+        padding-bottom: 0;
+    }
+
+    .work-page #work-detail-section .teaser-info-container .project-stats h1 {
+        font-size: 16px;
+    }
+
+    .work-page #work-detail-section .teaser-info-container .teaser-content blockquote {
+        font-size: 1em;
+    }
+
+    .slider-container .slick-slider .slick-arrow.slick-next.testimonial.expanded {
+        right: -9px;
+    }
+
+    .work-page #work-detail-section .teaser-info-container .teaser-content blockquote span:not(.title):before,
+    .work-page #work-detail-section .teaser-info-container .teaser-content blockquote span:not(.title):after {
+        font-size: 3rem;
+    }
+
+    .work-page #work-detail-section .teaser-info-container .teaser-content blockquote span:not(.title):before {
+        left: -6px;
+    }
+}
+
+.about-page,
+.quickdraw-page,
+.team-member-page {
+    .about-container,
+    .team-member-container {
+        font-family: $font-primary;
+        font-size: 14px;
+
+        a {
+            color: inherit;
+
+            &:hover {
+                color: $hex-lime;
+                text-decoration: none;
+            }
+        }
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    h1, h2, h3 {
+        font-family: $font-primary;
+        color: #5c5c60;
+        font-weight: 400;
+        padding: 0;
+        margin: 0 0 6px;
+    }
+}
+
+.about-page,
+.quickdraw-page {
+    h2 {
+        color: $hex-lime;
+    }
+
+    .content-container {
+        figure {
+            @include media('>=desktop') {
+                float: left;
+                max-width: 400px;
+                padding: 0 25px 25px 0;
+            }
+        }
+    }
+}
