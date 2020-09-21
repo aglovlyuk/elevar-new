@@ -71,6 +71,7 @@ body {
 
     .nav-item {
         position: relative;
+        font-size: .8125rem;
 
         &:not(:first-child) {
             @include media('>=tablet') {
@@ -214,7 +215,6 @@ body {
         text-decoration: none;
         position: relative;
         display: inline-block;
-        font-size: .8125rem;
         padding-top: .25em;
         padding-bottom: .25em;
 

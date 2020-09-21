@@ -189,6 +189,12 @@
             padding: 0 5px;
 
             img {
+                max-height: 320px;
+
+                @include media('>=desktop') {
+                    max-height: 480px;
+                }
+                
                 @include media('>=desktop') {
                     max-height: 600px;
                 }

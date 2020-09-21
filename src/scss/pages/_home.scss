@@ -45,6 +45,14 @@ $hero-padding-bm: 3vh;
             border-bottom-width: 3px;
         }
     }
+
+    .container-fluid {
+        img {
+            @include media('>=desktop') {
+                max-height: 408px;
+            }
+        }
+    }
 }
 
 .main-hero__ttl {
