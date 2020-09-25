@@ -120,6 +120,8 @@ var Work = function(settings) {
     }
 
     function initSliderAdaptive() {
+        $slider = $('.slider-adaptive');
+
         var $moreInfoContainer = $slider.parent().find('.teaser-info-container'),
             $btnMoreInfo = $slider.parent().find('.more-info'),
             currentSlideIndex,
