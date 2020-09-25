@@ -89,10 +89,10 @@ var Work = function(settings) {
 
             //app.initArrow();
 
-            if (tagName === '*') {
+            /*if (tagName === '*') {
                 $grid.isotope({ sortBy: 'originial-order' }).isotope();
                 return;
-            }
+            }*/
 
             $grid.isotope({ sortBy: ['featured', 'random'] });
 

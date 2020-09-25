@@ -10,6 +10,7 @@
 
     .insights-list {
         margin-bottom: 25px;
+        position: relative;
 
         @include media('<desktop') {
             margin-left: -5px;

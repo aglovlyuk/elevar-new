@@ -8,10 +8,10 @@
 
 .insights-wrapp {
     background-color: $cr-brand-secondary;
-    padding: 23px 10px 0;
+    padding-top: 23px;
 
     @include media('>=desktop') {
-        padding: 39px 32px 0;
+        padding-top: 39px;
         margin-bottom: 33px;
     }
 }
@@ -33,6 +33,14 @@
 }
 
 .insights-list {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include media('>=desktop') {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
     @include media('<tablet') {
         padding-bottom: 22px;
     }
@@ -95,7 +103,7 @@
 
     img {
         width: 100%;
-        
+
         transition: $animation-speed;
         object-fit: cover;
     }

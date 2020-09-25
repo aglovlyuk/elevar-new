@@ -5,199 +5,187 @@
 <%= _.template(require('./../includes/header.html').default)(classes) %>
 <div class="icon-sprite" style="position: absolute; width: 0; height: 0;" aria-hidden="true"><%= compilation.assets['spritemap.svg'].source() %></div>
 
-<section class="section" id="section0">
-    <div class="main-hero">
-        <div class="container-fluid">
-            <img src="uploads/hero.jpg" alt="">
-            <h1 class="main-hero__ttl">Seeing what others don’t see.</h1>
+<section class="main-hero" id="section0">
+    <div class="container-fluid">
+        <img src="uploads/hero.jpg" alt="">
+        <h1 class="main-hero__ttl">Seeing what others don’t see.</h1>
+    </div>
+</section>
+
+<section class="site-section" id="section1">
+    <div class="container-fluid site-section__container d-md-flex align-items-center">
+        <div class="site-section__img">
+            <img src="uploads/about.jpg" alt="About">
+            <h2 class="site-section__img-ttl">About</h2>
+        </div>
+
+        <div class="site-section__txt d-md-flex flex-column justify-content-center align-items-start">
+            <h3 class="site-section__ttl">A melting pot of experiences and perspectives</h3>
+            <p>As a minority-owned practice, we champion each employees journey to their best-self. We offer an autonomous, collaborative culture fueled by a simple question. . . Is that the best we can do?</p>
+            <a href="" class="btn btn-primary">Learn More</a>
         </div>
     </div>
 </section>
 
-<section class="section" id="section1">
-    <div class="site-section">
-        <div class="container-fluid site-section__container d-md-flex align-items-center">
-            <div class="site-section__img">
-                <img src="uploads/about.jpg" alt="About">
-                <h2 class="site-section__img-ttl">About</h2>
-            </div>
+<section class="site-section img-right" id="section2">
+    <div class="container-fluid site-section__container d-md-flex align-items-center">
+        <div class="site-section__img order-md-1">
+            <img src="uploads/people.jpg" alt="People">
+            <h2 class="site-section__img-ttl">PEOPLE</h2>
+        </div>
 
-            <div class="site-section__txt d-md-flex flex-column justify-content-center align-items-start">
-                <h3 class="site-section__ttl">A melting pot of experiences and perspectives</h3>
-                <p>As a minority-owned practice, we champion each employees journey to their best-self. We offer an autonomous, collaborative culture fueled by a simple question. . . Is that the best we can do?</p>
-                <a href="" class="btn btn-primary">Learn More</a>
-            </div>
+        <div class="site-section__txt d-md-flex flex-column justify-content-center align-items-start">
+            <h3 class="site-section__ttl">Our values are lived out in our work, every day</h3>
+            <p>Commitment, Experience, Creativity, Teamwork, Mastery, and Integrity are not only our values, but also our criteria for success as professionals, in our projects, and as a firm. If you need a challenge, or feel underutilized, give us a call.</p>
+            <a href="" class="btn btn-primary">Meet our People</a>
         </div>
     </div>
 </section>
 
-<section class="section" id="section2">
-    <div class="site-section img-right">
-        <div class="container-fluid site-section__container d-md-flex align-items-center">
-            <div class="site-section__img order-md-1">
-                <img src="uploads/people.jpg" alt="People">
-                <h2 class="site-section__img-ttl">PEOPLE</h2>
-            </div>
-
-            <div class="site-section__txt d-md-flex flex-column justify-content-center align-items-start">
-                <h3 class="site-section__ttl">Our values are lived out in our work, every day</h3>
-                <p>Commitment, Experience, Creativity, Teamwork, Mastery, and Integrity are not only our values, but also our criteria for success as professionals, in our projects, and as a firm. If you need a challenge, or feel underutilized, give us a call.</p>
-                <a href="" class="btn btn-primary">Meet our People</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section" id="section3">
-    <div class="projects-section">
+<section class="projects-section" id="section3">
+    <div class="projects">
         <div class="container">
-            <div class="projects">
-                <h2 class="projects__ttl">There is a design for every set of needs – bold, smart, and responsive</h2>
+            <h2 class="projects__ttl">There is a design for every set of needs – bold, smart, and responsive</h2>
 
-                <div class="projects-list row">
-                    <div class="col-6 col-lg-4 grid-item">
-                        <a href="" class="projects-list__item">
-                            <img src="uploads/cincinnati.jpg" alt="">
-                            <div class="projects-list__text-item">
-                                <h3 class="projects-list__text-ttl">Cincinnati Hills Christian Academy</h3>
-                                <div class="txt-overflow">
-                                    <span class="projects-list__city">Cincinnati, OH</span>
-                                    <span class="projects-list__more">View More</span>
-                                </div>
+            <div class="projects-list row">
+                <div class="col-6 col-lg-4 grid-item">
+                    <a href="" class="projects-list__item">
+                        <img src="uploads/cincinnati.jpg" alt="">
+                        <div class="projects-list__text-item">
+                            <h3 class="projects-list__text-ttl">Cincinnati Hills Christian Academy</h3>
+                            <div class="txt-overflow">
+                                <span class="projects-list__city">Cincinnati, OH</span>
+                                <span class="projects-list__more">View More</span>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
+                </div>
 
-                    <div class="col-6 col-lg-4 grid-item">
-                        <a href="" class="projects-list__item">
-                            <img src="uploads/approach.jpg" alt="">
-                            <div class="projects-list__text-item">
-                                <h3 class="projects-list__text-ttl">The Approach</h3>
-                                <div class="txt-overflow">
-                                    <span class="projects-list__city">Cincinnati, OH</span>
-                                    <span class="projects-list__more">View More</span>
-                                </div>
+                <div class="col-6 col-lg-4 grid-item">
+                    <a href="" class="projects-list__item">
+                        <img src="uploads/approach.jpg" alt="">
+                        <div class="projects-list__text-item">
+                            <h3 class="projects-list__text-ttl">The Approach</h3>
+                            <div class="txt-overflow">
+                                <span class="projects-list__city">Cincinnati, OH</span>
+                                <span class="projects-list__more">View More</span>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
+                </div>
 
-                    <div class="col-6 col-lg-4 grid-item">
-                        <a href="" class="projects-list__item">
-                            <img src="uploads/university-gardner.jpg" alt="">
-                            <div class="projects-list__text-item">
-                                <h3 class="projects-list__text-ttl">University of Cincinnati Gardner</h3>
-                                <div class="txt-overflow">
-                                    <span class="projects-list__city">Cincinnati, OH</span>
-                                    <span class="projects-list__more">View More</span>
-                                </div>
+                <div class="col-6 col-lg-4 grid-item">
+                    <a href="" class="projects-list__item">
+                        <img src="uploads/university-gardner.jpg" alt="">
+                        <div class="projects-list__text-item">
+                            <h3 class="projects-list__text-ttl">University of Cincinnati Gardner</h3>
+                            <div class="txt-overflow">
+                                <span class="projects-list__city">Cincinnati, OH</span>
+                                <span class="projects-list__more">View More</span>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
+                </div>
 
-                    <div class="col-6 col-lg-4 grid-item">
-                        <a href="" class="projects-list__item">
-                            <img src="uploads/pilot-chemical.jpg" alt="">
-                            <div class="projects-list__text-item">
-                                <h3 class="projects-list__text-ttl">Pilot Chemical</h3>
-                                <div class="txt-overflow">
-                                    <span class="projects-list__city">Cincinnati, OH</span>
-                                    <span class="projects-list__more">View More</span>
-                                </div>
+                <div class="col-6 col-lg-4 grid-item">
+                    <a href="" class="projects-list__item">
+                        <img src="uploads/pilot-chemical.jpg" alt="">
+                        <div class="projects-list__text-item">
+                            <h3 class="projects-list__text-ttl">Pilot Chemical</h3>
+                            <div class="txt-overflow">
+                                <span class="projects-list__city">Cincinnati, OH</span>
+                                <span class="projects-list__more">View More</span>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
+                </div>
 
-                    <div class="col-6 col-lg-4 grid-item">
-                        <a href="" class="projects-list__item">
-                            <img src="uploads/hilton-garden.jpg" alt="">
-                            <div class="projects-list__text-item">
-                                <h3 class="projects-list__text-ttl">Hilton Garden Inn at Keystone Parke</h3>
-                                <div class="txt-overflow">
-                                    <span class="projects-list__city">Cincinnati, OH</span>
-                                    <span class="projects-list__more">View More</span>
-                                </div>
+                <div class="col-6 col-lg-4 grid-item">
+                    <a href="" class="projects-list__item">
+                        <img src="uploads/hilton-garden.jpg" alt="">
+                        <div class="projects-list__text-item">
+                            <h3 class="projects-list__text-ttl">Hilton Garden Inn at Keystone Parke</h3>
+                            <div class="txt-overflow">
+                                <span class="projects-list__city">Cincinnati, OH</span>
+                                <span class="projects-list__more">View More</span>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
+                </div>
 
-                    <div class="col-6 col-lg-4 grid-item">
-                        <a href="" class="projects-list__item">
-                            <img src="uploads/kroger.jpg" alt="">
-                            <div class="projects-list__text-item">
-                                <h3 class="projects-list__text-ttl">Kroger</h3>
-                                <div class="txt-overflow">
-                                    <span class="projects-list__city">Cincinnati, OH</span>
-                                    <span class="projects-list__more">View More</span>
-                                </div>
+                <div class="col-6 col-lg-4 grid-item">
+                    <a href="" class="projects-list__item">
+                        <img src="uploads/kroger.jpg" alt="">
+                        <div class="projects-list__text-item">
+                            <h3 class="projects-list__text-ttl">Kroger</h3>
+                            <div class="txt-overflow">
+                                <span class="projects-list__city">Cincinnati, OH</span>
+                                <span class="projects-list__more">View More</span>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-
-            <div class="section-cta text-center">
-                <a href="" class="btn btn-primary">View all Projects</a>
-            </div>
         </div>
+    </div>
+
+    <div class="section-cta text-center">
+        <a href="" class="btn btn-primary">View all Projects</a>
     </div>
 </section>
 
-<section class="section" id="section4">
-    <div class="insights-section">
+<section class="insights-section" id="section4">
+    <div class="insights-wrapp">
         <div class="container">
-            <div class="insights-wrapp">
-                <h2 class="insights__ttl">We serve to learn, to be voices of our industry, and mentor the next generation</h2>
+            <h2 class="insights__ttl">We serve to learn, to be voices of our industry, and mentor the next generation</h2>
 
-                <div class="insights-list justify-content-between row">
-                    <div class="col-md-6 col-lg-4">
-                        <a href="" class="insights-item">
-                            <div class="insights-item__img"><img src="uploads/insight.jpg" alt=""></div>
-                            <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
-                            <span role="button" class="link-more">READ MORE</span>
-                        </a>
-                    </div>
+            <div class="insights-list justify-content-between row">
+                <div class="col-md-6 col-lg-4">
+                    <a href="" class="insights-item">
+                        <div class="insights-item__img"><img src="uploads/insight.jpg" alt=""></div>
+                        <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                        <span role="button" class="link-more">READ MORE</span>
+                    </a>
+                </div>
 
-                    <div class="col-md-6 col-lg-4">
-                        <a href="" class="insights-item">
-                            <div class="insights-item__img"><img src="uploads/insight.jpg" alt=""></div>
-                            <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
-                            <span role="button" class="link-more">READ MORE</span>
-                        </a>
-                    </div>
+                <div class="col-md-6 col-lg-4">
+                    <a href="" class="insights-item">
+                        <div class="insights-item__img"><img src="uploads/insight.jpg" alt=""></div>
+                        <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                        <span role="button" class="link-more">READ MORE</span>
+                    </a>
+                </div>
 
-                    <div class="col-md-6 col-lg-4">
-                        <a href="" class="insights-item">
-                            <div class="insights-item__img"><img src="uploads/insight.jpg" alt=""></div>
-                            <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
-                            <span role="button" class="link-more">READ MORE</span>
-                        </a>
-                    </div>
+                <div class="col-md-6 col-lg-4">
+                    <a href="" class="insights-item">
+                        <div class="insights-item__img"><img src="uploads/insight.jpg" alt=""></div>
+                        <h3 class="insights-item__text-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                        <span role="button" class="link-more">READ MORE</span>
+                    </a>
                 </div>
             </div>
-
-            <div class="section-cta text-center">
-                <a href="" class="btn btn-primary">Insights and News</a>
-            </div>
         </div>
+    </div>
+
+    <div class="section-cta text-center">
+        <a href="" class="btn btn-primary">Insights and News</a>
     </div>
 </section>
 
-<section class="section" id="section5">
-    <div class="site-section img-right">
-        <div class="container-fluid site-section__container d-md-flex align-items-center">
-            <div class="site-section__img order-md-1">
-                <img src="uploads/contacts.jpg" alt="Contact">
-                <h2 class="site-section__img-ttl">Contact</h2>
-            </div>
+<section class="site-section img-right" id="section5">
+    <div class="container-fluid site-section__container d-md-flex align-items-center">
+        <div class="site-section__img order-md-1">
+            <img src="uploads/contacts.jpg" alt="Contact">
+            <h2 class="site-section__img-ttl">Contact</h2>
+        </div>
 
-            <div class="site-section__txt d-md-flex flex-column justify-content-center align-items-start">
-                <h3 class="site-section__ttl">Contact Us</h3>
-                <p>Elevar Design Group serves our federal and national corporate clients with the same level of care and compassion as those who live in our local communities. We hope to become a part of your team, as you become part of ours.</p>
-                <a href="" class="btn btn-primary">Get in Touch</a>
-            </div>
+        <div class="site-section__txt d-md-flex flex-column justify-content-center align-items-start">
+            <h3 class="site-section__ttl">Contact Us</h3>
+            <p>Elevar Design Group serves our federal and national corporate clients with the same level of care and compassion as those who live in our local communities. We hope to become a part of your team, as you become part of ours.</p>
+            <a href="" class="btn btn-primary">Get in Touch</a>
         </div>
     </div>
 </section>

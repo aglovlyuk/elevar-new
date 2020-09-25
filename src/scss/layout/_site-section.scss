@@ -10,32 +10,16 @@ $section-padding-bm: 2vh;
     }
 }
 
-.section {
+
+.site-section {
+    padding-bottom: $section-padding-bm;
+
     &:not(:last-of-type) {
-        .site-section {
-            margin-bottom: 20px;
+        margin-bottom: 20px;
 
-            @include media('>=desktop') {
-                margin-bottom: 63px;
-            }
+        @include media('>=desktop') {
+            margin-bottom: 63px;
         }
-    }
-
-    &.is-visible {
-        .site-section {
-            .btn {
-                opacity: 1;
-            }
-        }
-    }
-
-    .site-section {
-        padding-bottom: $section-padding-bm;
-
-        /*.btn {
-            opacity: 0;
-            transition: $animation-speed, opacity $animation-speed-slow3x 1s;
-        }*/
     }
 }
 

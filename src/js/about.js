@@ -11,7 +11,7 @@ var About = function () {
             totalSlideCount;
 
         $sliderAdaptive.on('init', function (event, slick) {
-            currentSlideIndex = slick.slickCurrentSlide();
+            currentSlideIndex = 0;
             totalSlideCount = slick.slideCount;
 
             var $currentSlide = slick.$slides[currentSlideIndex];
@@ -103,10 +103,11 @@ var About = function () {
     }
 
     function init() {
+        let $aboutPage = $('#about-section');
         $sliderAdaptive = $('.slider-adaptive');
         $slider = $('.slider');
 
-        if ($sliderAdaptive.length > 0) {
+        if ($aboutPage.length > 0) {
             initSliderAdaptive();
         }
 
