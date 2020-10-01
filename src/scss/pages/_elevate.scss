@@ -57,7 +57,7 @@
     @include media('>=tablet') {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         padding-top: 3px;
     }
 
@@ -108,9 +108,8 @@
         }
 
         &:before {
+            @include ycenter;
             content: '|';
-            position: absolute;
-            top: .17em;
             right: -15px;
             font-size: .85em;
 
@@ -142,7 +141,7 @@
     text-transform: uppercase;
     transition: $animation-speed;
     position: relative;
-    margin-bottom: 10px;
+    margin: 5px 0;
 
     @include media('>=tablet') {
         padding-left: 4px;

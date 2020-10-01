@@ -194,7 +194,7 @@
                 @include media('>=desktop') {
                     max-height: 480px;
                 }
-                
+
                 @include media('>=desktop') {
                     max-height: 600px;
                 }
@@ -372,7 +372,7 @@
 
         .grid-item {
             cursor: pointer;
-            margin-bottom: 20px;
+            margin-bottom: 34px;
             overflow: hidden;
             width: 100%;
 
@@ -413,10 +413,11 @@
                     display: none;
                 }
 
+                hgroup,
                 .bio-container__heading {
-                    @include box-sizing();
-                    padding: 7px 0 14px 0;
+                    @include box-sizing;
                     width: 100%;
+                    padding: 7px 0 14px;
                 }
 
                 .bio-container__name,

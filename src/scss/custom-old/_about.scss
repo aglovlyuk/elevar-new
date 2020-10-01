@@ -38,6 +38,11 @@
     &.vertical .slider-container {
         max-height: 590px;
     }
+
+    .slick-slide,
+    .slick-slider .slick-track {
+        height: auto;
+    }
 }
 
 .about-container {

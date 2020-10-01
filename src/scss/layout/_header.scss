@@ -50,13 +50,8 @@ body {
 }
 
 .logo {
-    width: 157px;
-    height: 35px;
-
-    @include media('>=tablet') {
-        width: 188px;
-        height: 42px;
-    }
+    width: 200px;
+    height: 45px;
 
     @include media('>=desktop') {
         width: 280px;
@@ -248,11 +243,10 @@ body {
     }
 
     .nav-toggle {
-        position: absolute;
+        @include ycenter;
         right: 13px;
-        top: 20px;
-        width: 23px;
-        height: 23px;
+        width: 27px;
+        height: 26px;
         background-color: #5c5c60;
         padding: 6px 3px;
         cursor: pointer;
@@ -320,7 +314,7 @@ body {
             right: 0;
             height: 100vh;
             overflow: auto;
-            width: 90vw;
+            width: 50vw;
             max-width: 400px;
             z-index: 1000;
             padding: 40px 40px 40px 35px;

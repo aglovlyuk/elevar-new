@@ -21,6 +21,13 @@
 
 .search-container {
     margin: 0;
+    display: flex;
+    align-items: center;
+
+    @include media('<tablet') {
+        justify-content: center;
+    }
+
     input[type="search"]{
         @include box-sizing();
         @include border-radius(20px);
@@ -42,7 +49,7 @@
         @include font-size(1.6);
         content: '\e610';
         vertical-align: middle;
-        margin-right: 2px;
+        margin-right: 6px;
     }
 }
 

@@ -33,13 +33,13 @@
 }
 
 .insights-list {
-    padding-left: 10px;
+    /*padding-left: 10px;
     padding-right: 10px;
 
     @include media('>=desktop') {
         padding-left: 32px;
         padding-right: 32px;
-    }
+    }*/
 
     @include media('<tablet') {
         padding-bottom: 22px;
