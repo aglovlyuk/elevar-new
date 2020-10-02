@@ -118,8 +118,6 @@
             }
 
             @include media('>=desktop') {
-                top: 0;
-                right: -21px;
                 font-size: 1em;
             }
         }
