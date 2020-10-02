@@ -78,6 +78,7 @@ const Elevate = function() {
 
             if (typeof filterValue === 'undefined') {
                 loadAll();
+                btnMore.hide();
             }
 
             setTimeout(function () {
