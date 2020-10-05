@@ -314,7 +314,7 @@
             .teaser-content {
                 @include box-sizing();
                 @include transition(opacity $animation-duration $animation-type);
-                @include font-size(1.2);
+                font-size: 12px;
                 color: $rgb-white;
                 opacity: 0;
                 padding: 4%;
@@ -334,7 +334,7 @@
                 }
 
                 blockquote {
-                    @include font-size(1.5);
+                    font-size: 15px;
                     font-weight: normal;
                     margin: 0;
                     padding: 10px;
@@ -342,7 +342,7 @@
 
                     span:not(.title) {
                         &:before, &:after {
-                            @include font-size(5);
+                            font-size: 50px;
                             font-family: Georgia, sans-serif;
                             line-height: 1;
                             position: absolute;
@@ -384,7 +384,7 @@
                 }
 
                 > span {
-                    @include font-size(1.4);
+                    font-size: 14px;
                     color: $rgb-grey;
                     display: block;
                 }
