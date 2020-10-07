@@ -2,20 +2,6 @@
     BEGIN HOMPAGE
 ********************************************/
 
-.main-banner {
-    margin-bottom: 25px;
-    height: 40vh;
-
-    @include media('>=tablet') {
-        height: 50vh;
-    }
-
-    @include media('>=desktop') {
-        height: 80vh;
-        margin-bottom: 85px;
-    }
-}
-
 .slider-container {
     //padding-bottom: 25px;
     position: relative;
@@ -241,6 +227,31 @@
 }
 
 .slider-mini-container {}
+
+.main-banner {
+    margin-bottom: 85px;
+    overflow: visible;
+    /*height: 40vh;
+
+    @include media('>=tablet') {
+        height: 50vh;
+    }
+
+    @include media('>=desktop') {
+        height: 80vh;
+    }*/
+
+    .slick-dots {
+        @extend %listreset;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+    }
+
+    .slick-slide * {
+        vertical-align: top;
+    }
+}
 
 .home-page .news-container {
     @include font-size(1.3);
@@ -707,13 +718,13 @@
 
         .info-window {
             font-family: $font-primary;
-            @include font-size(1.2);
+            font-size: 12px;
 
             span {
                 display: block;
 
                 &:first-of-type {
-                    @include font-size(1.3);
+                    font-size: 13px;
                     font-weight: bold;
                     margin-bottom: 4px;
                 }
