@@ -391,6 +391,11 @@ var Work = function(settings) {
                 initFilter();
             }
         });
+
+        if($workSubMenu.find('.is-checked').data('filter') === '*') {
+            loadAll();
+            $workSubMenu.find('a[href="#all"]').trigger('click');
+        }
     }
 
     return {
