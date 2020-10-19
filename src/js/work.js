@@ -345,6 +345,16 @@ var Work = function(settings) {
                     loadAll();
                 }
             }
+
+            $('.grid-item').each(function() {
+                var currentId = $(this).attr('data-id');
+
+                if ($("[data-id='" + currentId +"']").length > 1) {
+                    $(this).remove();
+                }
+            });
+
+            $grid.isotope('layout');
         });
 
         window.addEventListener('load', function () {
@@ -391,11 +401,6 @@ var Work = function(settings) {
                 initFilter();
             }
         });
-
-        if($workSubMenu.find('.is-checked').data('filter') === '*') {
-            loadAll();
-            $workSubMenu.find('a[href="#all"]').trigger('click');
-        }
     }
 
     return {
