@@ -351,9 +351,14 @@ var Work = function(settings) {
                 if ($("[data-id='" + currentId +"']").length > 1) {
                     $(this).remove();
                 }
-
-                lazyload().loadImages();
+                //lazyload().loadImages();
+            }).promise().done( function(){
                 $grid.isotope('layout');
+
+                iso.filteredItems.forEach( function( item, i ) {
+                    let images = $(item.element).find('img.lazyload');
+                    lazyload(images);
+                });
             });
         });
 
