@@ -262,10 +262,6 @@ var Work = function(settings) {
         const $noResults = $('.no-results');
 
         // init Isotope
-        var $win = $(window),
-            $con = $('#masonry'),
-            $imgs = $("img.lazy");
-
         $grid = $($work).isotope({
             resizable: false,
             itemSelector: '.grid-item',
@@ -318,8 +314,11 @@ var Work = function(settings) {
             checkLastPage: true,
             history: false,
             outlayer: iso,
-            status: '.page-load-status'
+            status: '.page-load-status',
+            layoutMode: 'fitRows'
         });
+
+        lazyload();
 
         $search.on('keyup search', debounce( function() {
             qsRegex = new RegExp($search.val(), 'gi');
@@ -352,14 +351,15 @@ var Work = function(settings) {
                 if ($("[data-id='" + currentId +"']").length > 1) {
                     $(this).remove();
                 }
-            });
 
-            $grid.isotope('layout');
+                lazyload().loadImages();
+                $grid.isotope('layout');
+            });
         });
 
         window.addEventListener('load', function () {
             (function ($) {
-                $("img.lazyload").lazyload();
+                //$("img.lazyload").lazyload();
                 $grid.isotope('layout');
             })(jQuery);
         });
@@ -376,7 +376,7 @@ var Work = function(settings) {
         numberOfPages = parseInt($('.pagination').find('.page-num').last().text());
 
         if($workPage.length > 0) {
-            lazyload();
+            //lazyload();
             initIsotope();
         }
 
