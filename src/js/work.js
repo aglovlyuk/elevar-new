@@ -66,8 +66,6 @@ var Work = function(settings) {
     function workSubMenuClickEventHandler(e) {
         var $this = $(this);
 
-        //app.initArrow();
-
         filterValue = $this.data('filter');
         var tagName = filterValue !== '*'
             ? filterValue.substring(1)
@@ -238,7 +236,7 @@ var Work = function(settings) {
     function initFilter() {
         var hash = window.location.hash,
             $items = $workSubMenu.find('a'),
-            arr = new Array();
+            arr = [];
 
         $.each($items, function (index, value) {
             arr.push($(value).attr('href'));
@@ -318,8 +316,6 @@ var Work = function(settings) {
             layoutMode: 'fitRows'
         });
 
-        lazyload();
-
         $search.on('keyup search', debounce( function() {
             qsRegex = new RegExp($search.val(), 'gi');
 
@@ -351,23 +347,37 @@ var Work = function(settings) {
                 if ($("[data-id='" + currentId +"']").length > 1) {
                     $(this).remove();
                 }
-                //lazyload().loadImages();
-            }).promise().done( function(){
-                $grid.isotope('layout');
-
-                iso.filteredItems.forEach( function( item, i ) {
-                    let images = $(item.element).find('img.lazyload');
-                    lazyload(images);
-                });
             });
+
+            iso.filteredItems.forEach( function( item, i ) {
+                let images = $(item.element).find('img.lazyload[src=""]');
+                lazyload(images);
+            });
+
+            $grid.isotope('layout');
+                /*.promise().done( function(){
+                $grid.isotope('layout');
+                lazyload();
+            });*/
+
+            /*$('.lazyload').each(function(index, elem) {
+                if (!elem.complete) {
+                    $(elem).on('load', function(){
+                        console.log('image loaded from server');
+                    });
+                }
+                else {
+                    console.log('image loaded from cache');
+                }
+            })*/
         });
 
-        window.addEventListener('load', function () {
+        /*window.addEventListener('load', function () {
             (function ($) {
-                //$("img.lazyload").lazyload();
+                $("img.lazyload").lazyload();
                 $grid.isotope('layout');
             })(jQuery);
-        });
+        });*/
     }
 
     function init() {
@@ -383,6 +393,7 @@ var Work = function(settings) {
         if($workPage.length > 0) {
             //lazyload();
             initIsotope();
+            lazyload();
         }
 
         // Event handlers
@@ -413,4 +424,6 @@ var Work = function(settings) {
     }
 };
 
-Work().init();
+$(function(){
+    Work().init();
+});

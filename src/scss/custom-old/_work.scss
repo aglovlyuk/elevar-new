@@ -106,8 +106,10 @@
                     padding: 0;
 
                     img {
+                        display: block;
                         width: 100%;
                         height: auto;
+                        background-color: rgba(#000, .5);
 
                         &:after {
                             content: '';
@@ -560,6 +562,34 @@
                         img {
                             @include img-zoom();
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination {
+        position: absolute;
+        left: -9999px;
+        top: -999px;
+        justify-content: center;
+
+        ul {
+            @extend %listreset;
+            display: flex;
+
+            li {
+                margin: 0 3px;
+
+                @include media('>=tablet') {
+                    margin: 0 8px;
+                }
+
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $cr-brand-tertiary;
                     }
                 }
             }
