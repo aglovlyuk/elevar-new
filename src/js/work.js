@@ -75,7 +75,6 @@ var Work = function(settings) {
         $workSubMenu.find('.submenu__btn').removeClass('is-checked');
         $this.toggleClass('is-checked');
 
-
         // ajax call for the tag section "blurb"
         tagName !== '*'
             ? populateTagBlurb(tagName)
@@ -95,12 +94,11 @@ var Work = function(settings) {
             setTimeout(function () {
                 let images = $(item.element).find('img.lazyload[src*="data:image"]');
                 lazyload(images);
-            }, 10);
-        });
 
-        // layout Isotope after each image loads
-        $grid.imagesLoaded().done(function () {
-            $grid.isotope('layout');
+                images.on('load', function() {
+                    $grid.isotope('layout');
+                });
+            }, 10);
         });
     }
 
@@ -258,11 +256,6 @@ var Work = function(settings) {
         $.each(pages, function (index, value) {
             $grid.infiniteScroll('loadNextPage');
         });
-
-        // layout Isotope after each image loads
-        $grid.imagesLoaded().done(function () {
-            $grid.isotope('layout');
-        });
     }
 
     function initIsotope() {
@@ -355,11 +348,10 @@ var Work = function(settings) {
             iso.filteredItems.forEach( function( item, i ) {
                 let images = $(item.element).find('img.lazyload[src*="data:image"]');
                 lazyload(images);
-            });
 
-            // layout Isotope after each image loads
-            $grid.imagesLoaded().done(function () {
-                $grid.isotope('layout');
+                images.on('load', function() {
+                    $grid.isotope('layout');
+                });
             });
         });
     }
