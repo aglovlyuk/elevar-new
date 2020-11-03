@@ -85,19 +85,23 @@ var Work = function(settings) {
         if ($grid.length > 0) {
             loadAll();
 
-            //app.initArrow();
-
-            /*if (tagName === '*') {
-                $grid.isotope({ sortBy: 'originial-order' }).isotope();
-                return;
-            }
-
-            $grid.isotope({ sortBy: ['featured', 'random'] });*/
             $grid.isotope('shuffle');
             $grid.isotope('updateSortData').isotope();
         }
 
-        $grid.isotope('layout');
+        let iso = $grid.data('isotope');
+
+        iso.filteredItems.forEach( function( item, i ) {
+            setTimeout(function () {
+                let images = $(item.element).find('img.lazyload[src*="data:image"]');
+                lazyload(images);
+            }, 10);
+        });
+
+        // layout Isotope after each image loads
+        $grid.imagesLoaded().done(function () {
+            $grid.isotope('layout');
+        });
     }
 
     function moveSliderArrow(elem, slideIndex) {
@@ -254,6 +258,11 @@ var Work = function(settings) {
         $.each(pages, function (index, value) {
             $grid.infiniteScroll('loadNextPage');
         });
+
+        // layout Isotope after each image loads
+        $grid.imagesLoaded().done(function () {
+            $grid.isotope('layout');
+        });
     }
 
     function initIsotope() {
@@ -298,11 +307,6 @@ var Work = function(settings) {
             }
         });
 
-        // layout Isotope after each image loads
-        $grid.imagesLoaded().progress(function () {
-            $grid.isotope('layout');
-        });
-
         let iso = $grid.data('isotope');
 
         $grid.infiniteScroll({
@@ -334,7 +338,6 @@ var Work = function(settings) {
         }, 200));
 
         $grid.on('append.infiniteScroll', function (event, response, path, items) {
-            //var infScroll = $(this).data('infiniteScroll');
             if (typeof filterValue !== 'undefined') {
                 if (filterValue !== '*') {
                     loadAll();
@@ -350,34 +353,15 @@ var Work = function(settings) {
             });
 
             iso.filteredItems.forEach( function( item, i ) {
-                let images = $(item.element).find('img.lazyload[src=""]');
+                let images = $(item.element).find('img.lazyload[src*="data:image"]');
                 lazyload(images);
             });
 
-            $grid.isotope('layout');
-                /*.promise().done( function(){
+            // layout Isotope after each image loads
+            $grid.imagesLoaded().done(function () {
                 $grid.isotope('layout');
-                lazyload();
-            });*/
-
-            /*$('.lazyload').each(function(index, elem) {
-                if (!elem.complete) {
-                    $(elem).on('load', function(){
-                        console.log('image loaded from server');
-                    });
-                }
-                else {
-                    console.log('image loaded from cache');
-                }
-            })*/
+            });
         });
-
-        /*window.addEventListener('load', function () {
-            (function ($) {
-                $("img.lazyload").lazyload();
-                $grid.isotope('layout');
-            })(jQuery);
-        });*/
     }
 
     function init() {
@@ -391,7 +375,6 @@ var Work = function(settings) {
         numberOfPages = parseInt($('.pagination').find('.page-num').last().text());
 
         if($workPage.length > 0) {
-            //lazyload();
             initIsotope();
             lazyload();
         }
