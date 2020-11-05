@@ -1,16 +1,11 @@
 window.$ = window.jQuery = require('jquery');
 window.isotope = require("isotope-layout/dist/isotope.pkgd.min");
 const jQueryBridget = require('jquery-bridget');
-const InfiniteScroll = require('infinite-scroll');
 const Lazyload = require('lazyload');
 const imagesLoaded = require('imagesloaded');
 
-// make imagesLoaded available for InfiniteScroll
-InfiniteScroll.imagesLoaded = imagesLoaded;
-
 // make jQuery plugins
 imagesLoaded.makeJQueryPlugin( $ );
-jQueryBridget( 'infiniteScroll', InfiniteScroll, $ );
 jQueryBridget( 'lazyload', Lazyload, $ );
 
 var Work = function(settings) {
@@ -82,8 +77,6 @@ var Work = function(settings) {
 
         // filter items
         if ($grid.length > 0) {
-            loadAll();
-
             $grid.isotope('shuffle');
             $grid.isotope('updateSortData').isotope();
         }
@@ -249,15 +242,6 @@ var Work = function(settings) {
         }
     }
 
-    function loadAll() {
-        var $pagination = $('.pagination'),
-            pages = $pagination.find('.page-num');
-
-        $.each(pages, function (index, value) {
-            $grid.infiniteScroll('loadNextPage');
-        });
-    }
-
     function initIsotope() {
         const $noResults = $('.no-results');
 
@@ -302,23 +286,8 @@ var Work = function(settings) {
 
         let iso = $grid.data('isotope');
 
-        $grid.infiniteScroll({
-            path: '.pagination__next',
-            append: '.grid-item',
-            hideNav: '.pagination',
-            checkLastPage: true,
-            history: false,
-            outlayer: iso,
-            status: '.page-load-status',
-            layoutMode: 'fitRows'
-        });
-
         $search.on('keyup search', debounce( function() {
             qsRegex = new RegExp($search.val(), 'gi');
-
-            if (typeof filterValue === 'undefined') {
-                loadAll();
-            }
 
             setTimeout(function () {
                 $grid.isotope();
@@ -330,28 +299,20 @@ var Work = function(settings) {
             }, 100);
         }, 200));
 
-        $grid.on('append.infiniteScroll', function (event, response, path, items) {
-            if (typeof filterValue !== 'undefined') {
-                if (filterValue !== '*') {
-                    loadAll();
-                }
+        /*$('.grid-item').each(function() {
+            var currentId = $(this).attr('data-id');
+
+            if ($("[data-id='" + currentId +"']").length > 1) {
+                $(this).remove();
             }
+        });*/
 
-            $('.grid-item').each(function() {
-                var currentId = $(this).attr('data-id');
+        iso.filteredItems.forEach( function( item, i ) {
+            let images = $(item.element).find('img.lazyload[src*="data:image"]');
+            lazyload(images);
 
-                if ($("[data-id='" + currentId +"']").length > 1) {
-                    $(this).remove();
-                }
-            });
-
-            iso.filteredItems.forEach( function( item, i ) {
-                let images = $(item.element).find('img.lazyload[src*="data:image"]');
-                lazyload(images);
-
-                images.on('load', function() {
-                    $grid.isotope('layout');
-                });
+            images.on('load', function() {
+                $grid.isotope('layout');
             });
         });
     }
