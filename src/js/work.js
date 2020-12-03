@@ -77,8 +77,14 @@ var Work = function(settings) {
 
         // filter items
         if ($grid.length > 0) {
-            $grid.isotope('shuffle');
-            $grid.isotope('updateSortData').isotope();
+            $grid.isotope({ filter: filterValue });
+
+            if (tagName === '*') {
+                $grid.isotope('shuffle');
+                $grid.isotope('updateSortData').isotope();
+            } else {
+                $grid.isotope({ sortBy: 'original-order' })
+            }
         }
 
         let iso = $grid.data('isotope');
