@@ -305,14 +305,6 @@ var Work = function(settings) {
             }, 100);
         }, 200));
 
-        /*$('.grid-item').each(function() {
-            var currentId = $(this).attr('data-id');
-
-            if ($("[data-id='" + currentId +"']").length > 1) {
-                $(this).remove();
-            }
-        });*/
-
         iso.filteredItems.forEach( function( item, i ) {
             let images = $(item.element).find('img.lazyload[src*="data:image"]');
             lazyload(images);
