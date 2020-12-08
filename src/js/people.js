@@ -1,9 +1,10 @@
 window.$ = window.jQuery = require('jquery');
 window.isotope = require("isotope-layout/dist/isotope.pkgd.min");
 const jQueryBridget = require('jquery-bridget');
-const InfiniteScroll = require('infinite-scroll');
+const Lazyload = require('lazyload');
+
 // make Infinite Scroll a jQuery plugin
-jQueryBridget( 'infiniteScroll', InfiniteScroll, $ );
+jQueryBridget( 'lazyload', Lazyload, $ );
 
 var People = function(settings){
     var $people,
@@ -80,20 +81,21 @@ var People = function(settings){
 
         // filter items
         if ($grid.length > 0) {
-            loadAll();
-
-            $grid.isotope();
+            $grid.isotope({ filter: filterValue });
         }
-    }
 
-    function peopleListCallback(e) {
-        var resultCount = parseInt(e.matchingItems.length);
+        let iso = $grid.data('isotope');
 
-        if(settings.isDesktop) {
-            (resultCount % 2 !== 0 || resultCount === 2)
-                ? $people.addClass('flex-start')
-                : $people.removeClass('flex-start');
-        }
+        iso.filteredItems.forEach( function( item, i ) {
+            setTimeout(function () {
+                let images = $(item.element).find('img.lazyload[src*="data:image"]');
+                lazyload(images);
+
+                images.on('load', function() {
+                    $grid.isotope('layout');
+                });
+            }, 10);
+        });
     }
 
     function debounce(fn, threshold) {
@@ -110,15 +112,6 @@ var People = function(settings){
         }
     }
 
-    function loadAll() {
-        var $pagination = $('.pagination'),
-            pages = $pagination.find('.page-num');
-
-        $.each(pages, function (index, value) {
-            $grid.infiniteScroll('loadNextPage');
-        });
-    }
-
     function initIsotope() {
         const $noResults = $('.no-results');
 
@@ -131,10 +124,12 @@ var People = function(settings){
                 stagger: 20,
                 transitionDuration: 0,
                 visibleStyle: {
-                    transform: 'translateY(0)', opacity: 1
+                    opacity: 1,
+                    transform: 'translateY(0)'
                 },
                 hiddenStyle: {
-                    transform: 'translateY(100px)', opacity: 0
+                    opacity: 0,
+                    transform: 'translateY(100px)'
                 },
                 filter: function () {
                     var $this = $(this),
@@ -145,17 +140,10 @@ var People = function(settings){
                 }
         });
 
-        // layout Isotope after each image loads
-        $grid.imagesLoaded().progress(function () {
-            $grid.isotope('layout');
-        });
+        let iso = $grid.data('isotope');
 
         $search.on('keyup search', debounce( function() {
             qsRegex = new RegExp($search.val(), 'gi');
-
-            if (typeof filterValue === 'undefined') {
-                loadAll();
-            }
 
             setTimeout(function () {
                 $grid.isotope();
@@ -167,31 +155,18 @@ var People = function(settings){
             }, 100);
         }, 200));
 
-        $grid.on('append.infiniteScroll', function (event, response, path, items) {
-            //var infScroll = $(this).data('infiniteScroll');
+        iso.filteredItems.forEach( function( item, i ) {
+            let images = $(item.element).find('img.lazyload[src*="data:image"]');
+            lazyload(images);
 
-            if (typeof filterValue !== 'undefined') {
-                if (filterValue !== '*') {
-                    loadAll();
-                }
-            }
-        });
-
-        var iso = $grid.data('isotope');
-
-        $grid.infiniteScroll({
-            path: '.pagination__next',
-            append: '.grid-item',
-            hideNav: '.pagination',
-            checkLastPage: true,
-            history: false,
-            outlayer: iso,
-            status: '.page-load-status'
+            images.on('load', function() {
+                $grid.isotope('layout');
+            });
         });
     }
 
     function init() {
-        $people = $('.people-page').find('.js-grid-people');
+        $people = $('.js-grid-people');
         $peopleSubMenu = $('#js-people-filters');
         $search = $('.js-people-search');
 

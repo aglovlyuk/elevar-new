@@ -308,6 +308,7 @@ var Work = function(settings) {
             }, 100);
         }, 200));
 
+
         /*$('.grid-item').each(function() {
             var currentId = $(this).attr('data-id');
 
@@ -321,7 +322,7 @@ var Work = function(settings) {
             iso.filteredItems.forEach( function( item, i ) {
                 let images = $(item.element).find('img.lazyload[src*="data:image"]');
                 lazyload(images);
-
+                
                 images.on('load', function() {
                     $grid.isotope('layout');
                 });
