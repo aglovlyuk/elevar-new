@@ -81,7 +81,7 @@ var People = function(settings){
 
         // filter items
         if ($grid.length > 0) {
-            $grid.isotope({ filter: filterValue });
+            $grid.isotope();
         }
 
         let iso = $grid.data('isotope');
@@ -155,14 +155,16 @@ var People = function(settings){
             }, 100);
         }, 200));
 
-        iso.filteredItems.forEach( function( item, i ) {
-            let images = $(item.element).find('img.lazyload[src*="data:image"]');
-            lazyload(images);
+        if(typeof iso !== "undefined") {
+            iso.filteredItems.forEach( function( item, i ) {
+                let images = $(item.element).find('img.lazyload[src*="data:image"]');
+                lazyload(images);
 
-            images.on('load', function() {
-                $grid.isotope('layout');
+                images.on('load', function() {
+                    $grid.isotope('layout');
+                });
             });
-        });
+        }
     }
 
     function init() {
