@@ -5,7 +5,7 @@ const InfiniteScroll = require('infinite-scroll');
 const imagesLoaded = require('imagesloaded');
 // make Infinite Scroll a jQuery plugin
 jQueryBridget( 'infiniteScroll', InfiniteScroll, $ );
-imagesLoaded.makeJQueryPlugin( $ );
+InfiniteScroll.imagesLoaded = imagesLoaded;
 
 const Elevate = function() {
     let qsRegex,
