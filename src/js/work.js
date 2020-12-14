@@ -77,7 +77,7 @@ var Work = function(settings) {
 
         // filter items
         if ($grid.length > 0) {
-            $grid.isotope({ filter: filterValue });
+            $grid.isotope();
 
             if (tagName === '*') {
                 $grid.isotope('shuffle');
@@ -102,7 +102,7 @@ var Work = function(settings) {
             }, 10);
         });
         }
-        }
+    }
 
     function moveSliderArrow(elem, slideIndex) {
         if (slideIndex === 0) {
@@ -308,21 +308,11 @@ var Work = function(settings) {
             }, 100);
         }, 200));
 
-
-        /*$('.grid-item').each(function() {
-            var currentId = $(this).attr('data-id');
-
-            if ($("[data-id='" + currentId +"']").length > 1) {
-                $(this).remove();
-            }
-        });*/
-
-        if(iso != null)
-        {
+        if(typeof iso !== "undefined") {
             iso.filteredItems.forEach( function( item, i ) {
                 let images = $(item.element).find('img.lazyload[src*="data:image"]');
                 lazyload(images);
-                
+
                 images.on('load', function() {
                     $grid.isotope('layout');
                 });
