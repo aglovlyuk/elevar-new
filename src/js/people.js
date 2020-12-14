@@ -86,6 +86,8 @@ var People = function(settings){
 
         let iso = $grid.data('isotope');
 
+        if(iso != null)
+        {
         iso.filteredItems.forEach( function( item, i ) {
             setTimeout(function () {
                 let images = $(item.element).find('img.lazyload[src*="data:image"]');
@@ -96,6 +98,7 @@ var People = function(settings){
                 });
             }, 10);
         });
+    }
     }
 
     function debounce(fn, threshold) {
@@ -155,6 +158,8 @@ var People = function(settings){
             }, 100);
         }, 200));
 
+        if(iso != null)
+        {
         iso.filteredItems.forEach( function( item, i ) {
             let images = $(item.element).find('img.lazyload[src*="data:image"]');
             lazyload(images);
@@ -163,6 +168,8 @@ var People = function(settings){
                 $grid.isotope('layout');
             });
         });
+    }
+    
     }
 
     function init() {
