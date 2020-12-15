@@ -15,7 +15,8 @@ const Elevate = function() {
         btnMore,
         amountItems,
         filterValue,
-        elevateFilters;
+        elevateFilters,
+        nextURL;
 
     // debounce so filtering doesn't happen every millisecond
     function debounce( fn, threshold ) {
@@ -33,6 +34,13 @@ const Elevate = function() {
             timeout = setTimeout( delayed, threshold );
         };
     }
+
+    function updateNextURL(doc) {
+        nextURL = $(doc).find('.pagination__next').attr('href');
+    }
+
+    // get initial nextURL
+    updateNextURL( document );
 
     function initIsotope() {
         const $noResults = $('.no-results');
@@ -61,7 +69,9 @@ const Elevate = function() {
         let iso = $grid.data('isotope');
 
         $grid.infiniteScroll({
-            path: '.pagination__next',
+            path: function() {
+                return nextURL;
+            },
             append: '.grid-item',
             loadOnScroll: false,
             button: '.js-btn-more',
@@ -90,28 +100,24 @@ const Elevate = function() {
                     : $noResults.addClass('hidden');
             }, 100);
         }, 200));
+    }
 
-        // btnMore click
-        // btnMore.on('keyup search', debounce( function() {
-        //     $grid.infiniteScroll('loadNextPage');
-        // }, 200));
+    // load all items
+    function loadAll() {
+        $grid.infiniteScroll('loadNextPage');
 
-        // show/hide more button
-        $grid.on('arrangeComplete', function (event, filteredItems) {
-            if(filteredItems.length < amountItems) {
+        $grid.on('load.infiniteScroll', function( event, response ) {
+            if(typeof response !== "undefined") {
+                updateNextURL( response );
+
+                setTimeout(function () {
+                    $grid.infiniteScroll('loadNextPage');
+                }, 10);
+
                 btnMore.hide();
             } else {
                 btnMore.show();
             }
-        });
-    }
-
-    function loadAll() {
-        var $pagination = $('.pagination'),
-            pages = $pagination.find('.page-num');
-
-        $.each(pages, function (index, value) {
-            $grid.infiniteScroll('loadNextPage');
         });
     }
 
@@ -128,7 +134,6 @@ const Elevate = function() {
         // filter items
         if ($grid.length > 0) {
             loadAll();
-
             $grid.isotope();
         }
     }
