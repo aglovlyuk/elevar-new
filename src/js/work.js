@@ -89,6 +89,8 @@ var Work = function(settings) {
 
         let iso = $grid.data('isotope');
 
+        if(iso != null)
+        {
         iso.filteredItems.forEach( function( item, i ) {
             setTimeout(function () {
                 let images = $(item.element).find('img.lazyload[src*="data:image"]');
@@ -99,6 +101,7 @@ var Work = function(settings) {
                 });
             }, 10);
         });
+        }
     }
 
     function moveSliderArrow(elem, slideIndex) {
