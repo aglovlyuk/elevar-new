@@ -1,22 +1,23 @@
 window.$ = window.jQuery = require('jquery');
 window.isotope = require("isotope-layout/dist/isotope.pkgd.min");
 const jQueryBridget = require('jquery-bridget');
-const InfiniteScroll = require('infinite-scroll');
+const Lazyload = require('lazyload');
 const imagesLoaded = require('imagesloaded');
-// make Infinite Scroll a jQuery plugin
-jQueryBridget( 'infiniteScroll', InfiniteScroll, $ );
-InfiniteScroll.imagesLoaded = imagesLoaded;
+
+// make jQuery plugins
+imagesLoaded.makeJQueryPlugin( $ );
+jQueryBridget( 'lazyload', Lazyload, $ );
 
 const Elevate = function() {
     let qsRegex,
         $grid,
+        gridParent,
         gridElements,
         searchInput,
         btnMore,
         amountItems,
         filterValue,
-        elevateFilters,
-        nextURL;
+        elevateFilters;
 
     // debounce so filtering doesn't happen every millisecond
     function debounce( fn, threshold ) {
@@ -35,17 +36,10 @@ const Elevate = function() {
         };
     }
 
-    function updateNextURL(doc) {
-        nextURL = $(doc).find('.pagination__next').attr('href');
-    }
-
-    // get initial nextURL
-    updateNextURL( document );
-
     function initIsotope() {
         const $noResults = $('.no-results');
 
-        $grid = gridElements.isotope({
+        $grid = gridParent.isotope({
             itemSelector: '.grid-item',
             percentPosition: true,
             layoutMode: 'masonry',
@@ -61,26 +55,7 @@ const Elevate = function() {
             }
         });
 
-        // layout Isotope after each image loads
-        $grid.imagesLoaded().progress(function () {
-            $grid.isotope('layout');
-        });
-
         let iso = $grid.data('isotope');
-
-        $grid.infiniteScroll({
-            path: function() {
-                return nextURL;
-            },
-            append: '.grid-item',
-            loadOnScroll: false,
-            button: '.js-btn-more',
-            hideNav: '.pagination',
-            checkLastPage: true,
-            history: false,
-            outlayer: iso,
-            status: '.page-load-status'
-        });
 
         // use value of search field to filter
         searchInput.on('keyup search', debounce( function() {
@@ -100,25 +75,36 @@ const Elevate = function() {
                     : $noResults.addClass('hidden');
             }, 100);
         }, 200));
+
+        btnMore.find('a').on('click', function (e) {
+            e.preventDefault();
+
+            let nextItems = gridElements.filter(':visible:last').nextAll().slice(0, amountItems);
+
+            if(amountItems > nextItems.length) {
+                btnMore.hide();
+            }
+            nextItems.addClass('visible')
+        })
+
+        if(typeof iso !== "undefined") {
+            iso.filteredItems.forEach( function( item, i ) {
+                let images = $(item.element).find('img.lazyload[src*="data:image"]');
+                lazyload(images);
+
+                images.on('load', function() {
+                    $grid.isotope('layout');
+                });
+            });
+        }
     }
 
     // load all items
     function loadAll() {
-        $grid.infiniteScroll('loadNextPage');
-
-        $grid.on('load.infiniteScroll', function( event, response ) {
-            if(typeof response !== "undefined") {
-                updateNextURL( response );
-
-                setTimeout(function () {
-                    $grid.infiniteScroll('loadNextPage');
-                }, 10);
-
-                btnMore.hide();
-            } else {
-                btnMore.show();
-            }
-        });
+        if(gridElements.length > 0) {
+            gridElements.addClass('visible')
+            btnMore.hide();
+        }
     }
 
     // bind filter button click
@@ -135,17 +121,33 @@ const Elevate = function() {
         if ($grid.length > 0) {
             loadAll();
             $grid.isotope();
+
+            let iso = $grid.data('isotope');
+
+            if(iso != null) {
+                iso.filteredItems.forEach( function( item, i ) {
+                    setTimeout(function () {
+                        let images = $(item.element).find('img.lazyload[src*="data:image"]');
+                        lazyload(images);
+
+                        images.on('load', function() {
+                            $grid.isotope('layout');
+                        });
+                    }, 10);
+                });
+            }
         }
     }
 
     function init() {
-        gridElements      = $('.js-grid-insights');
+        gridParent        = $('.js-grid-insights');
+        gridElements      = gridParent.find('.grid-item');
         searchInput       = $('.js-filter-search');
         btnMore           = $('.js-btn-more');
         amountItems       = 12;
         elevateFilters    = $('#js-elevate-filters');
 
-        if(gridElements.length > 0) {
+        if(gridParent.length > 0) {
             initIsotope();
         }
 

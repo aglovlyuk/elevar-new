@@ -36,6 +36,14 @@
     }
 
     .grid-item {
+        &:not(.visible) {
+            display: none;
+        }
+
+        &:nth-child(-n+13) {
+            display:block;
+        }
+
         @include media('<desktop') {
             padding-right: 5px;
             padding-left: 5px;
